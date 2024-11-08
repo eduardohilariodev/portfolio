@@ -11,6 +11,16 @@ import { FaCopy } from "react-icons/fa";
 import { defaultEmail } from "../constants";
 import MagicButton from "./magic-button";
 
+// Add type for Lottie options
+type LottieOptions = {
+  loop: boolean;
+  autoplay: boolean;
+  animationData: unknown;
+  rendererSettings: {
+    preserveAspectRatio: string;
+  };
+};
+
 export const BentoGrid = ({
   className,
   children,
@@ -61,6 +71,16 @@ export const BentoGridItem = ({
       setIsCopied(false);
     }, 2000);
   }
+
+  // Update the defaultOptions type in the component
+  const options: LottieOptions = {
+    loop: isCopied,
+    autoplay: isCopied,
+    animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
 
   return (
     <div
@@ -147,16 +167,7 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="relative mt-5">
               <div className={`absolute -bottom-5 right-0`}>
-                <Lottie
-                  options={{
-                    loop: isCopied,
-                    autoplay: isCopied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: "xMidYMid slice",
-                    },
-                  }}
-                />
+                <Lottie options={options} />
 
                 <MagicButton
                   icon={<FaCopy />}

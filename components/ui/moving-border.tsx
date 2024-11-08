@@ -9,6 +9,11 @@ import {
 } from "framer-motion";
 import React, { useRef } from "react";
 
+// Add type for otherProps
+type OtherProps = {
+  [key: string]: unknown;
+};
+
 export function Button({
   borderRadius = "1.75rem",
   children,
@@ -21,13 +26,12 @@ export function Button({
 }: {
   borderRadius?: string;
   children: React.ReactNode;
-  as?: any;
+  as?: React.ElementType;
   containerClassName?: string;
   borderClassName?: string;
   duration?: number;
   className?: string;
-  [key: string]: any;
-}) {
+} & OtherProps) {
   return (
     <Component
       className={cn(
@@ -79,9 +83,8 @@ export const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
-}) => {
-  const pathRef = useRef<any>();
+} & OtherProps) => {
+  const pathRef = useRef<SVGRectElement>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

@@ -60,6 +60,47 @@ interface WorldProps {
 
 let numbersOfRings = [0];
 
+type ThreeGlobeType = {
+  globeMaterial: () => unknown;
+  hexPolygonsData: (data: any) => ThreeGlobeType;
+  hexPolygonResolution: (num: number) => ThreeGlobeType;
+  hexPolygonMargin: (num: number) => ThreeGlobeType;
+  showAtmosphere: (show: boolean) => ThreeGlobeType;
+  atmosphereColor: (color: string) => ThreeGlobeType;
+  atmosphereAltitude: (altitude: number) => ThreeGlobeType;
+  hexPolygonColor: (callback: (e: unknown) => string) => ThreeGlobeType;
+  arcsData: (data: Position[]) => ThreeGlobeType;
+  arcStartLat: (
+    callback: (d: { startLat: number }) => number,
+  ) => ThreeGlobeType;
+  arcStartLng: (
+    callback: (d: { startLng: number }) => number,
+  ) => ThreeGlobeType;
+  arcEndLat: (callback: (d: { endLat: number }) => number) => ThreeGlobeType;
+  arcEndLng: (callback: (d: { endLng: number }) => number) => ThreeGlobeType;
+  arcColor: (callback: (e: { color: string }) => string) => ThreeGlobeType;
+  arcAltitude: (callback: (e: { arcAlt: number }) => number) => ThreeGlobeType;
+  arcStroke: (callback: (e: unknown) => number) => ThreeGlobeType;
+  arcDashLength: (length: number) => ThreeGlobeType;
+  arcDashInitialGap: (
+    callback: (e: { order: number }) => number,
+  ) => ThreeGlobeType;
+  arcDashGap: (gap: number) => ThreeGlobeType;
+  arcDashAnimateTime: (callback: (e: unknown) => number) => ThreeGlobeType;
+  pointsData: (data: Position[]) => ThreeGlobeType;
+  pointColor: (callback: (e: { color: string }) => string) => ThreeGlobeType;
+  pointsMerge: (merge: boolean) => ThreeGlobeType;
+  pointAltitude: (altitude: number) => ThreeGlobeType;
+  pointRadius: (radius: number) => ThreeGlobeType;
+  ringsData: (data: unknown[]) => ThreeGlobeType;
+  ringColor: (
+    callback: (e: { color: (t: number) => string }) => (t: number) => string,
+  ) => ThreeGlobeType;
+  ringMaxRadius: (radius: number) => ThreeGlobeType;
+  ringPropagationSpeed: (speed: number) => ThreeGlobeType;
+  ringRepeatPeriod: (period: number) => ThreeGlobeType;
+};
+
 export function Globe({ globeConfig, data }: WorldProps) {
   const [globeData, setGlobeData] = useState<
     | {
@@ -72,7 +113,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     | null
   >(null);
 
-  const globeRef = useRef<ThreeGlobe | null>(null);
+  const globeRef = useRef<ThreeGlobeType | null>(null);
 
   const defaultProps = {
     pointSize: 1,
@@ -140,9 +181,9 @@ export function Globe({ globeConfig, data }: WorldProps) {
       (v, i, a) =>
         a.findIndex((v2) =>
           ["lat", "lng"].every(
-            (k) => v2[k as "lat" | "lng"] === v[k as "lat" | "lng"]
-          )
-        ) === i
+            (k) => v2[k as "lat" | "lng"] === v[k as "lat" | "lng"],
+          ),
+        ) === i,
     );
 
     setGlobeData(filteredPoints);
@@ -198,7 +239,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .ringMaxRadius(defaultProps.maxRings)
       .ringPropagationSpeed(RING_PROPAGATION_SPEED)
       .ringRepeatPeriod(
-        (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings
+        (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
       );
   };
 
@@ -210,11 +251,11 @@ export function Globe({ globeConfig, data }: WorldProps) {
       numbersOfRings = genRandomNumbers(
         0,
         data.length,
-        Math.floor((data.length * 4) / 5)
+        Math.floor((data.length * 4) / 5),
       );
 
       globeRef.current.ringsData(
-        globeData.filter((d, i) => numbersOfRings.includes(i))
+        globeData.filter((d, i) => numbersOfRings.includes(i)),
       );
     }, 2000);
 
