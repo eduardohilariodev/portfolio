@@ -60,47 +60,6 @@ interface WorldProps {
 
 let numbersOfRings = [0];
 
-type ThreeGlobeType = {
-  globeMaterial: () => unknown;
-  hexPolygonsData: (data: any) => ThreeGlobeType;
-  hexPolygonResolution: (num: number) => ThreeGlobeType;
-  hexPolygonMargin: (num: number) => ThreeGlobeType;
-  showAtmosphere: (show: boolean) => ThreeGlobeType;
-  atmosphereColor: (color: string) => ThreeGlobeType;
-  atmosphereAltitude: (altitude: number) => ThreeGlobeType;
-  hexPolygonColor: (callback: (e: unknown) => string) => ThreeGlobeType;
-  arcsData: (data: Position[]) => ThreeGlobeType;
-  arcStartLat: (
-    callback: (d: { startLat: number }) => number,
-  ) => ThreeGlobeType;
-  arcStartLng: (
-    callback: (d: { startLng: number }) => number,
-  ) => ThreeGlobeType;
-  arcEndLat: (callback: (d: { endLat: number }) => number) => ThreeGlobeType;
-  arcEndLng: (callback: (d: { endLng: number }) => number) => ThreeGlobeType;
-  arcColor: (callback: (e: { color: string }) => string) => ThreeGlobeType;
-  arcAltitude: (callback: (e: { arcAlt: number }) => number) => ThreeGlobeType;
-  arcStroke: (callback: (e: unknown) => number) => ThreeGlobeType;
-  arcDashLength: (length: number) => ThreeGlobeType;
-  arcDashInitialGap: (
-    callback: (e: { order: number }) => number,
-  ) => ThreeGlobeType;
-  arcDashGap: (gap: number) => ThreeGlobeType;
-  arcDashAnimateTime: (callback: (e: unknown) => number) => ThreeGlobeType;
-  pointsData: (data: Position[]) => ThreeGlobeType;
-  pointColor: (callback: (e: { color: string }) => string) => ThreeGlobeType;
-  pointsMerge: (merge: boolean) => ThreeGlobeType;
-  pointAltitude: (altitude: number) => ThreeGlobeType;
-  pointRadius: (radius: number) => ThreeGlobeType;
-  ringsData: (data: unknown[]) => ThreeGlobeType;
-  ringColor: (
-    callback: (e: { color: (t: number) => string }) => (t: number) => string,
-  ) => ThreeGlobeType;
-  ringMaxRadius: (radius: number) => ThreeGlobeType;
-  ringPropagationSpeed: (speed: number) => ThreeGlobeType;
-  ringRepeatPeriod: (period: number) => ThreeGlobeType;
-};
-
 export function Globe({ globeConfig, data }: WorldProps) {
   const [globeData, setGlobeData] = useState<
     | {
@@ -113,7 +72,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     | null
   >(null);
 
-  const globeRef = useRef<ThreeGlobeType | null>(null);
+  const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
     pointSize: 1,
