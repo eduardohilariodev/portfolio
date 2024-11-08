@@ -8,6 +8,7 @@ import { GridGlobe } from "./grid-globe";
 
 import animationData from "@/data/confetti.json";
 import { FaCopy } from "react-icons/fa";
+import { defaultEmail } from "../constants";
 import MagicButton from "./magic-button";
 
 export const BentoGrid = ({
@@ -53,7 +54,7 @@ export const BentoGridItem = ({
   const [isCopied, setIsCopied] = useState(false);
 
   function handleCopy(): void {
-    navigator.clipboard.writeText("eduardohilariodev@pm.me");
+    navigator.clipboard.writeText(defaultEmail);
     setIsCopied(true);
 
     setTimeout(() => {

@@ -14,6 +14,7 @@ const Approach = () => {
       <div className="my-20 flex w-full flex-col items-center justify-center gap-4 lg:flex-row">
         {/* add des prop */}
         <Card
+          key="phase-1"
           title="Planning & Strategy"
           icon={<AceternityIcon order="Phase 1" />}
           des="We'll collaborate to map out your website's goals, target audience, 
@@ -27,6 +28,7 @@ const Approach = () => {
           />
         </Card>
         <Card
+          key="phase-2"
           title="Development & Progress Update"
           icon={<AceternityIcon order="Phase 2" />}
           des="Once we agree on the plan, I cue my lofi playlist and dive into
@@ -49,6 +51,7 @@ const Approach = () => {
           {/* <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" /> */}
         </Card>
         <Card
+          key="phase-3"
           title="Development & Launch"
           icon={<AceternityIcon order="Phase 3" />}
           des="This is where the magic happens! Based on the approved design, 
