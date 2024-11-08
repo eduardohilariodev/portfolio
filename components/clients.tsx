@@ -16,14 +16,10 @@ export default function Clients() {
 
         <div className="flex flex-wrap items-center justify-center gap-4 max-lg:mt-10 md:gap-16">
           {companies.map(({ id, img, name, nameImg }) => (
-            <>
-              <div className="flex max-w-32 gap-2 md:max-w-60">
-                <img src={img} alt={name} className="w-5 md:w-10" />
-              </div>
-              <div className="flex max-w-32 gap-2 md:max-w-60">
-                <img src={nameImg} alt={name} className="w-20 md:w-24" />
-              </div>
-            </>
+            <div className="flex max-w-32 gap-2 md:max-w-60">
+              <img src={img} alt={name} className="w-5 md:w-10" />
+              <img src={nameImg} alt={name} className="w-20 md:w-24" />
+            </div>
           ))}
         </div>
       </div>
