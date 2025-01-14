@@ -158,10 +158,10 @@ export default function Home() {
             </p>
 
             <p>
-              I&apos;m Eduardo, a software engineer specializing in TypeScript,
-              React, and UX/UI Design. I focus on delivering user-focused
-              digital experiences, optimizing software performance, and building
-              scalable solutions for web and mobile platforms.
+              I&apos;m Eduardo Hilario, a software engineer specializing in
+              TypeScript, React, and UX/UI Design. I focus on delivering
+              user-focused digital experiences, optimizing software performance,
+              and building scalable solutions for web and mobile platforms.
             </p>
 
             <div className="space-y-4">
