@@ -2,6 +2,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import Hero from "./components/Hero";
 import Section from "./components/Section";
 import type { StackPillProps } from "./components/StackPill";
 
@@ -77,7 +78,7 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: "Content Producer",
+    title: "Technical Content Producer",
     company: companies["Brick Abode"],
     startDate: new Date("2019-11"),
     endDate: new Date("2021-03"),
@@ -86,13 +87,13 @@ const experiences: ExperienceItem[] = [
         name: "Audiovisual Materials Production",
         description:
           "Produced and edited videos, managed recording hardware, and optimized workflows using NLE software.",
-        stack: [],
+        stack: ["adobe"],
       },
       {
         name: "Automated Video Production Pipeline",
         description:
           "Created a production line for short job proposal videos, automating camera setups, voice capture, and YouTube API integration.",
-        stack: [],
+        stack: ["adobe", "python"],
       },
     ],
   },
@@ -134,6 +135,7 @@ const education = [
 ];
 
 const allTechs = [
+  "javascript",
   "typescript",
   "react",
   "nextjs",
@@ -144,6 +146,7 @@ const allTechs = [
   "aws",
   "flutter",
   "figma",
+  "adobe",
 ] as const;
 
 const contactLinks = [
@@ -161,6 +164,8 @@ const contactLinks = [
 export default function Home() {
   return (
     <div className="space-y-32">
+      <Hero />
+
       <Section
         id="about"
         title="About"

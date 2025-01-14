@@ -1,10 +1,12 @@
 import { IconType } from "react-icons";
 import {
+  TbBrandAdobe,
   TbBrandAws,
   TbBrandDocker,
   TbBrandFigma,
   TbBrandFlutter,
   TbBrandGit,
+  TbBrandJavascript,
   TbBrandLaravel,
   TbBrandNextjs,
   TbBrandPython,
@@ -18,17 +20,20 @@ export type TechCategory =
   | "backend"
   | "devops"
   | "tooling"
-  | "mobile";
+  | "mobile"
+  | "creative";
 
 interface TechConfig {
   icon: IconType;
   color: string;
   label: string;
   category: TechCategory;
+  children?: StackPillProps["tech"][];
 }
 
 export interface StackPillProps {
   tech:
+    | "javascript"
     | "react"
     | "typescript"
     | "nextjs"
@@ -39,11 +44,26 @@ export interface StackPillProps {
     | "git"
     | "docker"
     | "aws"
-    | "flutter";
+    | "flutter"
+    | "adobe";
   className?: string;
+  isChild?: boolean;
 }
 
 const techConfig: Record<StackPillProps["tech"], TechConfig> = {
+  javascript: {
+    icon: TbBrandJavascript,
+    color: "text-[#F7DF1E] bg-[#F7DF1E]/10",
+    label: "JavaScript",
+    category: "frontend",
+    children: ["typescript", "react", "nextjs", "vue"],
+  },
+  adobe: {
+    icon: TbBrandAdobe,
+    color: "text-[#FF0000] bg-[#FF0000]/10",
+    label: "Adobe Creative Suite",
+    category: "creative",
+  },
   react: {
     icon: TbBrandReact,
     color: "text-[#61DAFB] bg-[#61DAFB]/10",
@@ -112,16 +132,34 @@ const techConfig: Record<StackPillProps["tech"], TechConfig> = {
   },
 };
 
-export default function StackPill({ tech, className = "" }: StackPillProps) {
-  const { icon: Icon, color, label } = techConfig[tech];
+export default function StackPill({
+  tech,
+  className = "",
+  isChild = false,
+}: StackPillProps) {
+  const config = techConfig[tech];
+  const Icon = config.icon;
 
   return (
-    <span
-      className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-sm ${color} ${className}`}
-    >
-      <Icon className="text-lg" />
-      {label}
-    </span>
+    <div className="flex flex-col gap-2">
+      <div
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg ${config.color} ${className}`}
+      >
+        <Icon className="w-4 h-4" />
+        <span className="text-sm font-medium">{config.label}</span>
+      </div>
+      {!isChild && config.children && (
+        <div className="flex flex-wrap gap-2 pl-4">
+          {config.children.map((childTech) => (
+            <StackPill
+              key={childTech}
+              tech={childTech}
+              isChild={true}
+            />
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
 

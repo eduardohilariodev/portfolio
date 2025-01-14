@@ -31,7 +31,7 @@ export function ConnectDialog() {
         </DialogHeader>
         <div className="flex gap-4 justify-center py-4">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -39,7 +39,7 @@ export function ConnectDialog() {
             <TbBrandGithub className="w-6 h-6" />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
@@ -47,7 +47,7 @@ export function ConnectDialog() {
             <TbBrandLinkedin className="w-6 h-6" />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:eduardohilariodev@pm.me"
             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
           >
             <TbMail className="w-6 h-6" />
