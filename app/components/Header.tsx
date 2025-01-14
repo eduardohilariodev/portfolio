@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useScrollSpy } from "../hooks/useScrollSpy";
+import { ConnectDialog } from "./ConnectDialog";
 import ThemeToggle from "./ThemeToggle";
 
 const leftNavItems = [
@@ -76,6 +77,7 @@ export default function Header() {
                 />
               ))}
             </nav>
+            <ConnectDialog />
             <div className="w-px h-6 bg-gray-200 dark:bg-gray-800" />
             <ThemeToggle />
           </div>
@@ -131,6 +133,9 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+            <div className="px-4 py-2">
+              <ConnectDialog />
+            </div>
           </nav>
         </div>
       </div>

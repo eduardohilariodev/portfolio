@@ -1,0 +1,28 @@
+This project uses shadcn/ui CLI command 
+
+# Add components
+bunx --bun shadcn@latest add [component]
+
+# Initialize project
+bunx --bun shadcn@latest init
+
+# Options for init
+#   -d, --defaults    use default values (new-york, zinc, css variables)
+#   -f, --force      force overwrite components.json
+#   -y, --yes        skip confirmation
+#   -c, --cwd <dir>  working directory
+
+# Options for add
+#   -y, --yes         skip confirmation
+#   -o, --overwrite   overwrite existing files
+#   -c, --cwd <dir>   working directory
+#   -a, --all         add all components
+#   -p, --path <path> custom component path
+
+# Icons
+For icons, use React Icons (https://react-icons.github.io/react-icons/icons/tb/)
+Preferred icon sets:
+- Tabler Icons (tb): import { TbIconName } from "react-icons/tb"
+
+Example:
+import { TbBrandGithub } from "react-icons/tb"
