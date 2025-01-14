@@ -3,10 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useScrollSpy } from "../hooks/useScrollSpy";
+import ThemeToggle from "./ThemeToggle";
 
-const navItems = [
+const leftNavItems = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
+];
+
+const rightNavItems = [
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
 ];
@@ -24,64 +28,85 @@ export default function Header() {
     }
   };
 
+  const NavButton = ({ id, label }: { id: string; label: string }) => (
+    <button
+      onClick={() => scrollToSection(id)}
+      className={`px-4 py-1 rounded-full text-sm transition-colors ${
+        activeSection === id
+          ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
+          : "hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-400"
+      }`}
+    >
+      {label}
+    </button>
+  );
+
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/80 dark:bg-[#0a0b0f]/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
       <div className="max-w-6xl mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            {/* Logo */}
-            <div className="h-8 w-16 relative">
-              <Image
-                src="/logo.svg"
-                alt="Logo"
-                fill
-                className="object-contain dark:invert"
-                priority
+          {/* Left Navigation */}
+          <nav className="hidden md:flex gap-2">
+            {leftNavItems.map((item) => (
+              <NavButton
+                key={item.id}
+                {...item}
               />
-            </div>
+            ))}
+          </nav>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex gap-2">
-              {navItems.map(({ id, label }) => (
-                <button
-                  key={id}
-                  onClick={() => scrollToSection(id)}
-                  className={`px-4 py-1 rounded-full text-sm transition-colors ${
-                    activeSection === id
-                      ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-                      : "hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-400"
-                  }`}
-                >
-                  {label}
-                </button>
-              ))}
-            </nav>
+          {/* Center Logo */}
+          <div className="h-8 w-16 relative">
+            <Image
+              src="/logo.svg"
+              alt="Logo"
+              fill
+              className="object-contain text-black dark:text-white transition-colors"
+              priority
+            />
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          {/* Right Navigation */}
+          <div className="hidden md:flex items-center gap-4">
+            <nav className="flex gap-2">
+              {rightNavItems.map((item) => (
+                <NavButton
+                  key={item.id}
+                  {...item}
+                />
+              ))}
+            </nav>
+            <div className="w-px h-6 bg-gray-200 dark:bg-gray-800" />
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200"
+              aria-label="Toggle menu"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={
-                  isMenuOpen
-                    ? "M6 18L18 6M6 6l12 12"
-                    : "M4 6h16M4 12h16M4 18h16"
-                }
-              />
-            </svg>
-          </button>
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d={
+                    isMenuOpen
+                      ? "M6 18L18 6M6 6l12 12"
+                      : "M4 6h16M4 12h16M4 18h16"
+                  }
+                />
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Mobile Navigation */}
@@ -93,17 +118,17 @@ export default function Header() {
           }`}
         >
           <nav className="flex flex-col gap-2">
-            {navItems.map(({ id, label }) => (
+            {[...leftNavItems, ...rightNavItems].map((item) => (
               <button
-                key={id}
-                onClick={() => scrollToSection(id)}
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
                 className={`px-4 py-2 rounded-md text-sm transition-colors ${
-                  activeSection === id
+                  activeSection === item.id
                     ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
                     : "hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-400"
                 }`}
               >
-                {label}
+                {item.label}
               </button>
             ))}
           </nav>

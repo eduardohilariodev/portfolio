@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 145 71">
   <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-  <path d="M.5,8C.5,3.58,4.08,0,8.5,0h61v21H.5v-13Z" fill="#fff"/>
-  <rect x=".5" y="25" width="69" height="21" fill="#fff"/>
-  <path d="M.5,50h69v21H8.5c-4.42,0-8-3.58-8-8v-13Z" fill="#fff"/>
-  <rect x="73.5" width="21" height="21" fill="#fff"/>
-  <path d="M123.5,0h13c4.42,0,8,3.58,8,8v13h-21V0Z" fill="#fff"/>
-  <polygon points="123.5 25 119.5 25 98.5 25 94.5 25 73.5 25 73.5 46 94.5 46 98.5 46 119.5 46 123.5 46 144.5 46 144.5 25 123.5 25" fill="#fff"/>
-  <rect x="73.5" y="50" width="21" height="21" fill="#fff"/>
-  <path d="M123.5,50h21v13c0,4.42-3.58,8-8,8h-13v-21Z" fill="#fff"/>
+  <path d="M.5,8C.5,3.58,4.08,0,8.5,0h61v21H.5v-13Z" fill="currentColor"/>
+  <rect x=".5" y="25" width="69" height="21" fill="currentColor"/>
+  <path d="M.5,50h69v21H8.5c-4.42,0-8-3.58-8-8v-13Z" fill="currentColor"/>
+  <rect x="73.5" width="21" height="21" fill="currentColor"/>
+  <path d="M123.5,0h13c4.42,0,8,3.58,8,8v13h-21V0Z" fill="currentColor"/>
+  <polygon points="123.5 25 119.5 25 98.5 25 94.5 25 73.5 25 73.5 46 94.5 46 98.5 46 119.5 46 123.5 46 144.5 46 144.5 25 123.5 25" fill="currentColor"/>
+  <rect x="73.5" y="50" width="21" height="21" fill="currentColor"/>
+  <path d="M123.5,50h21v13c0,4.42-3.58,8-8,8h-13v-21Z" fill="currentColor"/>
 </svg>

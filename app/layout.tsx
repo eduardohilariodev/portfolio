@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { ThemeProvider } from "./components/ThemeProvider";
-import ThemeToggle from "./components/ThemeToggle";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,7 +27,6 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <ThemeToggle />
           <main className="max-w-6xl mx-auto px-4 py-8 mt-16">{children}</main>
           <Footer />
         </ThemeProvider>

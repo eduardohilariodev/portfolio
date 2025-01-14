@@ -9,13 +9,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="fixed top-4 right-4 p-2 rounded-full bg-gray-800/50 dark:bg-white/10 backdrop-blur-sm transition-colors hover:bg-gray-700/50 dark:hover:bg-white/20"
+      className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/5 text-gray-600 dark:text-gray-400 transition-colors"
       aria-label="Toggle theme"
     >
       {theme === "dark" ? (
-        <TbSun className="w-5 h-5 text-yellow-400" />
+        <TbSun className="w-5 h-5" />
       ) : (
-        <TbMoon className="w-5 h-5 text-gray-800" />
+        <TbMoon className="w-5 h-5" />
       )}
     </button>
   );
