@@ -1,101 +1,255 @@
 import Image from "next/image";
+import Link from "next/link";
+import StackPill from "./components/StackPill";
+import { getTimePeriod } from "./utils/date";
+
+const experiences = [
+  {
+    title: "Software Engineer",
+    company: "gbbs – Goodbye Blue Sky",
+    startDate: new Date("2022-03"),
+    endDate: null,
+    description: [
+      "Positively impacted 500+ sales professionals across more than four Brazilian states by enhancing the UX of the B2B sales app. Increased user satisfaction and adoption rate, significantly reducing support tickets and shortening the time-to-sale user journey.",
+      "Directly assisted dozens of small-to-large clients with UX improvements and maintenance of the ERP system. Bootstrapped and managed the development of an AI chatbot, incorporating context from the company's domain-specific internal knowledge.",
+      "Streamlined the branding of the product ecosystem by adhering to Material Design guidelines, creating greater visual cohesion across the company.",
+    ],
+    stack: [
+      "flutter",
+      "vue",
+      "laravel",
+      "python",
+      "docker",
+      "aws",
+      "git",
+      "figma",
+    ] as const,
+  },
+  {
+    title: "Content Producer",
+    company: "Brick Abode",
+    startDate: new Date("2019-11"),
+    endDate: new Date("2021-03"),
+    description: [
+      "Produced and edited audiovisual materials using NLE software, and managed recording hardware. Developed a production line for short, self-recorded 200+ job proposal videos, including camera setup, voice capture, green screening, lighting, and automated editing for YouTube API integration.",
+    ],
+    stack: [] as const,
+  },
+  {
+    title: "UI Designer",
+    company: "GETMORE",
+    startDate: new Date("2019-03"),
+    endDate: new Date("2019-09"),
+    description: [
+      "Served as a design generalist, creating dozens of presentations and layouts for print and other media, for internal and external company communication efforts. Specialized in UI design, developing wireframes and prototypes of varying complexity for key clients, and designed email marketing layouts.",
+    ],
+    stack: ["figma"] as const,
+  },
+];
+
+const education = [
+  {
+    school: "Universidade Federal de Santa Catarina",
+    degree: "Bachelor's degree, Design",
+    startDate: new Date("2016-03"),
+    endDate: new Date("2022-02"),
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="space-y-32">
+      {/* About Section */}
+      <section
+        id="about"
+        className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start pt-20"
+      >
+        <div className="md:col-span-2 space-y-6">
+          <h1 className="text-4xl font-bold text-teal-600 dark:text-teal-400">
+            About
+          </h1>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="space-y-4 text-lg">
+            <p className="text-gray-600 dark:text-gray-400 italic">
+              Just your average dev...
+            </p>
+
+            <p>
+              I'm Eduardo, a software engineer passionate about building great
+              user experiences and solving complex problems.
+            </p>
+
+            <p>
+              I specialize in frontend development with React and TypeScript,
+              but I'm also experienced with backend technologies. I love working
+              with modern web technologies and exploring new ways to make
+              applications faster and more user-friendly.
+            </p>
+
+            <p>
+              When I'm not coding, you'll find me gaming, reading tech blogs, or
+              contributing to open-source projects.
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <Link
+              href="/blog"
+              className="inline-block px-6 py-2 bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-md hover:bg-teal-500/20 transition"
+            >
+              Blog
+            </Link>
+            <Link
+              href="/projects"
+              className="inline-block px-6 py-2 bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-md hover:bg-teal-500/20 transition"
+            >
+              Projects
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-block px-6 py-2 bg-teal-500/10 text-teal-600 dark:text-teal-400 rounded-md hover:bg-teal-500/20 transition"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="relative aspect-square w-full max-w-[300px] mx-auto">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            src="/pro_v2_sq.png"
+            alt="Eduardo's profile picture"
+            fill
+            className="object-cover rounded-lg"
+            priority
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* Experience Section */}
+      <section
+        id="experience"
+        className="space-y-8 pt-20"
+      >
+        <h2 className="text-4xl font-bold text-teal-600 dark:text-teal-400">
+          Experience
+        </h2>
+
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="relative pl-8 border-l-2 border-teal-600/20 dark:border-teal-400/20"
+            >
+              <div className="absolute w-4 h-4 bg-teal-600 dark:bg-teal-400 rounded-full -left-[9px] top-0" />
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">
+                  {exp.title} @ {exp.company}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {exp.startDate.toLocaleDateString("en-US", {
+                    month: "long",
+                    year: "numeric",
+                  })}{" "}
+                  -{" "}
+                  {exp.endDate
+                    ? exp.endDate.toLocaleDateString("en-US", {
+                        month: "long",
+                        year: "numeric",
+                      })
+                    : "Present"}{" "}
+                  ({getTimePeriod(exp.startDate, exp.endDate || undefined)})
+                </p>
+                {exp.description.map((desc, i) => (
+                  <p
+                    key={i}
+                    className="text-gray-700 dark:text-gray-300"
+                  >
+                    {desc}
+                  </p>
+                ))}
+                {exp.stack.length > 0 && (
+                  <div className="flex gap-2 flex-wrap mt-2">
+                    {exp.stack.map((tech) => (
+                      <StackPill
+                        key={tech}
+                        tech={tech}
+                      />
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section
+        id="education"
+        className="space-y-8 pt-20"
+      >
+        <h2 className="text-4xl font-bold text-teal-600 dark:text-teal-400">
+          Education
+        </h2>
+
+        <div className="space-y-12">
+          {education.map((edu, index) => (
+            <div
+              key={index}
+              className="relative pl-8 border-l-2 border-teal-600/20 dark:border-teal-400/20"
+            >
+              <div className="absolute w-4 h-4 bg-teal-600 dark:bg-teal-400 rounded-full -left-[9px] top-0" />
+              <div className="space-y-2">
+                <h3 className="text-xl font-bold">{edu.school}</h3>
+                <p className="text-gray-600 dark:text-gray-400">
+                  {edu.degree} · (
+                  {edu.startDate.toLocaleDateString("en-US", {
+                    month: "long",
+                    year: "numeric",
+                  })}{" "}
+                  -{" "}
+                  {edu.endDate.toLocaleDateString("en-US", {
+                    month: "long",
+                    year: "numeric",
+                  })}
+                  )
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="space-y-8 pt-20"
+      >
+        <h2 className="text-4xl font-bold text-teal-600 dark:text-teal-400">
+          Contact
+        </h2>
+        <div className="space-y-4">
+          <p className="text-lg">
+            Feel free to reach out to me through any of these channels:
+          </p>
+          <div className="flex flex-col gap-4">
+            <a
+              href="mailto:eduardohilariodev@pm.me"
+              className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              <span className="font-medium">eduardohilariodev@pm.me</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/eduardohilariodev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-400 hover:underline"
+            >
+              <span className="font-medium">LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
