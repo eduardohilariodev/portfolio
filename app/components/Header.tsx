@@ -22,11 +22,12 @@ export default function Header() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      window.history.replaceState({}, "", `#${id}`);
-      setIsMenuOpen(false);
+    if (!element) {
+      return;
     }
+    element.scrollIntoView({ behavior: "smooth" });
+    window.history.replaceState({}, "", `#${id}`);
+    setIsMenuOpen(false);
   };
 
   const NavButton = ({ id, label }: { id: string; label: string }) => (
@@ -62,7 +63,7 @@ export default function Header() {
               src="/logo.svg"
               alt="Logo"
               fill
-              className="object-contain text-black dark:text-white transition-colors"
+              className="object-contain  dark:invert transition-colors"
               priority
             />
           </div>

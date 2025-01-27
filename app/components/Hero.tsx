@@ -1,9 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { FlipWords } from "@/components/ui/flip-words";
 import Image from "next/image";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import Logo from "./Logo";
+
+const words = ["design", "develop", "deliver"];
 
 export default function Hero() {
   const scrollPosition = useScrollPosition();
@@ -30,6 +34,7 @@ export default function Hero() {
             className="object-contain text-black dark:text-white transition-colors"
             priority
           />
+          <Logo />
         </div>
 
         <div className="space-y-4">
@@ -40,13 +45,11 @@ export default function Hero() {
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-            Software Engineer{" "}
-            <span className="text-orange-600 dark:text-orange-400">·</span>{" "}
-            TypeScript{" "}
-            <span className="text-orange-600 dark:text-orange-400">·</span>{" "}
-            React{" "}
-            <span className="text-orange-600 dark:text-orange-400">·</span>{" "}
-            UX/UI Design
+            I
+            <FlipWords
+              className="leading-tight"
+              words={words}
+            />
           </p>
         </div>
 
