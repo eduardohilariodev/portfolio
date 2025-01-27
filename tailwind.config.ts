@@ -6,9 +6,14 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   darkMode: ["class"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-helvetica)"],
+        serif: ["var(--font-garamond)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
