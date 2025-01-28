@@ -29,7 +29,7 @@ export default function Header() {
   const NavButton = ({ id, label }: { id: string; label: string }) => (
     <button
       onClick={() => scrollToSection(id)}
-      className={` rounded-full px-4 py-1 text-sm transition-colors ${
+      className={`cursor-pointer px-4 py-1 font-serif text-sm ${
         activeSection === id
           ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
           : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5"
@@ -40,20 +40,21 @@ export default function Header() {
   );
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-xs dark:border-gray-800 dark:bg-[#0a0b0f]/80">
-      <div className="mx-auto max-w-6xl px-4 py-4">
+    <header className="fixed top-0 right-0 left-0 z-50 backdrop-blur-xs dark:border-gray-800 dark:bg-[#0a0b0f]/80">
+      <div className="mx-auto max-w-5xl px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Center Logo */}
+          {/* Logo */}
           <div className="relative h-8 w-16">
             <Logo />
           </div>
 
           {/* Left Navigation */}
-          <nav className="hidden gap-2 md:flex">
+          <nav className="text-serif hidden gap-2 md:flex">
             {navItems.map((item) => (
               <NavButton key={item.id} {...item} />
             ))}
           </nav>
+          <ThemeToggle />
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-4 md:hidden">

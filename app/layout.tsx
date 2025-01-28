@@ -211,13 +211,14 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
+      className={`${helvetica.variable} ${garamond.variable}`}
     >
       <body
-        className={`${helvetica.variable} ${garamond.variable} font-sans bg-white dark:bg-[#0a0b0f] text-gray-900 dark:text-gray-200 min-h-screen transition-colors`}
+        className={`min-h-screen bg-white font-sans text-gray-900 transition-colors dark:bg-[#0a0b0f] dark:text-gray-200`}
       >
         <ThemeProvider>
           <Header />
-          <main className="max-w-6xl mx-auto px-4 py-8 mt-16">{children}</main>
+          <main className="mx-auto mt-16 max-w-6xl px-4 py-8">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
