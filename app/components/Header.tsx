@@ -29,7 +29,7 @@ export default function Header() {
   const NavButton = ({ id, label }: { id: string; label: string }) => (
     <button
       onClick={() => scrollToSection(id)}
-      className={`rounded-full px-4 py-1 text-sm transition-colors ${
+      className={` rounded-full px-4 py-1 text-sm transition-colors ${
         activeSection === id
           ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
           : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5"
