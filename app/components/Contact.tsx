@@ -23,7 +23,7 @@ export default function Contact({ links }: ContactProps) {
             href={link.href}
             target={link.isExternal ? "_blank" : undefined}
             rel={link.isExternal ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 text-orange-600 dark:text-orange-400 hover:underline"
+            className="inline-flex items-center gap-2 text-orange-600 hover:underline dark:text-orange-400"
           >
             <span className="font-medium">{link.label}</span>
           </a>

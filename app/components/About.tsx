@@ -23,10 +23,10 @@ export default function About({ profileImage, techs }: AboutProps) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-      <div className="md:col-span-2 space-y-6">
+    <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
+      <div className="space-y-6 md:col-span-2">
         <div className="space-y-4 text-lg">
-          <p className="text-gray-600 dark:text-gray-400 italic">
+          <p className="italic text-gray-600 dark:text-gray-400">
             Proactive Software Engineer with 5 years of experience
           </p>
 
@@ -39,19 +39,13 @@ export default function About({ profileImage, techs }: AboutProps) {
 
           <div className="space-y-4">
             {Array.from(techsByCategory.entries()).map(([category, techs]) => (
-              <div
-                key={category}
-                className="space-y-2"
-              >
+              <div key={category} className="space-y-2">
                 <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                  {categoryLabels[category]}
+                  {categoryLabels[category as keyof typeof categoryLabels]}
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {techs.map((tech) => (
-                    <StackPill
-                      key={tech}
-                      tech={tech}
-                    />
+                    <StackPill key={tech} tech={tech} />
                   ))}
                 </div>
               </div>
@@ -62,31 +56,31 @@ export default function About({ profileImage, techs }: AboutProps) {
         <div className="flex gap-4">
           <Link
             href="/blog"
-            className="inline-block px-6 py-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 rounded-md hover:bg-orange-500/20 transition"
+            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
           >
             Blog
           </Link>
           <Link
             href="/projects"
-            className="inline-block px-6 py-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 rounded-md hover:bg-orange-500/20 transition"
+            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
           >
             Projects
           </Link>
           <Link
             href="/contact"
-            className="inline-block px-6 py-2 bg-orange-500/10 text-orange-600 dark:text-orange-400 rounded-md hover:bg-orange-500/20 transition"
+            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
           >
             Contact
           </Link>
         </div>
       </div>
 
-      <div className="relative aspect-square w-full max-w-[300px] mx-auto">
+      <div className="relative mx-auto aspect-square w-full max-w-[300px]">
         <Image
           src={profileImage}
           alt="Eduardo's profile picture"
           fill
-          className="object-cover rounded-lg"
+          className="rounded-lg object-cover"
           priority
         />
       </div>

@@ -8,7 +8,7 @@ export default function Logo({}: LogoProps) {
       src="/logo.svg"
       alt="Logo"
       fill
-      className="object-contain dark:invert transition-colors"
+      className="object-contain transition-colors dark:invert"
       priority
     />
   );

@@ -23,13 +23,13 @@ export function TimelineItem({
   return (
     <div
       className={`relative pl-8 ${
-        isNested ? "pl-6 border-l" : "border-l-2"
+        isNested ? "border-l pl-6" : "border-l-2"
       } border-orange-600/20 dark:border-orange-400/20 ${className}`}
     >
       <div
         className={`absolute ${
-          isNested ? "w-2 h-2 -left-1 top-2" : "w-4 h-4 -left-[9px] top-0"
-        } bg-orange-600 dark:bg-orange-400 rounded-full`}
+          isNested ? "-left-1 top-2 h-2 w-2" : "-left-[9px] top-0 h-4 w-4"
+        } rounded-full bg-orange-600 dark:bg-orange-400`}
       />
       {children}
     </div>

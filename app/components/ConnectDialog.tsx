@@ -15,10 +15,7 @@ export function ConnectDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          variant="default"
-          size="sm"
-        >
+        <Button variant="default" size="sm">
           Let&apos;s connect!
         </Button>
       </DialogTrigger>
@@ -29,52 +26,43 @@ export function ConnectDialog() {
             Feel free to reach out through any of these channels.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex gap-4 justify-center py-4">
+        <div className="flex justify-center gap-4 py-4">
           <a
             href="https://github.com/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <TbBrandGithub className="w-6 h-6" />
+            <TbBrandGithub className="h-6 w-6" />
           </a>
           <a
             href="https://linkedin.com/in/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <TbBrandLinkedin className="w-6 h-6" />
+            <TbBrandLinkedin className="h-6 w-6" />
           </a>
           <a
             href="mailto:eduardohilariodev@pm.me"
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <TbMail className="w-6 h-6" />
+            <TbMail className="h-6 w-6" />
           </a>
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-800 my-4" />
-        <form
-          className="space-y-4"
-          onSubmit={(e) => e.preventDefault()}
-        >
+        <div className="my-4 border-t border-gray-200 dark:border-gray-800" />
+        <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="space-y-2">
             <Input placeholder="Your name" />
           </div>
           <div className="space-y-2">
-            <Input
-              type="email"
-              placeholder="Your email"
-            />
+            <Input type="email" placeholder="Your email" />
           </div>
           <div className="space-y-2">
             <Textarea placeholder="Your message" />
           </div>
-          <Button
-            type="submit"
-            className="w-full"
-          >
-            <TbSend className="w-4 h-4 mr-2" />
+          <Button type="submit" className="w-full">
+            <TbSend className="mr-2 h-4 w-4" />
             Send Message
           </Button>
         </form>

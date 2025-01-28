@@ -14,10 +14,7 @@ export default function Section({
   className = "",
 }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={`space-y-8 pt-20 ${className}`}
-    >
+    <section id={id} className={`space-y-8 pt-20 ${className}`}>
       <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400">
         {title}
       </h2>

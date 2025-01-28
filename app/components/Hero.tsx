@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { FlipWords } from "@/components/ui/flip-words";
 import Image from "next/image";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
 import { useScrollPosition } from "../hooks/useScrollPosition";
@@ -17,7 +16,7 @@ export default function Hero() {
 
   const currentHeight = Math.max(
     minHeight,
-    maxHeight - (scrollPosition / scrollThreshold) * (maxHeight - minHeight)
+    maxHeight - (scrollPosition / scrollThreshold) * (maxHeight - minHeight),
   );
 
   return (
@@ -26,34 +25,38 @@ export default function Hero() {
       style={{ height: `${currentHeight}px` }}
     >
       <div className="space-y-12 text-center">
-        <div className="relative w-24 h-24 mx-auto">
+        <div className="relative mx-auto h-24 w-24">
           <Image
             src="/logo.svg"
             alt="Logo"
             fill
-            className="object-contain text-black dark:text-white transition-colors"
+            className="object-contain text-black transition-colors dark:text-white"
             priority
           />
           <Logo />
         </div>
 
         <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl font-bold">
+          <h1 className="text-4xl font-bold md:text-6xl">
             Hi, I&apos;m{" "}
             <span className="text-orange-600 dark:text-orange-400">
               Eduardo
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400">
-            I
-            <FlipWords
-              className="leading-tight"
+          <p className="text-xl text-gray-600 dark:text-gray-400 md:text-2xl">
+            <div className="font-serif font-light">
+              <p>I design.</p>
+              <p>I develop.</p>
+              <p>I deliver.</p>
+            </div>
+            {/* <FlipWords
+              className="leading-tight font-serif"
               words={words}
-            />
+            /> */}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap justify-center gap-4">
           <Button
             variant="default"
             size="lg"
@@ -68,44 +71,32 @@ export default function Hero() {
           </Button>
 
           <div className="flex gap-2">
-            <Button
-              variant="ghost"
-              size="icon"
-              asChild
-            >
+            <Button variant="ghost" size="icon" asChild>
               <a
                 href="https://github.com/eduardohilariodev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange-600 dark:hover:text-orange-400"
               >
-                <TbBrandGithub className="w-5 h-5" />
+                <TbBrandGithub className="h-5 w-5" />
               </a>
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              asChild
-            >
+            <Button variant="ghost" size="icon" asChild>
               <a
                 href="https://linkedin.com/in/eduardohilariodev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-orange-600 dark:hover:text-orange-400"
               >
-                <TbBrandLinkedin className="w-5 h-5" />
+                <TbBrandLinkedin className="h-5 w-5" />
               </a>
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              asChild
-            >
+            <Button variant="ghost" size="icon" asChild>
               <a
                 href="mailto:eduardohilariodev@pm.me"
                 className="hover:text-orange-600 dark:hover:text-orange-400"
               >
-                <TbMail className="w-5 h-5" />
+                <TbMail className="h-5 w-5" />
               </a>
             </Button>
           </div>

@@ -38,7 +38,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12">
+                <div className="relative h-12 w-12">
                   <Image
                     src={exp.company.logo}
                     alt={`${exp.company.name} logo`}
@@ -53,7 +53,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                       href={exp.company.linkedIn}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-orange-600 dark:text-orange-400 hover:underline"
+                      className="text-orange-600 hover:underline dark:text-orange-400"
                     >
                       {exp.company.name}
                     </a>
@@ -78,24 +78,18 @@ export default function Experience({ experiences }: ExperienceProps) {
 
             <div className="space-y-12">
               {exp.projects.map((project, pIndex) => (
-                <TimelineItem
-                  key={pIndex}
-                  isNested
-                >
+                <TimelineItem key={pIndex} isNested>
                   <div className="space-y-2">
                     <h4 className="text-lg font-semibold text-orange-600 dark:text-orange-400">
                       {project.name}
                     </h4>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    <p className="leading-relaxed text-gray-700 dark:text-gray-300">
                       {project.description}
                     </p>
                     {project.stack.length > 0 && (
-                      <div className="flex gap-2 flex-wrap mt-4">
+                      <div className="mt-4 flex flex-wrap gap-2">
                         {project.stack.map((tech) => (
-                          <StackPill
-                            key={tech}
-                            tech={tech}
-                          />
+                          <StackPill key={tech} tech={tech} />
                         ))}
                       </div>
                     )}

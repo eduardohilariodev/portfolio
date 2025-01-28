@@ -143,19 +143,15 @@ export default function StackPill({
   return (
     <div className="flex flex-col gap-2">
       <div
-        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg ${config.color} ${className}`}
+        className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 ${config.color} ${className}`}
       >
-        <Icon className="w-4 h-4" />
+        <Icon className="h-4 w-4" />
         <span className="text-sm font-medium">{config.label}</span>
       </div>
       {!isChild && config.children && (
         <div className="flex flex-wrap gap-2 pl-4">
           {config.children.map((childTech) => (
-            <StackPill
-              key={childTech}
-              tech={childTech}
-              isChild={true}
-            />
+            <StackPill key={childTech} tech={childTech} isChild={true} />
           ))}
         </div>
       )}
