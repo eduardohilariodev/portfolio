@@ -21,7 +21,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 gap-2 rounded-full bg-gray-800/50 px-4 py-2 backdrop-blur-sm dark:bg-white/10">
+    <nav className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 gap-2 rounded-full bg-gray-800/50 px-4 py-2 backdrop-blur-xs dark:bg-white/10">
       {navItems.map(({ id, label }) => (
         <button
           key={id}
