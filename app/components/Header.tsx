@@ -1,19 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { useScrollSpy } from "../hooks/useScrollSpy";
 import { ConnectDialog } from "./ConnectDialog";
+import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
 
-const leftNavItems = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-];
-
-const rightNavItems = [
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+const navItems = [
+  { id: "contact", label: "Let's talk" },
+  { id: "about", label: "About me" },
+  { id: "experience", label: "Carreer" },
 ];
 
 export default function Header() {
@@ -47,35 +43,17 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur-sm dark:border-gray-800 dark:bg-[#0a0b0f]/80">
       <div className="mx-auto max-w-6xl px-4 py-4">
         <div className="flex items-center justify-between">
+          {/* Center Logo */}
+          <div className="relative h-8 w-16">
+            <Logo />
+          </div>
+
           {/* Left Navigation */}
           <nav className="hidden gap-2 md:flex">
-            {leftNavItems.map((item) => (
+            {navItems.map((item) => (
               <NavButton key={item.id} {...item} />
             ))}
           </nav>
-
-          {/* Center Logo */}
-          <div className="relative h-8 w-16">
-            <Image
-              src="/logo.svg"
-              alt="Logo"
-              fill
-              className="object-contain  transition-colors dark:invert"
-              priority
-            />
-          </div>
-
-          {/* Right Navigation */}
-          <div className="hidden items-center gap-4 md:flex">
-            <nav className="flex gap-2">
-              {rightNavItems.map((item) => (
-                <NavButton key={item.id} {...item} />
-              ))}
-            </nav>
-            <ConnectDialog />
-            <div className="h-6 w-px bg-gray-200 dark:bg-gray-800" />
-            <ThemeToggle />
-          </div>
 
           {/* Mobile Controls */}
           <div className="flex items-center gap-4 md:hidden">
@@ -115,7 +93,7 @@ export default function Header() {
           }`}
         >
           <nav className="flex flex-col gap-2">
-            {[...leftNavItems, ...rightNavItems].map((item) => (
+            {[...navItems].map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
