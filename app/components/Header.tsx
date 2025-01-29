@@ -29,10 +29,10 @@ export default function Header() {
   const NavButton = ({ id, label }: { id: string; label: string }) => (
     <button
       onClick={() => scrollToSection(id)}
-      className={`cursor-pointer px-4 py-1 font-serif text-sm ${
+      className={`cursor-pointer px-4 py-1 font-serif text-2xl ${
         activeSection === id
           ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-          : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5"
+          : "text-gray-600 hover:bg-gray-100 dark:text-white dark:hover:bg-white/5"
       }`}
     >
       {label}
@@ -41,19 +41,21 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 right-0 left-0 z-50 backdrop-blur-xs dark:border-gray-800 dark:bg-[#0a0b0f]/80">
-      <div className="mx-auto max-w-5xl px-4 py-4">
+      <div className="mx-auto max-w-5xl px-4 py-16 md:max-w-3xl">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="relative h-8 w-16">
-            <Logo />
+          <div className="flex gap-5">
+            {/* Logo */}
+            <div className="relative h-8 w-16">
+              <Logo />
+            </div>
+            {/* Left Navigation */}
+            <nav className="hidden gap-2 md:flex">
+              {navItems.map((item) => (
+                <NavButton key={item.id} {...item} />
+              ))}
+            </nav>
           </div>
 
-          {/* Left Navigation */}
-          <nav className="text-serif hidden gap-2 md:flex">
-            {navItems.map((item) => (
-              <NavButton key={item.id} {...item} />
-            ))}
-          </nav>
           <ThemeToggle />
 
           {/* Mobile Controls */}

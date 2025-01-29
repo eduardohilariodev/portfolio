@@ -1,89 +1,56 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import StackPill, {
-  getTechsByCategory,
-  type StackPillProps,
-} from "./StackPill";
+import profilePicture from "../img/profile_bnw.png";
 
-interface AboutProps {
-  profileImage: string;
-  techs: StackPillProps["tech"][];
-}
+interface AboutProps {}
 
-export default function About({ profileImage, techs }: AboutProps) {
-  const techsByCategory = getTechsByCategory(techs);
-  const categoryLabels = {
-    frontend: "Frontend",
-    backend: "Backend",
-    devops: "DevOps",
-    tooling: "Tools",
-    mobile: "Mobile",
-  };
-
+export default function About({}: AboutProps) {
   return (
-    <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
-      <div className="space-y-6 md:col-span-2">
-        <div className="space-y-4 text-lg">
-          <p className="italic text-gray-600 dark:text-gray-400">
-            Proactive Software Engineer with 5 years of experience
-          </p>
-
-          <p>
-            I&apos;m Eduardo, a software engineer specializing in TypeScript,
-            React, and UX/UI Design. I focus on delivering user-focused digital
-            experiences, optimizing software performance, and building scalable
-            solutions for web and mobile platforms.
-          </p>
-
-          <div className="space-y-4">
-            {Array.from(techsByCategory.entries()).map(([category, techs]) => (
-              <div key={category} className="space-y-2">
-                <h3 className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                  {categoryLabels[category as keyof typeof categoryLabels]}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {techs.map((tech) => (
-                    <StackPill key={tech} tech={tech} />
-                  ))}
-                </div>
-              </div>
-            ))}
+    <>
+      <div className="mr-42 ml-28 flex -translate-y-8 items-center">
+        <hr className="grow border-2 border-white" />
+        <i className="size-0 border-t-8 border-b-8 border-l-[12px] border-t-transparent border-b-transparent border-l-white" />
+      </div>
+      <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
+        <div className="space-y-6 md:col-span-2">
+          <div className="space-y-4 text-lg">
+            <section className="space-y-4 text-lg font-light dark:text-white">
+              <p>
+                Hey, I&apos;m <strong className="font-bold">Eduardo</strong>!
+              </p>
+              <p>I&apos;m a software engineer and designer, from Brazil.</p>
+              <p>
+                I&apos;m a software engineer and designer and I work on lots of
+                stuff, on the back-end, on the frontend and on the human-side!
+              </p>
+              <p>
+                I love to learn and to broaden my knowledge, be it from courses,
+                books, documentaries or college (already did a BA in Design, now
+                I am going for a second round in Computer Science).
+              </p>
+              <p>
+                Take a look in at my knowledge bellow and, in case you&apos;re
+                interested,&nbsp;
+                <a href="mailto:eduardohilariodev@pm.me" className="underline">
+                  send me a message
+                </a>
+                .
+              </p>
+            </section>
           </div>
         </div>
 
-        <div className="flex gap-4">
-          <Link
-            href="/blog"
-            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/projects"
-            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
-          >
-            Projects
-          </Link>
-          <Link
-            href="/contact"
-            className="inline-block rounded-md bg-orange-500/10 px-6 py-2 text-orange-600 transition hover:bg-orange-500/20 dark:text-orange-400"
-          >
-            Contact
-          </Link>
+        <div className="relative mx-auto aspect-square w-full max-w-[300px]">
+          <Image
+            src={profilePicture}
+            alt="Eduardo's profile picture"
+            fill
+            className="-translate-y-24 object-contain"
+            priority
+          />
         </div>
       </div>
-
-      <div className="relative mx-auto aspect-square w-full max-w-[300px]">
-        <Image
-          src={profileImage}
-          alt="Eduardo's profile picture"
-          fill
-          className="rounded-lg object-cover"
-          priority
-        />
-      </div>
-    </div>
+    </>
   );
 }

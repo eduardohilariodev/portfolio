@@ -72,19 +72,19 @@ const garamond = localFont({
     // },
     // Regular variants
     {
-      path: "./fonts/Garamond/ITC Garamond Std Book.otf",
+      path: "./fonts/Garamond/ITC Garamond Std Book Narrow.otf",
       weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Garamond/ITC Garamond Std Book.otf",
+      weight: "600",
       style: "normal",
     },
     // {
     //   path: "./fonts/Garamond/ITC Garamond Std Italic.otf",
     //   weight: "500",
     //   style: "italic",
-    // },
-    // {
-    //   path: "./fonts/Garamond/ITC Garamond Std Narrow.otf",
-    //   weight: "500",
-    //   style: "normal",
     // },
     // {
     //   path: "./fonts/Garamond/ITC Garamond Std Narrow Italic.otf",
@@ -214,11 +214,13 @@ export default function RootLayout({
       className={`${helvetica.variable} ${garamond.variable}`}
     >
       <body
-        className={`min-h-screen bg-white font-sans text-gray-900 transition-colors dark:bg-[#0a0b0f] dark:text-gray-200`}
+        className={`min-h-screen bg-white font-sans text-gray-900 transition-colors dark:bg-gray-900 dark:text-gray-200`}
       >
         <ThemeProvider>
           <Header />
-          <main className="mx-auto mt-16 max-w-6xl px-4 py-8">{children}</main>
+          <main className="mx-auto mt-16 max-w-5xl py-8 md:max-w-3xl">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>

@@ -1,10 +1,11 @@
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Contact, { ContactLink } from "./components/Contact";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Section from "./components/Section";
-import type { StackPillProps } from "./components/StackPill";
+import Skills from "./components/Skills";
+import type { Tech } from "./components/Stack";
 
 interface CompanyInfo {
   name: string;
@@ -15,7 +16,7 @@ interface CompanyInfo {
 interface Project {
   name: string;
   description: string;
-  stack: StackPillProps["tech"][];
+  stack: Tech["tech"][];
 }
 
 interface ExperienceItem {
@@ -149,15 +150,21 @@ const allTechs = [
   "adobe",
 ] as const;
 
-const contactLinks = [
+const contactLinks: ContactLink[] = [
   {
     href: "mailto:eduardohilariodev@pm.me",
-    label: "eduardohilariodev@pm.me",
+    label: "Email",
+    icon: "hn hn-envelope",
   },
   {
     href: "https://www.linkedin.com/in/eduardohilariodev",
     label: "LinkedIn",
-    isExternal: true,
+    icon: "hn hn-linkedin",
+  },
+  {
+    href: "https://www.github.com/eduardohilariodev",
+    label: "GitHub",
+    icon: "hn hn-github",
   },
 ];
 
@@ -166,35 +173,24 @@ export default function Home() {
     <div className="space-y-32">
       <Hero />
 
-      <Section
-        id="about"
-        title="About"
-      >
-        <About
-          profileImage="/pro_v2_sq.png"
-          techs={[...allTechs]}
-        />
+      <Section id="contact" title="Let's talk">
+        <Contact links={contactLinks} />
       </Section>
 
-      <Section
-        id="experience"
-        title="Experience"
-      >
+      <Section id="about" title="About me">
+        <About />
+      </Section>
+
+      <Section id="skills" title="My skills">
+        <Skills techs={[...allTechs]} />
+      </Section>
+
+      <Section id="experience" title="Experience">
         <Experience experiences={experiences} />
       </Section>
 
-      <Section
-        id="education"
-        title="Education"
-      >
+      <Section id="education" title="Education">
         <Education education={education} />
-      </Section>
-
-      <Section
-        id="contact"
-        title="Contact"
-      >
-        <Contact links={contactLinks} />
       </Section>
     </div>
   );

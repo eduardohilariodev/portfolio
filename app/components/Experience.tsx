@@ -2,14 +2,13 @@
 
 import Image from "next/image";
 import { getTimePeriod } from "../utils/date";
-import type { StackPillProps } from "./StackPill";
-import StackPill from "./StackPill";
+import type { StackPillProps } from "./Stack";
 import { Timeline, TimelineItem } from "./Timeline";
 
 interface Project {
   name: string;
   description: string;
-  stack: StackPillProps["tech"][];
+  stack: StackPillProps[];
 }
 
 interface CompanyInfo {
@@ -18,7 +17,7 @@ interface CompanyInfo {
   linkedIn: string;
 }
 
-interface Experience {
+interface ExperienceDatum {
   title: string;
   company: CompanyInfo;
   startDate: Date;
@@ -27,7 +26,7 @@ interface Experience {
 }
 
 interface ExperienceProps {
-  experiences: Experience[];
+  experiences: ExperienceDatum[];
 }
 
 export default function Experience({ experiences }: ExperienceProps) {
@@ -86,13 +85,13 @@ export default function Experience({ experiences }: ExperienceProps) {
                     <p className="leading-relaxed text-gray-700 dark:text-gray-300">
                       {project.description}
                     </p>
-                    {project.stack.length > 0 && (
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {project.stack.map((tech) => (
-                          <StackPill key={tech} tech={tech} />
-                        ))}
-                      </div>
-                    )}
+                    {/* {project.stack.length > 0 && (
+                      // <div className="mt-4 flex flex-wrap gap-2">
+                      //   {project.stack.map((tech) => (
+                      //     <StackPill key={tech.label} tech={tech} />
+                      //   ))}
+                      // </div>
+                    )} */}
                   </div>
                 </TimelineItem>
               ))}

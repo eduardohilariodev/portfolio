@@ -1,9 +1,9 @@
 "use client";
 
-interface ContactLink {
+export interface ContactLink {
   href: string;
+  icon: string;
   label: string;
-  isExternal?: boolean;
 }
 
 interface ContactProps {
@@ -12,23 +12,30 @@ interface ContactProps {
 
 export default function Contact({ links }: ContactProps) {
   return (
-    <div className="space-y-4">
-      <p className="text-lg">
-        Feel free to reach out to me through any of these channels:
-      </p>
-      <div className="flex flex-col gap-4">
-        {links.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            target={link.isExternal ? "_blank" : undefined}
-            rel={link.isExternal ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-2 text-orange-600 hover:underline dark:text-orange-400"
-          >
-            <span className="font-medium">{link.label}</span>
-          </a>
-        ))}
-      </div>
+    <div className="mx-auto flex max-w-xl justify-between gap-4">
+      {links.map((link) => (
+        <ContactButton
+          key={link.href}
+          href={link.href}
+          icon={link.icon}
+          label={link.label}
+        />
+      ))}
     </div>
+  );
+}
+
+function ContactButton({ href, icon, label }: ContactLink) {
+  return (
+    <a
+      key={href}
+      className="flex flex-col items-center justify-center gap-4 border-3 border-black px-14 py-12 text-black dark:border-white dark:text-white"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i className={`${icon} text-6xl`} />
+      <span className="font-serif text-2xl font-medium">{label}</span>
+    </a>
   );
 }
