@@ -79,3 +79,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+:root {
+  ::selection {
+    background-color: #303030;
+    color: white;
+  }
+}

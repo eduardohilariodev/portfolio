@@ -11,44 +11,54 @@ const stack: Stack[] = [
   {
     heading: "Languages",
     items: [
-      {
-        label: "languages",
-        children: [
-          { label: "brazilian" },
-          { label: "english" },
-          { label: "spanish" },
-        ],
-      },
-      {
-        label: "programming",
-        children: [
-          { label: "javascript" },
-          { label: "python" },
-          { label: "php" },
-          { label: "dart" },
-        ],
-      },
-      {
-        label: "javascript",
-        children: [
-          { label: "typescript" },
-          { label: "nodejs" },
-          { label: "reactjs" },
-          { label: "nextjs" },
-          { label: "vuejs" },
-          { label: "vite" },
-          { label: "vitest" },
-          { label: "jest" },
-        ],
-      },
-      {
-        label: "php",
-        children: [{ label: "laravel" }],
-      },
-      {
-        label: "dart",
-        children: [{ label: "flutter" }],
-      },
+      { label: "javascript" },
+      { label: "python" },
+      { label: "php" },
+      { label: "dart" },
+      // {
+      //   label: "javascript",
+      //   children: [
+      //     { label: "typescript" },
+      //     { label: "nodejs" },
+      //     { label: "reactjs" },
+      //     { label: "nextjs" },
+      //     { label: "vuejs" },
+      //     { label: "vite" },
+      //     { label: "vitest" },
+      //     { label: "jest" },
+      //   ],
+      // },
+      // {
+      //   label: "php",
+      //   children: [{ label: "laravel" }],
+      // },
+      // {
+      //   label: "dart",
+      //   children: [{ label: "flutter" }],
+      // },
+      // {
+      //   label: "databases",
+      //   children: [
+      //     { label: "mysql" },
+      //     { label: "mongodb" },
+      //     { label: "graphql" },
+      //   ],
+      // },
+      // {
+      //   label: "python",
+      //   children: [{ label: "fastapi" }],
+      // },
+    ],
+  },
+  {
+    heading: "Frontend",
+    items: [
+      { label: "html" },
+      { label: "reactjs", children: [{ label: "nextjs" }] },
+      { label: "vuejs", children: [{ label: "nuxt" }] },
+      { label: "jquery" },
+      { label: "vite" },
+      { label: "webpack" },
       {
         label: "css",
         children: [
@@ -57,66 +67,53 @@ const stack: Stack[] = [
           { label: "sass" },
         ],
       },
-      {
-        label: "databases",
-        children: [
-          { label: "mysql" },
-          { label: "mongodb" },
-          { label: "graphql" },
-        ],
-      },
-      {
-        label: "python",
-        children: [{ label: "fastapi" }],
-      },
     ],
   },
   {
-    heading: "Frameworks",
+    heading: "Backend",
     items: [
       {
-        label: "libraries",
-        children: [
-          { label: "reactjs" },
-          { label: "vuejs" },
-          { label: "flutter" },
-        ],
+        label: "javascript",
+        children: [{ label: "nodejs" }, { label: "expressjs" }],
       },
-      {
-        label: "backend",
-        children: [
-          { label: "nodejs" },
-          { label: "laravel" },
-          { label: "fastapi" },
-        ],
-      },
-      {
-        label: "fullstack",
-        children: [{ label: "nextjs" }, { label: "laravel" }],
-      },
+      { label: "php", children: [{ label: "laravel" }] },
+      { label: "python", children: [{ label: "fastapi" }] },
+      { label: "nginx" },
+      { label: "graphql" },
     ],
   },
   {
     heading: "Data",
     items: [
-      {
-        label: "devops",
-        children: [
-          { label: "aws" },
-          { label: "vercel" },
-          { label: "githubactions" },
-          { label: "nginx" },
-          { label: "docker" },
-        ],
-      },
+      { label: "postgresql" },
+      { label: "mysql" },
+      { label: "sqlite" },
+      { label: "mongodb" },
     ],
+  },
+  {
+    heading: "Cloud",
+    items: [{ label: "aws" }, { label: "vercel" }, { label: "githubactions" }],
+  },
+  {
+    heading: "Mobile",
+    items: [{ label: "flutter" }, { label: "reactnative" }],
+  },
+  {
+    heading: "Testing",
+    items: [{ label: "vitest" }, { label: "jest" }, { label: "puppeteer" }],
   },
   {
     heading: "Tooling",
     items: [
       {
-        label: "testing",
-        children: [{ label: "vitest" }, { label: "jest" }],
+        label: "docker",
+      },
+      {
+        label: "bash",
+      },
+      {
+        label: "pwsh",
       },
       {
         label: "os",
@@ -128,17 +125,48 @@ const stack: Stack[] = [
       },
     ],
   },
+  {
+    heading: "Design",
+    items: [
+      { label: "figma" },
+      {
+        label: "adobe",
+        children: [
+          { label: "photoshop" },
+          { label: "illustrator" },
+          { label: "premiere" },
+          { label: "aftereffects" },
+        ],
+      },
+    ],
+  },
 ];
 
 export default function Skills() {
-  return stack.map(({ heading, items }) => (
-    <div className="mb-8" key={heading}>
-      <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
-      <div className="flex flex-wrap gap-4">
-        {items.map((item) => (
-          <StackPill key={item.label} tech={item} />
-        ))}
+  return (
+    <>
+      <div className="mb-12 space-y-3 font-light dark:text-white">
+        <p className="">
+          Usually the tools I use for the job, depend on the job.
+        </p>
+        <p>
+          There&apos;s no one-size fits all, and as such I&apos;m always trying
+          out new technologies, and constantly learning.
+        </p>
+        <p>
+          The following technologies are the ones I&apos;m most familiar with:
+        </p>
       </div>
-    </div>
-  ));
+      {stack.map(({ heading, items }) => (
+        <div className="mb-8" key={heading}>
+          <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
+          <div className="flex flex-wrap gap-4">
+            {items.map((item) => (
+              <StackPill key={item.label} tech={item} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </>
+  );
 }
