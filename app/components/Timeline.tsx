@@ -12,7 +12,7 @@ interface TimelineItemProps {
 }
 
 export function Timeline({ children, className = "" }: TimelineProps) {
-  return <div className={`space-y-24 ${className}`}>{children}</div>;
+  return <div className={`${className}`}>{children}</div>;
 }
 
 export function TimelineItem({
@@ -28,7 +28,7 @@ export function TimelineItem({
     >
       <div
         className={`absolute ${
-          isNested ? "-left-1 top-2 h-2 w-2" : "-left-[9px] top-0 h-4 w-4"
+          isNested ? "top-2 -left-1 h-2 w-2" : "top-0 -left-[9px] h-4 w-4"
         } rounded-full bg-orange-600 dark:bg-orange-400`}
       />
       {children}

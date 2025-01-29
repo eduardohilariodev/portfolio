@@ -78,7 +78,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <main className="mx-auto mt-16 max-w-5xl py-8 md:max-w-3xl">
+          <main className="mx-auto mt-16 max-w-5xl px-8 py-8 md:max-w-3xl">
             {children}
           </main>
           <Footer />
