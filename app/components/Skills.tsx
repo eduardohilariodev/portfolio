@@ -2,12 +2,12 @@
 
 import { StackPill, StackPillProps } from "./Stack";
 
-interface Stack {
+interface StackItem {
   heading: string;
   items: StackPillProps[];
 }
 
-const stack: Stack[] = [
+const stack: StackItem[] = [
   {
     heading: "Languages",
     items: [
@@ -15,39 +15,6 @@ const stack: Stack[] = [
       { label: "python" },
       { label: "php" },
       { label: "dart" },
-      // {
-      //   label: "javascript",
-      //   children: [
-      //     { label: "typescript" },
-      //     { label: "nodejs" },
-      //     { label: "reactjs" },
-      //     { label: "nextjs" },
-      //     { label: "vuejs" },
-      //     { label: "vite" },
-      //     { label: "vitest" },
-      //     { label: "jest" },
-      //   ],
-      // },
-      // {
-      //   label: "php",
-      //   children: [{ label: "laravel" }],
-      // },
-      // {
-      //   label: "dart",
-      //   children: [{ label: "flutter" }],
-      // },
-      // {
-      //   label: "databases",
-      //   children: [
-      //     { label: "mysql" },
-      //     { label: "mongodb" },
-      //     { label: "graphql" },
-      //   ],
-      // },
-      // {
-      //   label: "python",
-      //   children: [{ label: "fastapi" }],
-      // },
     ],
   },
   {
