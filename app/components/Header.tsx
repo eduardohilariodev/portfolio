@@ -32,7 +32,7 @@ export default function Header() {
       className={`cursor-pointer px-4 py-1 font-serif text-2xl ${
         activeSection === id
           ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-          : "text-gray-600 hover:bg-gray-100 dark:text-white dark:hover:bg-white/5"
+          : "text-neutral-600 hover:bg-neutral-100 dark:text-white dark:hover:bg-white/5"
       }`}
     >
       {label}
@@ -40,7 +40,7 @@ export default function Header() {
   );
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 backdrop-blur-xs dark:border-gray-800 dark:bg-[#0a0b0f]/80">
+    <header className="fixed top-0 right-0 left-0 z-50 backdrop-blur-xs dark:border-neutral-800 dark:bg-[#0a0b0f]/80">
       <div className="mx-auto max-w-5xl px-4 py-16 md:max-w-3xl">
         <div className="flex items-center justify-between">
           <div className="flex gap-5">
@@ -63,7 +63,7 @@ export default function Header() {
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-600 hover:text-gray-900 dark:text-white dark:hover:text-gray-200"
+              className="p-2 text-neutral-600 hover:text-neutral-900 dark:text-white dark:hover:text-neutral-200"
               aria-label="Toggle menu"
             >
               <svg
@@ -103,7 +103,7 @@ export default function Header() {
                 className={`rounded-md px-4 py-2 text-sm transition-colors ${
                   activeSection === item.id
                     ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-                    : "text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/5"
+                    : "text-neutral-600 hover:bg-neutral-100 dark:text-neutral-400 dark:hover:bg-white/5"
                 }`}
               >
                 {item.label}

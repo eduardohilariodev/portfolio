@@ -31,7 +31,7 @@ export function ConnectDialog() {
             href="https://github.com/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="rounded-full p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <TbBrandGithub className="h-6 w-6" />
           </a>
@@ -39,18 +39,18 @@ export function ConnectDialog() {
             href="https://linkedin.com/in/eduardohilariodev"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="rounded-full p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <TbBrandLinkedin className="h-6 w-6" />
           </a>
           <a
             href="mailto:eduardohilariodev@pm.me"
-            className="rounded-full p-2 transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="rounded-full p-2 transition-colors hover:bg-neutral-100 dark:hover:bg-neutral-800"
           >
             <TbMail className="h-6 w-6" />
           </a>
         </div>
-        <div className="my-4 border-t border-gray-200 dark:border-gray-800" />
+        <div className="my-4 border-t border-neutral-200 dark:border-neutral-800" />
         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
           <div className="space-y-2">
             <Input placeholder="Your name" />

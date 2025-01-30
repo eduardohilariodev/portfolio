@@ -43,7 +43,7 @@ export default function Hero() {
               Eduardo
             </span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 md:text-2xl">
+          <p className="text-xl text-neutral-600 md:text-2xl dark:text-neutral-400">
             <div className="font-serif font-light">
               <p>I design.</p>
               <p>I develop.</p>

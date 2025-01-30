@@ -291,7 +291,7 @@ export default function Experience() {
           ))}
         </div>
       ))}
-      <Button>Download resume</Button>
+      <Button icon={"hn hn-save"}>Save Resume</Button>
     </div>
   );
 }

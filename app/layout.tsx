@@ -74,7 +74,7 @@ export default function RootLayout({
       className={`${helvetica.variable} ${garamond.variable}`}
     >
       <body
-        className={`min-h-screen bg-white font-sans text-gray-900 transition-colors dark:bg-gray-900 dark:text-gray-200`}
+        className={`min-h-screen bg-neutral-200 font-sans text-gray-900 transition-colors dark:bg-gray-900 dark:text-gray-200`}
       >
         <ThemeProvider>
           <Header />

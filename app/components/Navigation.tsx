@@ -21,7 +21,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed left-1/2 top-4 z-50 flex -translate-x-1/2 gap-2 rounded-full bg-gray-800/50 px-4 py-2 backdrop-blur-xs dark:bg-white/10">
+    <nav className="fixed top-4 left-1/2 z-50 flex -translate-x-1/2 gap-2 rounded-full bg-neutral-800/50 px-4 py-2 backdrop-blur-xs dark:bg-white/10">
       {navItems.map(({ id, label }) => (
         <button
           key={id}
@@ -29,7 +29,7 @@ export default function Navigation() {
           className={`rounded-full px-4 py-1 text-sm transition-colors ${
             activeSection === id
               ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-              : "text-gray-600 hover:bg-gray-700/50 dark:text-gray-400 dark:hover:bg-white/20"
+              : "text-neutral-600 hover:bg-neutral-700/50 dark:text-neutral-400 dark:hover:bg-white/20"
           }`}
         >
           {label}
