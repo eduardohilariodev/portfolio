@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--user-data-dir=C:\\Users\\Eduardo\\AppData\\Local\\Google\\Chrome\\User Data",
+        "--profile-directory=Profile 3"
+      ],
+      "runtimeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "preLaunchTask": "Launch Bun Dev"
+    },
+    {
+      "type": "chrome",
+      "request": "attach",
+      "name": "Attach to Chrome",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch and Attach",
+      "configurations": ["Launch Chrome against localhost", "Attach to Chrome"]
+    }
+  ]
+}
