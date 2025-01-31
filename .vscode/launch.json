@@ -13,7 +13,8 @@
         "--profile-directory=Profile 3"
       ],
       "runtimeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
-      "preLaunchTask": "Launch Bun Dev"
+      "preLaunchTask": "Launch Bun Dev",
+      "postDebugTask": "Terminate All Tasks"
     },
     {
       "type": "chrome",
