@@ -11,7 +11,7 @@ export default function Button({ children, icon }: ButtonProps) {
   return (
     <button
       className={cn(
-        "relative cursor-pointer rounded-none border-3 border-neutral-900 px-5 py-3 font-serif text-2xl text-neutral-900",
+        "relative cursor-pointer rounded-none border-3 border-neutral-900 px-5 py-3 font-serif text-2xl text-neutral-900 select-none",
 
         "bg-white dark:border-white dark:text-white",
         "dark:bg-neutral-900",

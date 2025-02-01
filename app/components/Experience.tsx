@@ -36,7 +36,7 @@ const experiences: ExperienceItem[] = [
         projects: [
           {
             description:
-              "Boosted sales conversion rates by 40% by implementing a design system and improving the UX of the B2B sales app, positively impacting over 500 sales professionals across 4+ Brazilian states and reducing support tickets by 80%.",
+              "Worked on both web and mobile fronts to serve companies",
             stack: [
               { label: "flutter" },
               { label: "dart" },
@@ -154,16 +154,6 @@ const experiences: ExperienceItem[] = [
               "Designed presentations, layouts, and various print materials for company-wide communication.",
             stack: [{ label: "figma" }],
           },
-          {
-            description:
-              "Developed wireframes and prototypes of varying complexity for a key client.",
-            stack: [{ label: "figma" }],
-          },
-          {
-            description:
-              "Created email marketing layouts for clients, including Unilever and Banco next.",
-            stack: [{ label: "figma" }],
-          },
         ],
       },
     ],
@@ -174,13 +164,6 @@ interface CompanyInfo {
   name: string;
   logo: string;
   linkedIn: string;
-}
-
-interface CompanyProps {
-  img: string;
-  name: string;
-  start: string;
-  end: string;
 }
 
 interface ExperienceItem {
@@ -200,6 +183,12 @@ interface Project {
   stack: StackPillProps[];
 }
 
+interface CompanyProps {
+  img: string;
+  name: string;
+  start: string;
+  end: string;
+}
 function Company({ img, name, start, end }: CompanyProps) {
   return (
     <div>
@@ -249,12 +238,19 @@ function Position({ title, projects }: PositionProps) {
             <div className="size-2 rounded-full bg-white" />
             <div className="ml-0.5 h-full border-l-3 border-l-white" />
           </div>
-          <div className="mb-6 space-y-4" key={description}>
+          <div
+            className="mb-6 space-y-4 dark:text-neutral-300"
+            key={description}
+          >
             <p>{description}</p>
-            <div className="flex flex-wrap gap-4">
-              {stack.map((tech) => (
-                <StackPill key={tech.label} tech={tech} />
-              ))}
+
+            <div className="flex flex-col gap-3">
+              <h5 className="font-serif text-2xl">Core Technologies</h5>
+              <div className="flex flex-wrap gap-4">
+                {stack.map((tech) => (
+                  <StackPill key={tech.label} tech={tech} />
+                ))}
+              </div>
             </div>
           </div>
         </>
