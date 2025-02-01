@@ -1,15 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { Timeline, TimelineItem } from "./Timeline";
-
-interface Education {
-  img: string;
-  institution: string;
-  degree: string;
-  startDate: Date;
-  endDate: Date;
-}
+import { type Education } from "@/app/types";
+import { Child, Parent } from "./Timeline";
 
 const education: Education[] = [
   {
@@ -30,36 +22,32 @@ const education: Education[] = [
 
 export default function Education() {
   return (
-    <Timeline>
-      {education.map((edu, index) => (
-        <TimelineItem key={index}>
-          <div className="flex gap-4">
-            <Image
-              src={edu.img}
-              alt={edu.institution}
-              height={12}
-              width={12}
-              className="h-12 w-12 rounded-full object-cover"
-            />
-            <div className="space-y-2">
-              <h3 className="text-xl font-bold">{edu.institution}</h3>
-              <p className="text-neutral-600 dark:text-neutral-400">
-                {edu.degree} · (
-                {edu.startDate.toLocaleDateString("en-US", {
-                  month: "long",
-                  year: "numeric",
-                })}{" "}
-                -{" "}
-                {edu.endDate.toLocaleDateString("en-US", {
-                  month: "long",
-                  year: "numeric",
-                })}
-                )
-              </p>
-            </div>
-          </div>
-        </TimelineItem>
+    <div className="px-12">
+      {education.map((edu) => (
+        <div key={edu.institution}>
+          <Parent
+            img={edu.img}
+            name={edu.institution}
+            start={edu.startDate.toLocaleDateString("en-US", {
+              month: "short",
+              year: "numeric",
+            })}
+            end={edu.endDate.toLocaleDateString("en-US", {
+              month: "short",
+              year: "numeric",
+            })}
+          />
+          <Child
+            title={edu.degree}
+            projects={[
+              {
+                description: "",
+                stack: [],
+              },
+            ]}
+          />
+        </div>
       ))}
-    </Timeline>
+    </div>
   );
 }

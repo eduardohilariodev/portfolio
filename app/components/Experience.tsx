@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-
+import { type CompanyInfo, type ExperienceItem } from "@/app/types";
 import Button from "./Button";
-import { StackPill, type StackPillProps } from "./Stack";
+import { Child, Parent } from "./Timeline";
 
 const companies: Record<string, CompanyInfo> = {
   Ckreativ: {
@@ -160,113 +159,12 @@ const experiences: ExperienceItem[] = [
   },
 ];
 
-interface CompanyInfo {
-  name: string;
-  logo: string;
-  linkedIn: string;
-}
-
-interface ExperienceItem {
-  company: CompanyInfo;
-  startDate: Date;
-  endDate: Date | null;
-  positions: Position[];
-}
-
-interface Position {
-  title: string;
-  projects: Project[];
-}
-
-interface Project {
-  description: string;
-  stack: StackPillProps[];
-}
-
-interface CompanyProps {
-  img: string;
-  name: string;
-  start: string;
-  end: string;
-}
-function Company({ img, name, start, end }: CompanyProps) {
-  return (
-    <div>
-      <div className="flex gap-4 text-lg font-light dark:text-white">
-        <Image
-          src={img}
-          alt={`${img} logo`}
-          height={80}
-          width={80}
-          className="object-contain"
-        />
-        <div className="flex grow items-center justify-between text-2xl">
-          <h3>{name}</h3>
-
-          <span>
-            {start}&ndash;{end}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface PositionProps {
-  title: string;
-  projects: Project[];
-}
-
-function Position({ title, projects }: PositionProps) {
-  return (
-    <div className="grid grid-flow-row grid-cols-[80px_auto] gap-x-4">
-      <div className="ml-0.5 h-6 justify-self-center border-l-3 border-l-white" />
-      <div />
-      <div className="grid-cols-subgrid place-items-center">
-        <div className="ml-0.5 h-8 justify-self-center border-l-3 border-l-white" />
-        <div className="size-4 rounded-full bg-white" />
-        <div className="ml-0.5 h-8 border-l-3 border-l-white" />
-      </div>
-      <h4 className="self-center justify-self-start font-serif text-3xl text-white">
-        {title}
-      </h4>
-
-      {projects.map(({ description, stack }) => (
-        <>
-          <div className="grid-cols-subgrid place-items-center">
-            <div className="ml-0.5 h-2 border-l-3 border-l-white" />
-            <div className="size-2 rounded-full bg-white" />
-            <div className="ml-0.5 h-full border-l-3 border-l-white" />
-          </div>
-          <div
-            className="mb-6 space-y-4 dark:text-neutral-300"
-            key={description}
-          >
-            <p>{description}</p>
-
-            <div className="flex flex-col gap-3">
-              <h5 className="font-serif text-2xl">Core Technologies</h5>
-              <div className="flex flex-wrap gap-4">
-                {stack.map((tech) => (
-                  <StackPill key={tech.label} tech={tech} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </>
-      ))}
-      <div className="ml-0.5 h-18 justify-self-center border-l-3 border-l-white" />
-      <div />
-    </div>
-  );
-}
-
 export default function Experience() {
   return (
-    <div className="px-12">
+    <div aria-label="Experience spacing" className="px-12">
       {experiences.map((experience) => (
         <div key={experience.company.name}>
-          <Company
+          <Parent
             img={experience.company.logo}
             name={experience.company.name}
             start={experience.startDate.toLocaleDateString("en-US", {
@@ -283,11 +181,13 @@ export default function Experience() {
             }
           />
           {experience.positions.map(({ title, projects }) => (
-            <Position title={title} projects={projects} key={title} />
+            <Child key={title} title={title} projects={projects} />
           ))}
         </div>
       ))}
-      <Button icon={"hn hn-save"}>Save Resume</Button>
+      <Button icon="hn hn-save" aria-label="Save resume">
+        Save Resume
+      </Button>
     </div>
   );
 }

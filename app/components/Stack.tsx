@@ -62,6 +62,7 @@ import {
   TbTestPipe,
   TbTopologyStar3,
 } from "react-icons/tb";
+import type { StackPillProps } from "../types";
 
 interface TechConfig {
   icon: IconType;
@@ -70,8 +71,6 @@ interface TechConfig {
   border: string;
   label: string;
 }
-
-type TechStack = Record<Tech, TechConfig>;
 
 export interface StackGroupProps {
   tech: Tech;
@@ -152,6 +151,8 @@ export type Tech =
   | "jquery"
   | "webpack"
   | "pwsh";
+
+type TechStack = Record<Tech, TechConfig>;
 
 const techStack: TechStack = {
   expressjs: {
@@ -666,15 +667,8 @@ const techStack: TechStack = {
     label: "PowerShell",
   },
 };
-
-export interface StackPillProps {
-  label: Tech;
-  isChild?: boolean;
-  children?: StackPillProps[];
-}
-
 export function StackPill({ tech }: { tech: StackPillProps }) {
-  const config = techStack[tech.label];
+  const config = techStack[tech.label as keyof typeof techStack];
   const Icon = config.icon;
   const borderRadius = "rounded-xs";
 

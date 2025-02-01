@@ -21,14 +21,9 @@ export default function Hero() {
           </div>
 
           <hr className="border-[1.5px]" />
-          <p className="text-3xl md:text-5xl">
-            <div className="font-serif font-light">
-              <p>I design. I develop. I deliver.</p>
-            </div>
-            {/* <FlipWords
-              className="leading-tight font-serif"
-              words={words}
-            /> */}
+
+          <p className="font-serif text-4xl font-light">
+            I design. I develop. I deliver.
           </p>
         </div>
       </div>
