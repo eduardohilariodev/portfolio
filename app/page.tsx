@@ -6,15 +6,6 @@ import Hero from "./components/Hero";
 import Section from "./components/Section";
 import Skills from "./components/Skills";
 
-const education = [
-  {
-    school: "Universidade Federal de Santa Catarina",
-    degree: "Bachelor's degree, Design",
-    startDate: new Date("2016-03"),
-    endDate: new Date("2022-02"),
-  },
-];
-
 const allTechs = [
   "javascript",
   "typescript",
@@ -70,7 +61,7 @@ export default function Home() {
       </Section>
 
       <Section id="education" title="Education">
-        <Education education={education} />
+        <Education />
       </Section>
     </div>
   );
