@@ -3,9 +3,7 @@
 import Image from "next/image";
 import profilePicture from "../img/profile_bnw.png";
 
-interface AboutProps {}
-
-export default function About({}: AboutProps) {
+export default function About() {
   return (
     <>
       <div className="mr-42 ml-28 flex -translate-y-8 items-center">

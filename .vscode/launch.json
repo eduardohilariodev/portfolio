@@ -4,7 +4,7 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Launch Chrome against localhost",
+      "name": "Launch Chrome",
       "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}",
       "runtimeArgs": [
@@ -14,6 +14,7 @@
       ],
       "runtimeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
       "preLaunchTask": "Launch Bun Dev",
+      "includeLaunchArgs": true,
       "postDebugTask": "Terminate All Tasks"
     },
     {
@@ -27,7 +28,8 @@
   "compounds": [
     {
       "name": "Launch and Attach",
-      "configurations": ["Launch Chrome against localhost", "Attach to Chrome"]
+      "configurations": ["Launch Chrome", "Attach to Chrome"],
+      "stopAll": true
     }
   ]
 }

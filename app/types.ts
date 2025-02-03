@@ -7,13 +7,18 @@ export interface CompanyInfo {
 export interface ExperienceItem {
   company: CompanyInfo;
   startDate: Date;
-  endDate: Date | null;
-  positions: Position[];
+  endDate: Date;
+  stack?: StackPillProps[];
+  positions: {
+    title: string;
+    description?: string;
+  }[];
 }
 
 export interface Position {
   title: string;
-  projects: Project[];
+  description: string;
+  stack: StackPillProps[];
 }
 
 export interface StackPillProps {
@@ -33,4 +38,6 @@ export interface Education {
   degree: string;
   startDate: Date;
   endDate: Date;
+  description?: string;
+  stack?: StackPillProps[];
 }

@@ -2,6 +2,7 @@
 
 import { type CompanyInfo, type ExperienceItem } from "@/app/types";
 import Button from "./Button";
+import { StackPill } from "./Stack";
 import { Child, Parent } from "./Timeline";
 
 const companies: Record<string, CompanyInfo> = {
@@ -29,92 +30,31 @@ const experiences: ExperienceItem[] = [
     company: companies.Ckreativ,
     startDate: new Date("2022-03"),
     endDate: new Date("2024-12"),
+    stack: [
+      { label: "vuejs", children: [{ label: "nuxt" }] },
+      { label: "typescript" },
+      { label: "python" },
+      { label: "laravel" },
+      { label: "aws" },
+      { label: "docker" },
+      { label: "githubactions" },
+      { label: "flutter" },
+      { label: "mysql" },
+    ],
     positions: [
       {
         title: "Software Engineer",
-        projects: [
-          {
-            description:
-              "Worked on both web and mobile fronts to serve companies",
-            stack: [
-              { label: "flutter" },
-              { label: "dart" },
-              { label: "figma" },
-              // { label: "material design" },
-            ],
-          },
-          {
-            description:
-              "Led the development of an AI chatbot capable of answering domain-specific natural language queries in under 50 seconds using a database with over 7 years of knowledge.",
-            stack: [
-              { label: "nuxt" },
-              { label: "vuejs" },
-              { label: "typescript" },
-              { label: "python" },
-              { label: "laravel" },
-              // { label: "langchain" },
-              { label: "aws" },
-            ],
-          },
-          {
-            description:
-              "Increased customer acquisition by 15% through the integration of a custom Stripe subscription system, simplifying SaaS billing for end users.",
-            stack: [
-              { label: "vuejs" },
-              { label: "laravel" },
-              { label: "aws" },
-              { label: "mysql" },
-            ],
-          },
-          {
-            description:
-              "Designed and deployed scalable software solutions, including cloud-hosted applications, while streamlining development pipelines using GitHub Actions and Docker.",
-            stack: [
-              { label: "docker" },
-              { label: "githubactions" },
-              { label: "aws" },
-            ],
-          },
-        ],
+        description:
+          "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability.",
       },
       {
         title: "Junior Software Engineer",
-        projects: [
-          {
-            description:
-              "Enhanced the UX and maintained the Ckreativ ERP platform for over 25 businesses, achieving a 30% increase in user satisfaction scores and a 25% reduction in reported system issues.",
-            stack: [
-              { label: "vuejs" },
-              { label: "laravel" },
-              { label: "bootstrap" },
-              { label: "aws" },
-              { label: "mysql" },
-            ],
-          },
-          {
-            description:
-              "Contributed to the scalability and maintenance of web and mobile applications, increasing application response speed by 40% and user retention rates by 20%.",
-            stack: [{ label: "flutter" }, { label: "git" }],
-          },
-          {
-            description:
-              "Streamlined testing and debugging processes to improve platform performance, reducing error resolution time by 50% and ensuring 99.9% system uptime for small to medium-sized businesses.",
-            stack: [
-              // { label: "postman" },
-              { label: "mysql" },
-            ],
-          },
-        ],
+        description:
+          "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes.",
       },
       {
         title: "UX Designer",
-        projects: [
-          {
-            description:
-              "Designed and tested user interfaces, increasing accessibility and user engagement.",
-            stack: [{ label: "figma" }],
-          },
-        ],
+        description: `Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms.`,
       },
     ],
   },
@@ -122,21 +62,24 @@ const experiences: ExperienceItem[] = [
     company: companies["Brick Abode"],
     startDate: new Date("2019-11"),
     endDate: new Date("2021-03"),
+    stack: [
+      {
+        label: "adobe",
+        children: [{ label: "premiere" }, { label: "aftereffects" }],
+      },
+      { label: "pwsh" },
+      { label: "python" },
+    ],
     positions: [
       {
         title: "Technical Content Producer",
-        projects: [
-          {
-            description:
-              "Produced and edited videos, managed recording hardware, and optimized workflows using NLE software.",
-            stack: [{ label: "adobe" }],
-          },
-          {
-            description:
-              "Created a production line for short job proposal videos, automating camera setups, voice capture, and YouTube API integration.",
-            stack: [{ label: "adobe" }, { label: "python" }],
-          },
-        ],
+        description:
+          "Led video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes.",
+      },
+      {
+        title: "Production Intern",
+        description:
+          "Created video content and automated production workflows using industry tools. Improved content delivery efficiency.",
       },
     ],
   },
@@ -144,16 +87,23 @@ const experiences: ExperienceItem[] = [
     company: companies.GETMORE,
     startDate: new Date("2019-03"),
     endDate: new Date("2019-09"),
+    stack: [
+      {
+        label: "adobe",
+        children: [{ label: "photoshop" }, { label: "illustrator" }],
+      },
+      { label: "figma" },
+    ],
     positions: [
       {
-        title: "UI Designer",
-        projects: [
-          {
-            description:
-              "Designed presentations, layouts, and various print materials for company-wide communication.",
-            stack: [{ label: "figma" }],
-          },
-        ],
+        title: "UX Designer",
+        description:
+          "Designed brand-aligned communication materials with focus on visual consistency.",
+      },
+      {
+        title: "Design Intern",
+        description:
+          "Created internal and external communication materials following brand guidelines.",
       },
     ],
   },
@@ -180,9 +130,36 @@ export default function Experience() {
                 : "Present"
             }
           />
-          {experience.positions.map(({ title, projects }) => (
-            <Child key={title} title={title} projects={projects} />
+          {experience.positions.map(({ title, description }, index, array) => (
+            <Child
+              key={title}
+              title={title}
+              description={description}
+              isLast={index === array.length - 1}
+            />
           ))}
+
+          {experience.stack && experience.stack.length > 0 && (
+            <div
+              aria-label="Technologies section"
+              className="mt-4 flex flex-col gap-3"
+            >
+              <h5
+                aria-label="Technologies heading"
+                className="font-serif text-2xl"
+              >
+                Core Technologies
+              </h5>
+              <div
+                aria-label="Technology pills container"
+                className="flex flex-wrap gap-4"
+              >
+                {experience.stack.map((tech) => (
+                  <StackPill key={tech.label} tech={tech} />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       ))}
       <Button icon="hn hn-save" aria-label="Save resume">

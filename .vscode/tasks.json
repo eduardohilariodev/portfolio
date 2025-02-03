@@ -24,7 +24,7 @@
         "background": {
           "activeOnStart": true,
           "beginsPattern": "^\\s*▲\\s*Next\\.js",
-          "endsPattern": "^\\s*-\\s*Network:"
+          "endsPattern": "^\\s*✓\\s*Ready"
         }
       },
       "presentation": {

@@ -1,6 +1,7 @@
 "use client";
 
-import { StackPill, StackPillProps } from "./Stack";
+import { StackPillProps } from "../types";
+import { StackPill } from "./Stack";
 
 interface StackItem {
   heading: string;
@@ -54,6 +55,7 @@ const stack: StackItem[] = [
     items: [
       { label: "postgresql" },
       { label: "mysql" },
+      { label: "mariadb" },
       { label: "sqlite" },
       { label: "mongodb" },
     ],

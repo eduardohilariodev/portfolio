@@ -6,21 +6,6 @@ import Hero from "./components/Hero";
 import Section from "./components/Section";
 import Skills from "./components/Skills";
 
-const allTechs = [
-  "javascript",
-  "typescript",
-  "react",
-  "nextjs",
-  "vue",
-  "python",
-  "laravel",
-  "docker",
-  "aws",
-  "flutter",
-  "figma",
-  "adobe",
-] as const;
-
 const contactLinks: ContactLink[] = [
   {
     href: "mailto:eduardohilariodev@pm.me",

@@ -1,8 +1,6 @@
 import Image from "next/image";
 
-interface LogoProps {}
-
-export default function Logo({}: LogoProps) {
+export default function Logo() {
   return (
     <Image
       src="/logo.svg"

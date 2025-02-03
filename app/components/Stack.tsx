@@ -27,6 +27,7 @@ import {
   SiJquery,
   SiLaravel,
   SiLinux,
+  SiMariadb,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
@@ -79,102 +80,89 @@ export interface StackGroupProps {
 
 export type Tech =
   | "adobe"
+  | "aftereffects"
+  | "ansible"
   | "api"
   | "aws"
+  | "backend"
+  | "bash"
   | "bootstrap"
   | "brazilian"
+  | "cloud"
+  | "config"
   | "css"
+  | "cypress"
   | "dart"
   | "databases"
+  | "design"
   | "devops"
   | "docker"
   | "english"
+  | "expressjs"
   | "fastapi"
   | "figma"
   | "flutter"
+  | "frontend"
+  | "fullstack"
   | "git"
   | "githubactions"
+  | "grafana"
   | "graphql"
+  | "html"
+  | "illustrator"
   | "javascript"
   | "jest"
+  | "jquery"
+  | "kubernetes"
   | "languages"
   | "laravel"
+  | "libraries"
   | "linux"
   | "macos"
+  | "mariadb"
+  | "markdown"
+  | "mobile"
   | "mongodb"
   | "mysql"
   | "nextjs"
   | "nginx"
   | "nodejs"
+  | "nuxt"
   | "os"
+  | "other"
+  | "photoshop"
   | "php"
+  | "postgresql"
+  | "premiere"
   | "programming"
+  | "prometheus"
+  | "puppeteer"
+  | "pwsh"
   | "python"
   | "reactjs"
+  | "reactnative"
   | "sass"
   | "spanish"
+  | "sqlite"
   | "tailwindcss"
+  | "testing"
   | "typescript"
   | "vercel"
   | "vite"
   | "vitest"
   | "vuejs"
-  | "windows"
-  | "testing"
-  | "libraries"
-  | "backend"
-  | "fullstack"
-  | "design"
-  | "ansible"
-  | "kubernetes"
-  | "prometheus"
-  | "grafana"
-  | "postgresql"
-  | "sqlite"
-  | "puppeteer"
-  | "cypress"
-  | "bash"
-  | "markdown"
-  | "config"
-  | "html"
-  | "other"
-  | "frontend"
-  | "mobile"
-  | "cloud"
-  | "nuxt"
-  | "photoshop"
-  | "illustrator"
-  | "premiere"
-  | "reactnative"
-  | "aftereffects"
-  | "expressjs"
-  | "jquery"
   | "webpack"
-  | "pwsh";
+  | "windows";
 
 type TechStack = Record<Tech, TechConfig>;
 
 const techStack: TechStack = {
-  expressjs: {
-    background: "bg-[#3a9cfc]/10",
-    border: "border-[#3a9cfc]/30",
-    color: "text-[#3a9cfc]",
-    icon: SiExpress,
-    label: "Express.js",
-  },
-  jquery: {
-    background: "bg-[#0769AD]/10",
-    border: "border-[#0769AD]/30",
-    color: "text-[#0769AD]",
-    icon: SiJquery,
-    label: "jQuery",
-  },
   adobe: {
     background: "bg-[#FF0000]/10",
     border: "border-[#FF0000]/30",
     color: "text-[#FF0000]",
     icon: SiAdobe,
-    label: "Adobe",
+    label: "Adobe Creative Cloud",
   },
   aftereffects: {
     background: "bg-[#9999FF]/10",
@@ -302,6 +290,13 @@ const techStack: TechStack = {
     icon: GB,
     label: "English",
   },
+  expressjs: {
+    background: "bg-[#3a9cfc]/10",
+    border: "border-[#3a9cfc]/30",
+    color: "text-[#3a9cfc]",
+    icon: SiExpress,
+    label: "Express.js",
+  },
   fastapi: {
     background: "bg-[#009688]/10",
     border: "border-[#009688]/30",
@@ -393,6 +388,13 @@ const techStack: TechStack = {
     icon: SiJest,
     label: "Jest",
   },
+  jquery: {
+    background: "bg-[#0769AD]/10",
+    border: "border-[#0769AD]/30",
+    color: "text-[#0769AD]",
+    icon: SiJquery,
+    label: "jQuery",
+  },
   kubernetes: {
     background: "bg-[#326CE5]/10",
     border: "border-[#326CE5]/30",
@@ -434,6 +436,13 @@ const techStack: TechStack = {
     color: "text-[#FFFFFF]",
     icon: TbBrandApple,
     label: "macOS",
+  },
+  mariadb: {
+    background: "bg-[#28748b]/10",
+    border: "border-[#28748b]/30",
+    color: "text-[#28748b]",
+    icon: SiMariadb,
+    label: "MariaDB",
   },
   markdown: {
     background: "bg-[#000000]/10",
@@ -554,6 +563,13 @@ const techStack: TechStack = {
     icon: SiPuppeteer,
     label: "Puppeteer",
   },
+  pwsh: {
+    background: "bg-[#1e77d1]/10",
+    border: "border-[#1e77d1]/30",
+    color: "text-[#1e77d1]",
+    icon: TbBrandPowershell,
+    label: "PowerShell",
+  },
   python: {
     background: "bg-[#3c6d9b]/10",
     border: "border-[#3c6d9b]/30",
@@ -631,13 +647,6 @@ const techStack: TechStack = {
     icon: SiVite,
     label: "Vite",
   },
-  webpack: {
-    background: "bg-[#5d99c6]/10",
-    border: "border-[#5d99c6]/30",
-    color: "text-[#5d99c6]",
-    icon: SiWebpack,
-    label: "Webpack",
-  },
   vitest: {
     background: "bg-[#7a9a2a]/10",
     border: "border-[#7a9a2a]/30",
@@ -652,6 +661,13 @@ const techStack: TechStack = {
     icon: SiVuedotjs,
     label: "Vue.js",
   },
+  webpack: {
+    background: "bg-[#5d99c6]/10",
+    border: "border-[#5d99c6]/30",
+    color: "text-[#5d99c6]",
+    icon: SiWebpack,
+    label: "Webpack",
+  },
   windows: {
     background: "bg-[#1866b5]/10",
     border: "border-[#1866b5]/30",
@@ -659,14 +675,8 @@ const techStack: TechStack = {
     icon: TbBrandWindows,
     label: "Windows",
   },
-  pwsh: {
-    background: "bg-[#1e77d1]/10",
-    border: "border-[#1e77d1]/30",
-    color: "text-[#1e77d1]",
-    icon: TbBrandPowershell,
-    label: "PowerShell",
-  },
 };
+
 export function StackPill({ tech }: { tech: StackPillProps }) {
   const config = techStack[tech.label as keyof typeof techStack];
   const Icon = config.icon;
@@ -674,7 +684,10 @@ export function StackPill({ tech }: { tech: StackPillProps }) {
 
   return (
     <div
-      className={`inset-0 flex cursor-default items-center bg-white before:absolute dark:bg-neutral-900 ${borderRadius}`}
+      className={cn(
+        `inset-0 flex cursor-default items-center bg-white before:absolute dark:bg-neutral-900`,
+        borderRadius,
+      )}
     >
       <div
         className={cn(
