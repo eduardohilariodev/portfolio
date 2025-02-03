@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="space-y-4">
           <div>
             <div className="@container relative font-semibold tracking-tight">
-              <h1 className="text-5xl">
+              <h1 className="text-4xl md:text-5xl">
                 Eduardo <br /> Hilário
               </h1>
               <div
@@ -19,7 +19,7 @@ export default function Hero() {
                   WebkitTextStroke:
                     theme === "dark" ? "0.5px white" : "1px black",
                 }}
-                className="absolute right-0 bottom-0 flex flex-col -space-y-8 text-right text-transparent opacity-20 *:h-24 *:text-[11.9cqw]"
+                className="absolute right-0 bottom-0 flex flex-col -space-y-4 text-right text-transparent opacity-20 *:h-16 *:text-[11.9cqw] md:-space-y-8 md:*:h-24"
               >
                 <span>Software Engineer</span>
                 <span>Designer</span>

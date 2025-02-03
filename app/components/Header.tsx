@@ -3,7 +3,6 @@
 import { cn } from "@/lib/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { useState } from "react";
-import { useSectionScrollSpy } from "../hooks/useSectionScrollSpy";
 
 import Button from "./Button";
 import Logo from "./Logo";
@@ -17,7 +16,6 @@ const navItems = [
 ];
 
 export default function Header() {
-  const activePageSection = useSectionScrollSpy();
   const [{ y: scrollY }] = useWindowScroll();
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
