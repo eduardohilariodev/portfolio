@@ -1,9 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { useWindowScroll } from "@uidotdev/usehooks";
 import { useState } from "react";
-import { useScrollPosition } from "../hooks/useScrollPosition";
 import { useSectionScrollSpy } from "../hooks/useSectionScrollSpy";
+
 import Button from "./Button";
 import Logo from "./Logo";
 import ThemeToggle from "./ThemeToggle";
@@ -17,9 +18,10 @@ const navItems = [
 
 export default function Header() {
   const activePageSection = useSectionScrollSpy();
-  const [scrollPosition] = useScrollPosition();
+  const [{ y: scrollY }] = useWindowScroll();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const scrollThreshold = 320;
+  const scrollThreshold = 160;
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,25 +34,16 @@ export default function Header() {
   };
 
   const NavButton = ({ id, label }: { id: string; label: string }) => (
-    <Button
-      onClick={() => scrollToSection(id)}
-      className={`cursor-pointer px-4 py-1 font-serif text-2xl ${
-        activePageSection === id
-          ? "bg-teal-500/20 text-teal-600 dark:text-teal-400"
-          : "text-neutral-600 hover:bg-neutral-100 dark:text-white dark:hover:bg-white/5"
-      }`}
-    >
-      {label}
-    </Button>
+    <Button onClick={() => scrollToSection(id)}>{label}</Button>
   );
 
   return (
     <header
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 mx-auto max-w-5xl px-8 backdrop-blur-xs transition-all duration-100 md:max-w-3xl md:py-16",
-        scrollPosition > scrollThreshold ? "py-3" : "py-6",
-        scrollPosition > scrollThreshold &&
-          "border-b-2 dark:border-b-neutral-700 dark:bg-neutral-800/50",
+        "fixed top-0 right-0 left-0 z-50 mx-auto h-fit max-w-5xl px-8 transition-opacity duration-100 md:max-w-3xl md:py-16",
+        scrollY && scrollY > scrollThreshold ? "py-3" : "py-6",
+        ((scrollY && scrollY > scrollThreshold) || isMenuOpen) &&
+          "border-b-2 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-800/50",
       )}
     >
       <div className="flex items-center justify-between">
@@ -66,14 +59,12 @@ export default function Header() {
             ))}
           </nav>
         </div>
-
         {/* Mobile Controls */}
         <div className="flex items-center gap-4 md:hidden">
           <ThemeToggle />
           <Button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 text-neutral-600 hover:text-neutral-900 dark:text-white dark:hover:text-neutral-200"
-            aria-label="Toggle menu"
+            ria-label="Toggle menu"
           >
             <svg
               className="h-6 w-6"
@@ -97,22 +88,20 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <div
+      <nav
         className={cn(
-          "transition-all duration-300 ease-in-out md:hidden",
+          "mt-4 flex w-full flex-col items-end gap-2 transition-[opacity,max-height] duration-300 ease-in-out md:opacity-0",
           isMenuOpen
-            ? "mt-4 max-h-64 opacity-100"
+            ? "max-h-64 opacity-100"
             : "pointer-events-none max-h-0 opacity-0",
         )}
       >
-        <nav className="flex flex-col items-end gap-2">
-          {[...navItems].map((item) => (
-            <Button key={item.id} onClick={() => scrollToSection(item.id)}>
-              {item.label}
-            </Button>
-          ))}
-        </nav>
-      </div>
+        {[...navItems].map((item) => (
+          <Button key={item.id} onClick={() => scrollToSection(item.id)}>
+            {item.label}
+          </Button>
+        ))}
+      </nav>
     </header>
   );
 }

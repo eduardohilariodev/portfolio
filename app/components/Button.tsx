@@ -1,68 +1,84 @@
-// https://codepen.io/rauldronca/pen/PzMgzp?editors=0100
-
 import { cn } from "@/lib/utils";
 
 interface ButtonProps {
   icon?: string | React.ReactNode;
   children: React.ReactNode;
-  className?: string;
   onClick: () => void; // Added type for onClick
 }
 
-export default function Button({
+function ButtonChild({
   children,
-  onClick,
   icon,
-  className,
-}: ButtonProps) {
+}: {
+  children: React.ReactNode;
+  icon?: string | React.ReactNode;
+}) {
   return (
-    <button
-      onClick={onClick}
-      className={cn(
-        "min-h-12 min-w-12 p-2 text-xl text-neutral-600 transition-colors",
-        "transition-all dark:text-neutral-400",
+    <div className="grid place-items-center gap-3 font-serif whitespace-nowrap text-neutral-900 dark:text-neutral-200">
+      {icon &&
+        (typeof icon === "string" ? (
+          <i className={cn(icon, "text-xl")} />
+        ) : (
+          icon
+        ))}
+      {children}
+    </div>
+  );
+}
 
-        "transition-all duration-300 ease-in",
+export default function Button({ children, onClick, icon }: ButtonProps) {
+  return (
+    <div className="group relative min-h-12 min-w-12 *:min-h-12 *:w-fit *:min-w-12 *:cursor-pointer *:border-2 *:border-transparent *:p-2 *:text-xl">
+      <button
+        onClick={onClick}
+        tabIndex={0}
+        className={cn(
+          "group-hover:opacity-0",
+          "group-active:opacity-100",
 
-        "hover:-translate-1 hover:cursor-pointer hover:border-1 hover:border-neutral-900 hover:transition-all hover:duration-300 hover:ease-in dark:hover:border-white",
+          "group-focus:border-netural-900 border border-transparent dark:group-focus:border-neutral-200",
+          "transition-opacity duration-[2s]",
+        )}
+        type="button"
+      >
+        <ButtonChild icon={icon}>{children}</ButtonChild>
+      </button>
 
-        "before:bg-neutral-900 dark:hover:before:bg-white",
-        "after:bg-neutral-900 dark:hover:after:bg-white",
+      <button
+        onClick={onClick}
+        aria-hidden
+        tabIndex={-1}
+        className={cn(
+          "absolute inset-0",
+          "group-hover:opacity-100",
+          "opacity-0 transition-opacity duration-[2s]",
+          "group-active:opacity-0 group-active:transition-opacity group-active:duration-[2s]",
 
-        "before:transition-all before:duration-300 before:ease-in",
-        "after:transition-all after:duration-300 after:ease-in",
+          "border-neutral-300 dark:border-neutral-700",
+          "group-hover:border-neutral-200 dark:border-neutral-200",
 
-        "hover:before:transition-all hover:before:duration-300 hover:before:ease-in",
-        "hover:after:transition-all hover:after:duration-300 hover:after:ease-in",
+          "before:bg-neutral-900 dark:before:bg-neutral-200",
+          "after:bg-neutral-900 dark:after:bg-neutral-200",
 
-        "before:absolute before:skew-x-[45deg]",
-        "after:absolute after:skew-y-[45deg]",
+          "before:absolute before:skew-x-[45deg]",
+          "after:absolute after:skew-y-[45deg]",
 
-        "before:-right-[6px] before:-bottom-[0px] before:h-[0px] before:w-[100.5%]",
-        "after:top-[4px] after:-right-[3px] after:h-[90%] after:w-[0px]",
+          "before:-right-[5px] before:-bottom-[9px] before:h-[8px] before:w-[100.5%]",
+          "after:top-[4px] after:-right-[9px] after:h-[104%] after:w-[8px]",
 
-        "hover:before:-right-[5px] hover:before:-bottom-[9px] hover:before:h-[8px] hover:before:w-[100.5%]",
-        "hover:after:top-[4px] hover:after:-right-[9px] hover:after:h-[104%] hover:after:w-[8px]",
+          "group-active:translate-0",
+          "group-active:before:-right-[5px] group-active:before:-bottom-[0px] group-active:before:h-[0px] group-active:before:w-[100.5%]",
 
-        "active:translate-0",
-        "active:before:-right-[5px] active:before:-bottom-[0px] active:before:h-[0px] active:before:w-[100.5%]",
+          "group-active:after:top-[4px] group-active:after:-right-[3px] group-active:after:h-[90%] group-active:after:w-[0px]",
+          "dark:shadow-neutral-200 group-hover:dark:shadow-2xl group-active:dark:shadow-none",
+          "-translate-2",
 
-        "active:after:top-[4px] active:after:-right-[3px] active:after:h-[90%] active:after:w-[0px]",
-        "dark:shadow-white hover:dark:shadow-2xl active:dark:shadow-none",
-
-        className,
-      )}
-      type="button"
-    >
-      <div className="grid place-items-center gap-3 font-serif whitespace-nowrap text-neutral-900 dark:text-white">
-        {icon &&
-          (typeof icon === "string" ? (
-            <i className={cn(icon, "text-xl")} />
-          ) : (
-            icon
-          ))}
-        {children}
-      </div>
-    </button>
+          "",
+        )}
+        type="button"
+      >
+        <ButtonChild icon={icon}>{children}</ButtonChild>
+      </button>
+    </div>
   );
 }
