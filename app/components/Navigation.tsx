@@ -1,6 +1,6 @@
 "use client";
 
-import { useScrollSpy } from "../hooks/useScrollSpy";
+import { useSectionScrollSpy } from "../hooks/useSectionScrollSpy";
 
 const navItems = [
   { id: "about", label: "About" },
@@ -10,7 +10,7 @@ const navItems = [
 ];
 
 export default function Navigation() {
-  const activeSection = useScrollSpy();
+  const activeSection = useSectionScrollSpy();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

@@ -1,7 +1,7 @@
 "use client";
 
 import { type CompanyInfo, type ExperienceItem } from "@/app/types";
-import Button from "./Button";
+import BigButton from "./BigButton";
 import { StackPill } from "./Stack";
 import { Child, Parent } from "./Timeline";
 
@@ -162,9 +162,9 @@ export default function Experience() {
           )}
         </div>
       ))}
-      <Button icon="hn hn-save" aria-label="Save resume">
+      <BigButton icon="hn hn-save" aria-label="Save resume">
         Save Resume
-      </Button>
+      </BigButton>
     </div>
   );
 }
