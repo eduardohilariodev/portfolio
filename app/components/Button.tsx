@@ -54,8 +54,8 @@ export default function Button({ children, onClick, icon }: ButtonProps) {
           "opacity-0 transition-opacity duration-[2s]",
           "group-active:opacity-0 group-active:transition-opacity group-active:duration-[2s]",
 
-          "border-neutral-300 dark:border-neutral-700",
-          "group-hover:border-neutral-200 dark:border-neutral-200",
+          "group-hover:border-t-white group-hover:border-l-white group-hover:bg-neutral-100 dark:border-neutral-700 group-hover:dark:bg-neutral-900",
+          "dark:border-neutral-200",
 
           "before:bg-neutral-900 dark:before:bg-neutral-200",
           "after:bg-neutral-900 dark:after:bg-neutral-200",
