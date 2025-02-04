@@ -39,6 +39,19 @@
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
+
+  --animate-bounce-hard: bounce-hard 5s steps(3, jump-end) infinite;
+  @keyframes bounce-hard {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 
 /*
@@ -73,4 +86,6 @@
     background-color: #303030;
     color: white;
   }
+
+  scroll-behavior: smooth;
 }
