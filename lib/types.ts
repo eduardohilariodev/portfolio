@@ -27,6 +27,7 @@ export interface Position {
 export interface StackPillProps {
   label: string;
   isChild?: boolean;
+  hasColor?: boolean;
   children?: StackPillProps[];
 }
 
