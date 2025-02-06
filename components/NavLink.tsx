@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
+import Link, { LinkProps } from "next/link";
 
-interface NavLinkProps {
+interface NavLinkProps extends LinkProps {
   children: React.ReactNode;
   onClick?: () => void;
   href: string;
@@ -15,6 +15,7 @@ export default function NavLink({
   href,
   className,
   active = false,
+  ...props
 }: NavLinkProps) {
   type lineIndex = 0 | 1 | 2 | 3 | 4;
 
@@ -35,21 +36,26 @@ export default function NavLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "group relative flex items-center font-serif text-lg font-medium",
+        "group relative flex items-center font-serif text-lg font-medium hover:text-neutral-400 dark:hover:text-neutral-300",
         className,
         active
           ? "text-neutral-900 dark:text-neutral-200"
           : "text-neutral-600 dark:text-neutral-400",
       )}
+      {...props}
     >
-      <div className="delay- absolute top-0 flex w-full">
+      <div className="absolute top-0 flex w-full">
         {Array.from({ length: 5 }).map((_, index) => (
           <hr
             key={index}
-            className={cn(
-              "z-10 w-full border-2 opacity-0 transition duration-1000 group-hover:opacity-100 dark:border-neutral-200",
-              lineClass(index as lineIndex),
-            )}
+            className={
+              cn(
+                "z-10 w-full border opacity-0 transition duration-1000 group-hover:opacity-100 dark:border-neutral-200",
+                lineClass(index as lineIndex),
+              ) + active
+                ? "opacity-100"
+                : ""
+            }
           />
         ))}
       </div>

@@ -12,8 +12,9 @@ import ThemeButton from "./ThemeButton";
 const navItems = [
   { id: "contact", label: "Let's talk" },
   { id: "about", label: "About me" },
-  { id: "skills", label: "Knowledge" },
-  { id: "experience", label: "Carreer" },
+  { id: "knowledge", label: "Knowledge" },
+  { id: "carreer", label: "Carreer" },
+  { id: "education", label: "Education" },
 ];
 
 export default function Header() {
@@ -23,13 +24,13 @@ export default function Header() {
   const scrollThreshold = 160;
 
   useEffect(() => {
-    if (y === 0) {
+    if (y && y < 400) {
       setActiveSection("");
       return;
     }
 
     const options = {
-      threshold: 0.7,
+      threshold: 0.8,
     };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -62,13 +63,24 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
-  const NavButton = ({ id, label }: { id: string; label: string }) => (
+  const NavButton = ({
+    id,
+    children,
+    ...props
+  }: {
+    id: string;
+    children: React.ReactNode;
+    onClick?: () => void;
+  } & React.ComponentPropsWithoutRef<"a">) => (
     <NavLink
       href={`#${id}`}
-      onClick={() => scrollToSection(id)}
+      onClick={() => {
+        scrollToSection(id);
+      }}
       active={activeSection === id}
+      {...props}
     >
-      {label}
+      {children}
     </NavLink>
   );
 
@@ -78,7 +90,7 @@ export default function Header() {
         "fixed top-0 right-0 left-0 z-50 w-full p-8 transition-all duration-100 md:py-10",
         y &&
           y > scrollThreshold &&
-          "border-b-2 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-800/50",
+          "border-b-2 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-900/80",
       )}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between">
@@ -93,17 +105,17 @@ export default function Header() {
           {/* Left Navigation */}
           <nav className="hidden gap-4 md:flex">
             {navItems.map((item) => (
-              <NavButton key={item.id} {...item} />
+              <NavButton key={item.id} id={item.id}>
+                {item.label}
+              </NavButton>
             ))}
           </nav>
         </div>
+
         {/* Mobile Controls */}
-        <div className="flex items-center gap-4 md:hidden">
+        <div className="flex items-center gap-4">
           <ThemeButton />
-          <Button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            ria-label="Toggle menu"
-          >
+          <Button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <svg
               className="h-6 w-6"
               fill="none"
@@ -135,9 +147,9 @@ export default function Header() {
         )}
       >
         {[...navItems].map((item) => (
-          <Button key={item.id} onClick={() => scrollToSection(item.id)}>
+          <NavButton key={item.id} id={item.id}>
             {item.label}
-          </Button>
+          </NavButton>
         ))}
       </nav>
     </header>

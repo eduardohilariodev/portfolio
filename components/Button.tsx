@@ -1,9 +1,12 @@
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 interface ButtonProps {
   icon?: string | React.ReactNode;
   children: React.ReactNode;
-  onClick: () => void; // Added type for onClick
+  className?: string;
+  href?: string;
+  onClick?: () => void;
 }
 
 function ButtonChild({
@@ -26,11 +29,37 @@ function ButtonChild({
   );
 }
 
-export default function Button({ children, onClick, icon }: ButtonProps) {
+export default function Button({
+  children,
+  icon,
+  className,
+  href,
+  onClick,
+}: ButtonProps) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    if (href) {
+      router.push(href);
+    }
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
-    <div className="group relative min-h-12 min-w-12 *:min-h-12 *:w-fit *:min-w-12 *:cursor-pointer *:border-2 *:border-transparent *:p-2 *:text-xl">
+    <div
+      className={
+        cn(
+          "group relative min-h-12 min-w-12 *:min-h-12 *:w-fit *:min-w-12 *:cursor-pointer *:border-2 *:border-transparent *:px-7 *:py-3 *:text-xl",
+          className,
+        ) + children && !icon
+          ? "*:px-7 *:py-3"
+          : "p-2"
+      }
+    >
       <button
-        onClick={onClick}
+        onClick={handleClick}
         tabIndex={0}
         className={cn(
           "group-hover:opacity-0",
@@ -45,11 +74,12 @@ export default function Button({ children, onClick, icon }: ButtonProps) {
       </button>
 
       <button
-        onClick={onClick}
+        onClick={handleClick}
         aria-hidden
         tabIndex={-1}
         className={cn(
           "absolute inset-0",
+
           "group-hover:opacity-100",
           "opacity-0 transition-opacity duration-[2s]",
           "group-active:opacity-0 group-active:transition-opacity group-active:duration-[2s]",
@@ -72,8 +102,6 @@ export default function Button({ children, onClick, icon }: ButtonProps) {
           "group-active:after:top-[4px] group-active:after:-right-[3px] group-active:after:h-[90%] group-active:after:w-[0px]",
           "dark:shadow-neutral-200 group-hover:dark:shadow-2xl group-active:dark:shadow-none",
           "-translate-2",
-
-          "",
         )}
         type="button"
       >
