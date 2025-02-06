@@ -9,7 +9,7 @@ export default function Contact() {
     <div className="mx-auto flex max-w-xl justify-between gap-4">
       {contactLinks.map((link) => (
         <Button key={link.href} href={link.href} icon={link.icon}>
-          {link.label}
+          {link.title}
         </Button>
       ))}
     </div>
