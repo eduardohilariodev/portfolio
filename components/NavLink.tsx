@@ -39,11 +39,11 @@ export default function NavLink({
       href={href}
       onClick={onClick}
       className={cn(
-        "group relative flex items-center font-serif text-lg font-medium hover:text-neutral-400 dark:hover:text-neutral-300",
-        className,
         active
           ? "text-neutral-900 dark:text-neutral-200"
           : "text-neutral-600 dark:text-neutral-400",
+        "group relative flex w-fit items-center font-serif text-xl font-light tracking-tight hover:text-neutral-400 dark:hover:text-neutral-300",
+        className,
       )}
       {...props}
     >
@@ -51,14 +51,11 @@ export default function NavLink({
         {Array.from({ length: 5 }).map((_, index) => (
           <hr
             key={index}
-            className={
-              cn(
-                "z-10 w-full border opacity-0 transition duration-1000 group-hover:opacity-100 dark:border-neutral-200",
-                lineClass(index as lineIndex),
-              ) + active
-                ? "opacity-100"
-                : ""
-            }
+            className={cn(
+              "z-10 w-full border opacity-0 transition duration-1000 group-hover:opacity-100 dark:border-neutral-200",
+              lineClass(index as lineIndex),
+              active ? "opacity-100" : "",
+            )}
           />
         ))}
       </div>
