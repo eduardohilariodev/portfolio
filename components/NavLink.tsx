@@ -5,9 +5,17 @@ interface NavLinkProps {
   children: React.ReactNode;
   onClick?: () => void;
   href: string;
+  className?: string;
+  active: boolean;
 }
 
-export default function NavLink({ children, onClick, href }: NavLinkProps) {
+export default function NavLink({
+  children,
+  onClick,
+  href,
+  className,
+  active = false,
+}: NavLinkProps) {
   type lineIndex = 0 | 1 | 2 | 3 | 4;
 
   function lineClass(number: lineIndex) {
@@ -26,7 +34,13 @@ export default function NavLink({ children, onClick, href }: NavLinkProps) {
     <Link
       href={href}
       onClick={onClick}
-      className="group relative flex items-center font-serif text-lg font-medium"
+      className={cn(
+        "group relative flex items-center font-serif text-lg font-medium",
+        className,
+        active
+          ? "text-neutral-900 dark:text-neutral-200"
+          : "text-neutral-600 dark:text-neutral-400",
+      )}
     >
       <div className="delay- absolute top-0 flex w-full">
         {Array.from({ length: 5 }).map((_, index) => (
