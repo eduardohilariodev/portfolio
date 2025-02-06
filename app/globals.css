@@ -6,8 +6,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: var(--font-alte-haas-grotesk);
-  --font-serif: var(--font-garamond);
+  --font-sans: var(--font-archivo);
+  --font-serif: var(--font-cormorant);
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
