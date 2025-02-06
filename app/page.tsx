@@ -1,4 +1,4 @@
-import Contact, { ContactLink } from "@/components/Contact";
+import Contact, { ContactLink } from "@/app/contact/page";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import About from "./about/page";

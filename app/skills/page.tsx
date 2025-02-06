@@ -1,6 +1,6 @@
 "use client";
 
-import { StackPill } from "@/components/Stack";
+import { StackPill } from "@/components/StackPill";
 import { StackPillProps } from "../types";
 
 interface StackItem {

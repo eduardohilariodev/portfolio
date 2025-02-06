@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
 import Button from "./Button";
 
-export default function ThemeToggle() {
+export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
 
   return (

@@ -6,7 +6,8 @@ import { useState } from "react";
 
 import Button from "./Button";
 import Logo from "./Logo";
-import ThemeToggle from "./ThemeToggle";
+import NavLink from "./NavLink";
+import ThemeButton from "./ThemeButton";
 
 const navItems = [
   { id: "contact", label: "Let's talk" },
@@ -32,7 +33,7 @@ export default function Header() {
   };
 
   const NavButton = ({ id, label }: { id: string; label: string }) => (
-    <Button onClick={() => scrollToSection(id)}>{label}</Button>
+    <NavLink onClick={() => scrollToSection(id)}>{label}</NavLink>
   );
 
   return (
@@ -59,7 +60,7 @@ export default function Header() {
         </div>
         {/* Mobile Controls */}
         <div className="flex items-center gap-4 md:hidden">
-          <ThemeToggle />
+          <ThemeButton />
           <Button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             ria-label="Toggle menu"

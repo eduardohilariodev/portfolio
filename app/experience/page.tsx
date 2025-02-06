@@ -2,7 +2,7 @@
 
 import { type CompanyInfo, type ExperienceItem } from "@/app/types";
 import BigButton from "@/components/BigButton";
-import { StackPill } from "@/components/Stack";
+import { StackPill } from "@/components/StackPill";
 import { Child, Parent } from "@/components/Timeline";
 
 const companies: Record<string, CompanyInfo> = {
