@@ -110,6 +110,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <ThemeButton />
           <Button
+            className="md:hidden"
             icon={
               <svg
                 className="h-6 w-6"
