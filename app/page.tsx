@@ -37,11 +37,11 @@ export default function Home() {
         <About />
       </Section>
 
-      <Section id="skills" title="Knowledge">
+      <Section id="knowledge" title="Knowledge">
         <Skills />
       </Section>
 
-      <Section id="experience" title="Experience">
+      <Section id="carreer" title="Carreer">
         <Experience />
       </Section>
 
