@@ -8,14 +8,28 @@ export interface ContactLink {
   label: string;
 }
 
-interface ContactProps {
-  links: ContactLink[];
-}
+const contactLinks: ContactLink[] = [
+  {
+    href: "mailto:eduardohilariodev@pm.me",
+    label: "Email",
+    icon: "hn hn-envelope",
+  },
+  {
+    href: "https://www.linkedin.com/in/eduardohilariodev",
+    label: "LinkedIn",
+    icon: "hn hn-linkedin",
+  },
+  {
+    href: "https://www.github.com/eduardohilariodev",
+    label: "GitHub",
+    icon: "hn hn-github",
+  },
+];
 
-export default function Contact({ links }: ContactProps) {
+export default function Contact() {
   return (
     <div className="mx-auto flex max-w-xl justify-between gap-4">
-      {links.map((link) => (
+      {contactLinks.map((link) => (
         <Button key={link.href} href={link.href} icon={link.icon}>
           {link.label}
         </Button>
