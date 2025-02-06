@@ -5,7 +5,7 @@ import type { ContactLink, Section } from "./types";
 export const SECTION_DATA = {
   ABOUT: {
     id: "about",
-    title: "About",
+    title: "About me",
     href: "#about",
   },
   KNOWLEDGE: {
@@ -39,16 +39,16 @@ export const sections: Record<SectionId, Section> = {
     ...SECTION_DATA.ABOUT,
     icon: TbBrandGithub,
   },
+  [SECTION_DATA.CONTACT.id]: {
+    ...SECTION_DATA.CONTACT,
+    icon: TbMail,
+  },
   [SECTION_DATA.KNOWLEDGE.id]: {
     ...SECTION_DATA.KNOWLEDGE,
     icon: TbBrandLinkedin,
   },
   [SECTION_DATA.CAREER.id]: {
     ...SECTION_DATA.CAREER,
-    icon: TbMail,
-  },
-  [SECTION_DATA.CONTACT.id]: {
-    ...SECTION_DATA.CONTACT,
     icon: TbMail,
   },
   [SECTION_DATA.EDUCATION.id]: {
@@ -66,28 +66,28 @@ export const SECTION = SECTION_DATA;
 export const CONTACT_LINKS = {
   EMAIL: {
     href: "mailto:eduardohilariodev@pm.me",
-    label: "Email",
+    title: "Email",
     icon: "hn hn-envelope",
   },
   LINKEDIN: {
     href: "https://www.linkedin.com/in/eduardohilariodev",
-    label: "LinkedIn",
+    title: "LinkedIn",
     icon: "hn hn-linkedin",
   },
   GITHUB: {
     href: "https://www.github.com/eduardohilariodev",
-    label: "GitHub",
+    title: "GitHub",
     icon: "hn hn-github",
   },
 } as const;
 
 export type ContactLinkLabel =
-  (typeof CONTACT_LINKS)[keyof typeof CONTACT_LINKS]["label"];
+  (typeof CONTACT_LINKS)[keyof typeof CONTACT_LINKS]["title"];
 
 export const contactLinks: Record<ContactLinkLabel, ContactLink> = {
-  [CONTACT_LINKS.EMAIL.label]: CONTACT_LINKS.EMAIL,
-  [CONTACT_LINKS.LINKEDIN.label]: CONTACT_LINKS.LINKEDIN,
-  [CONTACT_LINKS.GITHUB.label]: CONTACT_LINKS.GITHUB,
+  [CONTACT_LINKS.EMAIL.title]: CONTACT_LINKS.EMAIL,
+  [CONTACT_LINKS.LINKEDIN.title]: CONTACT_LINKS.LINKEDIN,
+  [CONTACT_LINKS.GITHUB.title]: CONTACT_LINKS.GITHUB,
 };
 
 // Getter for contact links

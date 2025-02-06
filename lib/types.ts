@@ -59,5 +59,5 @@ export interface Section extends BaseSectionData {
 export interface ContactLink {
   href: string;
   icon: string;
-  label: string;
+  title: string;
 }
