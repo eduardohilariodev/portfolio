@@ -65,20 +65,6 @@ import {
   TbTopologyStar3,
 } from "react-icons/tb";
 import type { StackPillProps } from "../lib/types";
-
-interface TechConfig {
-  icon: IconType;
-  color: string;
-  background: string;
-  border: string;
-  label: string;
-}
-
-export interface StackGroupProps {
-  tech: Tech;
-  children: React.ReactNode;
-}
-
 export type Tech =
   | "adobe"
   | "aftereffects"
@@ -154,6 +140,19 @@ export type Tech =
   | "vuejs"
   | "webpack"
   | "windows";
+
+interface TechConfig {
+  icon: IconType;
+  color: string;
+  background: string;
+  border: string;
+  label: string;
+}
+
+export interface StackGroupProps {
+  tech: Tech;
+  children: React.ReactNode;
+}
 
 type TechStack = Record<Tech, TechConfig>;
 
@@ -292,9 +291,9 @@ const techStack: TechStack = {
     label: "English",
   },
   expressjs: {
-    background: "bg-[#3a9cfc]/10",
-    border: "border-[#3a9cfc]/30",
-    color: "text-[#3a9cfc]",
+    background: "bg-[#3E84C9]/10 dark:bg-[#3a9cfc]/10",
+    border: "border-[#3E84C9]/30 dark:border-[#3a9cfc]/30",
+    color: "text-[#3E84C9] dark:text-[#3a9cfc]",
     icon: SiExpress,
     label: "Express.js",
   },
@@ -341,9 +340,9 @@ const techStack: TechStack = {
     label: "Git",
   },
   githubactions: {
-    background: "bg-[#010409]/60",
-    border: "border-[#f1f6fc]/20",
-    color: "text-[#f1f6fc]",
+    background: "bg-[#000000]/0 dark:bg-[#ffffff]/0",
+    border: "border-[#000000]/30 dark:border-[#ffffff]/30",
+    color: "text-[#000000]/75 dark:text-[#ffffff]/75",
     icon: SiGithubactions,
     label: "GitHub Actions",
   },
@@ -376,9 +375,9 @@ const techStack: TechStack = {
     label: "Illustrator",
   },
   javascript: {
-    background: "bg-[#f1db3a]/10",
-    border: "border-[#f1db3a]/30",
-    color: "text-[#f1db3a]",
+    background: "bg-[#CF9F38]/10 dark:bg-[#f1db3a]/10",
+    border: "border-[#CF9F38]/30 dark:border-[#f1db3a]/30",
+    color: "text-[#CF9F38] dark:text-[#f1db3a]",
     icon: SiJavascript,
     label: "JavaScript",
   },
@@ -474,9 +473,9 @@ const techStack: TechStack = {
     label: "MySQL",
   },
   nextjs: {
-    background: "bg-[#ffffff]/0",
-    border: "border-[#ffffff]/30",
-    color: "text-[#ffffff]/75",
+    background: "bg-[#000000]/0 dark:bg-[#ffffff]/0",
+    border: "border-[#000000]/30 dark:border-[#ffffff]/30",
+    color: "text-[#000000]/75 dark:text-[#ffffff]/75",
     icon: SiNextdotjs,
     label: "Next.js",
   },
@@ -635,9 +634,9 @@ const techStack: TechStack = {
     label: "TypeScript",
   },
   vercel: {
-    background: "bg-[#000]/60",
-    border: "border-[#fff]/20",
-    color: "text-[#FFF]/90",
+    background: "bg-[#000000]/0 dark:bg-[#ffffff]/0",
+    border: "border-[#000000]/30 dark:border-[#ffffff]/30",
+    color: "text-[#000000]/75 dark:text-[#ffffff]/75",
     icon: SiVercel,
     label: "Vercel",
   },

@@ -115,10 +115,10 @@ const stack: StackItem[] = [
   },
 ];
 export default function Skills() {
-  const { x, y } = useMousePosition({ id: "skills" });
+  const { x, y, isActive } = useMousePosition({ id: "skills" });
   const [isHovered, setIsHovered] = useState(false);
 
-  const maskSize = isHovered ? 500 : 100;
+  const maskSize = isActive ? (isHovered ? 500 : 100) : 0;
 
   return (
     <>
