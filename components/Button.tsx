@@ -3,30 +3,10 @@ import { useRouter } from "next/navigation";
 
 interface ButtonProps {
   icon?: string | React.ReactNode;
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   href?: string;
   onClick?: () => void;
-}
-
-function ButtonChild({
-  children,
-  icon,
-}: {
-  children: React.ReactNode;
-  icon?: string | React.ReactNode;
-}) {
-  return (
-    <div className="grid place-items-center gap-3 font-serif whitespace-nowrap text-neutral-900 dark:text-neutral-200">
-      {icon &&
-        (typeof icon === "string" ? (
-          <i className={cn(icon, "text-xl")} />
-        ) : (
-          icon
-        ))}
-      {children}
-    </div>
-  );
 }
 
 export default function Button({
@@ -49,24 +29,22 @@ export default function Button({
 
   return (
     <div
-      className={
-        cn(
-          "group relative min-h-12 min-w-12 *:min-h-12 *:w-fit *:min-w-12 *:cursor-pointer *:border-2 *:border-transparent *:px-7 *:py-3 *:text-xl",
-          className,
-        ) + children && !icon
-          ? "*:px-7 *:py-3"
-          : "p-2"
-      }
+      className={cn(
+        "group relative min-h-12 w-fit min-w-12 border-2 border-transparent text-xl",
+        className,
+        children ? "px-4 py-3" : "p-2",
+      )}
     >
       <button
         onClick={handleClick}
         tabIndex={0}
         className={cn(
-          "group-hover:opacity-0",
+          "min-h-12 min-w-12",
+          "cursor-pointer group-hover:opacity-0",
           "group-active:opacity-100",
-
           "group-focus:border-netural-900 border border-transparent dark:group-focus:border-neutral-200",
           "transition-opacity duration-[2s]",
+          children ? "px-4 py-3" : "p-2",
         )}
         type="button"
       >
@@ -78,14 +56,17 @@ export default function Button({
         aria-hidden
         tabIndex={-1}
         className={cn(
+          children ? "px-4 py-3" : "p-2",
           // TODO: fix this absolute
-          "absolute",
+          "absolute inset-0 cursor-pointer",
+
+          "min-h-12 min-w-12",
 
           "group-hover:opacity-100",
           "opacity-0 transition-opacity duration-[2s]",
           "group-active:opacity-0 group-active:transition-opacity group-active:duration-[2s]",
 
-          "group-hover:border-t-white group-hover:border-l-white group-hover:bg-neutral-100 dark:border-neutral-700 group-hover:dark:bg-neutral-900",
+          "border-2 group-hover:border-t-white group-hover:border-l-white group-hover:bg-neutral-100 dark:border-neutral-700 group-hover:dark:bg-neutral-900",
           "dark:border-neutral-200",
 
           "before:bg-neutral-900 dark:before:bg-neutral-200",
@@ -94,8 +75,8 @@ export default function Button({
           "before:absolute before:skew-x-[45deg]",
           "after:absolute after:skew-y-[45deg]",
 
-          "before:-right-[5px] before:-bottom-[9px] before:h-[8px] before:w-[100.5%]",
-          "after:top-[4px] after:-right-[9px] after:h-[104%] after:w-[8px]",
+          "before:-right-[5px] before:-bottom-[9px] before:h-[8px] before:w-[105%]",
+          "after:top-[4px] after:-right-[9px] after:h-[103%] after:w-[8px]",
 
           "group-active:translate-0",
           "group-active:before:-right-[5px] group-active:before:-bottom-[0px] group-active:before:h-[0px] group-active:before:w-[100.5%]",
@@ -108,6 +89,26 @@ export default function Button({
       >
         <ButtonChild icon={icon}>{children}</ButtonChild>
       </button>
+    </div>
+  );
+}
+
+function ButtonChild({
+  children,
+  icon,
+}: {
+  children: React.ReactNode;
+  icon?: string | React.ReactNode;
+}) {
+  return (
+    <div className="grid place-items-center gap-3 font-serif whitespace-nowrap text-neutral-900 dark:text-neutral-200">
+      {icon &&
+        (typeof icon === "string" ? (
+          <i className={cn(icon, "text-xl")} />
+        ) : (
+          icon
+        ))}
+      {children}
     </div>
   );
 }
