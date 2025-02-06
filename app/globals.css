@@ -7,7 +7,7 @@
 
 @theme {
   --font-sans: var(--font-archivo);
-  --font-serif: var(--font-cormorant);
+  --font-serif: var(--font-garamond);
 
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));

@@ -3,13 +3,30 @@ import Header from "@/components/Header";
 import { ThemeProvider } from "@/lib/providers/ThemeProvider";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Archivo, Cormorant } from "next/font/google";
+import { Archivo } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
-const cormorant = Cormorant({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
+const garamond = localFont({
+  variable: "--font-garamond",
+  src: [
+    {
+      path: "../public/fonts/Garamond/ITC Garamond Std Light Narrow.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Garamond/ITC Garamond Std Book Narrow.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Garamond/ITC Garamond Std Book.otf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +43,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${archivo.variable} ${cormorant.variable}`}
+      className={`${archivo.variable} ${garamond.variable}`}
     >
       <link rel="icon" href="/favicon.ico" sizes="32x32" />
       <link rel="icon" href="/icon.svg" type="image/svg+xml" />
