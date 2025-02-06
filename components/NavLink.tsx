@@ -4,9 +4,10 @@ import Link from "next/link";
 interface NavLinkProps {
   children: React.ReactNode;
   onClick?: () => void;
+  href: string;
 }
 
-export default function NavLink({ children, onClick }: NavLinkProps) {
+export default function NavLink({ children, onClick, href }: NavLinkProps) {
   type lineIndex = 0 | 1 | 2 | 3 | 4;
 
   function lineClass(number: lineIndex) {
@@ -23,7 +24,7 @@ export default function NavLink({ children, onClick }: NavLinkProps) {
 
   return (
     <Link
-      href="#"
+      href={href}
       onClick={onClick}
       className="group relative flex items-center font-serif text-lg font-medium"
     >
