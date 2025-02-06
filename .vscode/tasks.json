@@ -4,6 +4,15 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Run Dev & TypeScript",
+      "dependsOrder": "parallel",
+      "dependsOn": ["Launch Bun Dev", "Run TypeScript"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
       "label": "Launch Bun Dev",
       "type": "shell",
       "command": "bun",
@@ -30,9 +39,25 @@
       "presentation": {
         "reveal": "always",
         "focus": true,
-        "panel": "dedicated"
+        "panel": "shared",
+        "group": "Next.js"
       }
     },
+    {
+      "label": "Run TypeScript",
+      "type": "shell",
+      "command": "bunx",
+      "args": ["tsc", "--watch"],
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared",
+        "group": "Next.js"
+      }
+    },
+
     {
       "label": "Terminate All Tasks",
       "command": "echo ${input:terminate}",
