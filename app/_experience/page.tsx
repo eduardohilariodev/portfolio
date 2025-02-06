@@ -1,9 +1,9 @@
 "use client";
 
-import { type CompanyInfo, type ExperienceItem } from "@/app/types";
 import BigButton from "@/components/BigButton";
 import { StackPill } from "@/components/StackPill";
 import { Child, Parent } from "@/components/Timeline";
+import { type CompanyInfo, type ExperienceItem } from "@/lib/types";
 
 const companies: Record<string, CompanyInfo> = {
   Ckreativ: {

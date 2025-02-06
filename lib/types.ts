@@ -1,3 +1,6 @@
+import { IconType } from "react-icons";
+import { SectionId } from "./constants";
+
 export interface CompanyInfo {
   name: string;
   logo: string;
@@ -40,4 +43,21 @@ export interface Education {
   endDate: Date;
   description?: string;
   stack?: StackPillProps[];
+}
+
+export interface BaseSectionData {
+  id: string;
+  title: string;
+  href: string;
+}
+
+export interface Section extends BaseSectionData {
+  id: SectionId;
+  icon: IconType;
+}
+
+export interface ContactLink {
+  href: string;
+  icon: string;
+  label: string;
 }

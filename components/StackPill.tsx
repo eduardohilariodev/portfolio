@@ -63,7 +63,7 @@ import {
   TbTestPipe,
   TbTopologyStar3,
 } from "react-icons/tb";
-import type { StackPillProps } from "../app/types";
+import type { StackPillProps } from "../lib/types";
 
 interface TechConfig {
   icon: IconType;

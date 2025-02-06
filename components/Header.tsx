@@ -1,5 +1,6 @@
 "use client";
 
+import { getSectionsArray } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
@@ -9,19 +10,12 @@ import Logo from "./Logo";
 import NavLink from "./NavLink";
 import ThemeButton from "./ThemeButton";
 
-const navItems = [
-  { id: "contact", label: "Let's talk" },
-  { id: "about", label: "About me" },
-  { id: "knowledge", label: "Knowledge" },
-  { id: "carreer", label: "Carreer" },
-  { id: "education", label: "Education" },
-];
-
 export default function Header() {
   const [{ y }] = useWindowScroll();
   const [activeSection, setActiveSection] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrollThreshold = 160;
+  const navItems = getSectionsArray();
 
   useEffect(() => {
     if (y && y < 400) {
@@ -51,7 +45,7 @@ export default function Header() {
     });
 
     return () => observer.disconnect();
-  }, [y]);
+  }, [navItems, y]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -106,7 +100,7 @@ export default function Header() {
           <nav className="hidden gap-4 md:flex">
             {navItems.map((item) => (
               <NavButton key={item.id} id={item.id}>
-                {item.label}
+                {item.title}
               </NavButton>
             ))}
           </nav>
@@ -148,7 +142,7 @@ export default function Header() {
       >
         {[...navItems].map((item) => (
           <NavButton key={item.id} id={item.id}>
-            {item.label}
+            {item.title}
           </NavButton>
         ))}
       </nav>
