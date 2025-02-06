@@ -1,10 +1,10 @@
-import About from "./components/About";
-import Contact, { ContactLink } from "./components/Contact";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
-import Hero from "./components/Hero";
-import Section from "./components/Section";
-import Skills from "./components/Skills";
+import Contact, { ContactLink } from "@/components/Contact";
+import Hero from "@/components/Hero";
+import Section from "@/components/Section";
+import About from "./about/page";
+import Education from "./education/page";
+import Experience from "./experience/page";
+import Skills from "./skills/page";
 
 const contactLinks: ContactLink[] = [
   {
