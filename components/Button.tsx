@@ -78,7 +78,8 @@ export default function Button({
         aria-hidden
         tabIndex={-1}
         className={cn(
-          "absolute inset-0",
+          // TODO: fix this absolute
+          "absolute",
 
           "group-hover:opacity-100",
           "opacity-0 transition-opacity duration-[2s]",
