@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import { BR, ES, GB } from "country-flag-icons/react/3x2";
 
+import { HTMLAttributes } from "react";
 import { IconType } from "react-icons";
 import {
   SiAdobe,
@@ -677,10 +678,19 @@ const techStack: TechStack = {
   },
 };
 
-export function StackPill({ tech }: { tech: StackPillProps }) {
-  const config = techStack[tech.label as keyof typeof techStack];
-  const Icon = config.icon;
+export function StackPill({
+  tech,
+  ...props
+}: { tech: StackPillProps } & HTMLAttributes<HTMLDivElement>) {
+  const {
+    background,
+    border,
+    color,
+    icon: Icon,
+    label,
+  } = techStack[tech.label as keyof typeof techStack];
   const borderRadius = "rounded-xs";
+  const { hasColor } = tech;
 
   return (
     <div
@@ -688,18 +698,25 @@ export function StackPill({ tech }: { tech: StackPillProps }) {
         `inset-0 flex cursor-default items-center bg-neutral-200 before:absolute dark:bg-neutral-900`,
         borderRadius,
       )}
+      {...props}
     >
       <div
         className={cn(
           `flex w-fit items-center border-1`,
-          config.background,
-          config.border,
           borderRadius,
+          hasColor
+            ? `${background} ${border}`
+            : "border-neutral-900 bg-neutral-200 dark:border-neutral-200/30 dark:bg-neutral-900",
         )}
       >
-        <div className={cn("flex items-center gap-2 px-2 py-1", config.color)}>
+        <div
+          className={cn(
+            "flex items-center gap-2 px-2 py-1",
+            hasColor ? color : "text-neutral-900 dark:text-neutral-200",
+          )}
+        >
           <Icon className="size-3.5" />
-          <span className="text-xs tracking-wide">{config.label}</span>
+          <span className="text-xs tracking-wide">{label}</span>
         </div>
 
         {tech.children && (

@@ -1,7 +1,11 @@
 "use client";
 
 import { StackPill } from "@/components/StackPill";
+import useMousePosition from "@/lib/hooks/useMousePosition";
 import { StackPillProps } from "../../lib/types";
+
+import { motion } from "framer-motion";
+import { useState } from "react";
 
 interface StackItem {
   heading: string;
@@ -110,8 +114,12 @@ const stack: StackItem[] = [
     ],
   },
 ];
-
 export default function Skills() {
+  const { x, y } = useMousePosition({ id: "skills" });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const maskSize = isHovered ? 500 : 100;
+
   return (
     <>
       <div className="mb-12 space-y-3 font-light dark:text-neutral-200">
@@ -126,16 +134,58 @@ export default function Skills() {
           The following technologies are the ones I&apos;m most familiar with:
         </p>
       </div>
-      {stack.map(({ heading, items }) => (
-        <div className="mb-8" key={heading}>
-          <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
-          <div className="flex flex-wrap gap-4">
-            {items.map((item) => (
-              <StackPill key={item.label} tech={item} />
-            ))}
-          </div>
-        </div>
-      ))}
+      <div className="relative h-full w-full">
+        <motion.div
+          id="skills"
+          className="absolute size-full"
+          animate={{
+            WebkitMaskPosition: `${x - maskSize / 2}px ${y - maskSize / 2}px`,
+            WebkitMaskSize: `${maskSize}px`,
+          }}
+          transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+          style={{
+            WebkitMaskImage: "url(/mask.svg)",
+            maskImage: "url(/mask.svg)",
+            maskRepeat: "no-repeat",
+          }}
+        >
+          <KnowledgeList hasColor setIsHovered={setIsHovered} />
+        </motion.div>
+        <KnowledgeList setIsHovered={setIsHovered} />
+      </div>
     </>
   );
+}
+function KnowledgeList({
+  hasColor = false,
+  setIsHovered,
+}: {
+  hasColor?: boolean;
+  setIsHovered: (isHovered: React.SetStateAction<boolean>) => void;
+}) {
+  return stack.map(({ heading, items }) => (
+    <div className="mb-8" key={heading}>
+      <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
+      <div className="flex flex-wrap gap-4">
+        {items.map((item) => {
+          item.hasColor = hasColor;
+          const { children } = item;
+          if (children) {
+            item.children = children.map((child) => ({
+              ...child,
+              hasColor,
+            }));
+          }
+          return (
+            <StackPill
+              key={item.label}
+              tech={item}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
+          );
+        })}
+      </div>
+    </div>
+  ));
 }

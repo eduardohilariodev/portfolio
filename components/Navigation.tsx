@@ -1,6 +1,6 @@
 "use client";
 
-import { useSectionScrollSpy } from "../hooks/useSectionScrollSpy";
+import { useSectionScrollSpy } from "../lib/hooks/useSectionScrollSpy";
 
 const navItems = [
   { id: "about", label: "About" },
