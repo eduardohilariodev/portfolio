@@ -66,7 +66,7 @@ export default function Button({
           "opacity-0 transition-opacity duration-[2s]",
           "group-active:opacity-0 group-active:transition-opacity group-active:duration-[2s]",
 
-          "border-2 group-hover:border-t-neutral-200 group-hover:border-l-neutral-200 group-hover:bg-neutral-100 dark:border-neutral-700 group-hover:dark:bg-neutral-900",
+          "border-2 group-hover:border-t-neutral-900 group-hover:border-l-neutral-900 group-hover:bg-neutral-100 dark:border-neutral-700 group-hover:dark:border-t-neutral-200 group-hover:dark:border-l-neutral-200 group-hover:dark:bg-neutral-900",
           "dark:border-neutral-200",
 
           "before:bg-neutral-900 dark:before:bg-neutral-200",
