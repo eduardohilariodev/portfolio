@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
+import { AnchorHTMLAttributes } from "react";
 
-interface NavLinkProps extends LinkProps {
+interface NavLinkProps
+  extends LinkProps,
+    AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   onClick?: () => void;
   href: string;
   className?: string;
-  active: boolean;
+  active?: boolean;
 }
 
 export default function NavLink({
