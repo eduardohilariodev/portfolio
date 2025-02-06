@@ -84,7 +84,7 @@ export default function Header() {
         "fixed top-0 right-0 left-0 z-50 w-full p-8 transition-all duration-100 md:py-10",
         y &&
           y > scrollThreshold &&
-          "border-b-2 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-900/80",
+          "border-b-2 border-b-neutral-900 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-900/80",
       )}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between">

@@ -685,7 +685,7 @@ export function StackPill({ tech }: { tech: StackPillProps }) {
   return (
     <div
       className={cn(
-        `inset-0 flex cursor-default items-center bg-white before:absolute dark:bg-neutral-900`,
+        `inset-0 flex cursor-default items-center bg-neutral-200 before:absolute dark:bg-neutral-900`,
         borderRadius,
       )}
     >

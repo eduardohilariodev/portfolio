@@ -6,13 +6,13 @@ export default function About() {
   return (
     <>
       <div className="mr-42 ml-28 flex -translate-y-8 items-center">
-        <hr className="grow border-2 border-white" />
-        <i className="size-0 border-t-8 border-b-8 border-l-[12px] border-t-transparent border-b-transparent border-l-white" />
+        <hr className="grow border-2 dark:border-neutral-200" />
+        <i className="size-0 border-t-8 border-b-8 border-l-[12px] border-t-transparent border-b-transparent border-l-neutral-200" />
       </div>
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
         <div className="space-y-6 md:col-span-2">
           <div className="space-y-4 text-lg">
-            <section className="space-y-4 text-lg font-light tracking-wider dark:text-white">
+            <section className="space-y-4 text-lg font-light tracking-wider dark:text-neutral-200">
               <p>
                 Hey, I&apos;m <strong className="font-bold">Eduardo</strong>!
               </p>

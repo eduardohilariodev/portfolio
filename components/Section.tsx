@@ -24,7 +24,7 @@ export default function Section({
 
   return (
     <section ref={ref} id={id} className={cn("scroll-mt-56", className)}>
-      <h2 className="mb-8 font-serif text-5xl text-black dark:text-white">
+      <h2 className="mb-8 font-serif text-5xl text-black dark:text-neutral-200">
         {title}
       </h2>
       {children}

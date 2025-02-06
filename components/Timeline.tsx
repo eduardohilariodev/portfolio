@@ -19,7 +19,7 @@ export function Parent({ img, name, start, end }: ParentProps) {
   return (
     <div
       aria-label="Parent container"
-      className="flex gap-4 text-lg font-light dark:text-white"
+      className="flex gap-4 text-lg font-light dark:text-neutral-200"
     >
       <Image
         src={img}
@@ -30,7 +30,7 @@ export function Parent({ img, name, start, end }: ParentProps) {
         aria-label="Parent logo"
       />
       <div className="flex grow flex-col justify-end gap-y-2">
-        <hr className="border-1 border-white" />
+        <hr className="border-1 border-neutral-200" />
         <div
           aria-label="Parent details"
           className="flex items-center justify-between text-2xl"
@@ -56,7 +56,7 @@ export function Child({ title, description, isLast = false }: ChildProps) {
       <TimelineNode hasNode>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-3xl text-white"
+          className="self-center font-serif text-3xl text-neutral-200"
         >
           {title}
         </h4>
@@ -92,12 +92,12 @@ export function TimelineNode({ hasNode = false, children }: TimelineNodeProps) {
         {hasNode && (
           <div
             aria-label="Connector dot"
-            className="size-4 rounded-full bg-white"
+            className="size-4 rounded-full bg-neutral-200"
           />
         )}
         <div
           aria-label="Vertical timeline line"
-          className="h-full w-0.5 bg-white"
+          className="h-full w-0.5 bg-neutral-200"
         />
       </div>
 

@@ -49,7 +49,7 @@ export default function RootLayout({
       <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <body
-        className={`min-h-screen bg-neutral-200 font-sans text-neutral-900 transition-colors dark:bg-neutral-900 dark:text-white`}
+        className={`min-h-screen bg-neutral-200 font-sans text-neutral-900 transition-colors dark:bg-neutral-900 dark:text-neutral-200`}
       >
         <ThemeProvider>
           <Header />
@@ -57,7 +57,7 @@ export default function RootLayout({
             {children}
             <div
               className={cn(
-                "pointer-events-none fixed inset-0 z-5 bg-neutral-900/95 backdrop-blur-xs",
+                "pointer-events-none fixed inset-0 z-5 bg-neutral-200/95 backdrop-blur-xs dark:bg-neutral-900/95",
               )}
               style={{
                 transform: "scale(200%)",

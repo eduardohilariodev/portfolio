@@ -14,7 +14,7 @@ export default function Hero() {
   useEffect(() => {
     if (strokeRef.current) {
       strokeRef.current.style.webkitTextStroke =
-        theme === "dark" ? "0.5px white" : "1px black";
+        theme === "dark" ? "0.5px neutral-200" : "1px black";
     }
   }, [theme]);
 

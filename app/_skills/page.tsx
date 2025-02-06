@@ -114,7 +114,7 @@ const stack: StackItem[] = [
 export default function Skills() {
   return (
     <>
-      <div className="mb-12 space-y-3 font-light dark:text-white">
+      <div className="mb-12 space-y-3 font-light dark:text-neutral-200">
         <p className="">
           Usually the tools I use for the job, depend on the job.
         </p>

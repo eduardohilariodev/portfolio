@@ -12,7 +12,7 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  --color-background: white;
+  --color-background: neutral-200;
   --color-foreground: hsl(222.2 84% 4.9%);
 
   --color-primary: hsl(222.2 47.4% 11.2%);
@@ -30,10 +30,10 @@
   --color-accent: hsl(210 40% 96.1%);
   --color-accent-foreground: hsl(222.2 47.4% 11.2%);
 
-  --color-popover: white;
+  --color-popover: neutral-200;
   --color-popover-foreground: hsl(222.2 84% 4.9%);
 
-  --color-card: white;
+  --color-card: neutral-200;
   --color-card-foreground: hsl(222.2 84% 4.9%);
 
   --radius-lg: 0.5rem;
@@ -84,7 +84,7 @@
 :root {
   ::selection {
     background-color: #303030;
-    color: white;
+    color: neutral-200;
   }
 
   scroll-behavior: smooth;
