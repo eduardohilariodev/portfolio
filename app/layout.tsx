@@ -54,16 +54,17 @@ export default function RootLayout({
         <ThemeProvider>
           <Header />
           <main className="mx-auto mt-16 max-w-5xl px-8 py-8 md:max-w-3xl">
+            {children}
             <div
               className={cn(
-                "fixed inset-0 z-5 scale-x-200 scale-y-120 bg-neutral-900/95 backdrop-blur-xs",
+                "pointer-events-none fixed inset-0 z-5 bg-neutral-900/95 backdrop-blur-xs",
               )}
               style={{
+                transform: "scale(200%)",
                 WebkitMaskImage:
                   "radial-gradient(circle, transparent 30%, black 50%)",
               }}
             />
-            {children}
           </main>
           <Footer />
         </ThemeProvider>
