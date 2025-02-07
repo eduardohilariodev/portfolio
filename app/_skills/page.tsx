@@ -122,10 +122,8 @@ export default function Skills() {
 
   return (
     <>
-      <div className="mb-12 space-y-3 font-light dark:text-neutral-200">
-        <p className="">
-          Usually the tools I use for the job, depend on the job.
-        </p>
+      <div className="text-md mb-12 space-y-3 font-light text-neutral-900 dark:text-neutral-200">
+        <p>Usually the tools I use for the job, depend on the job.</p>
         <p>
           There&apos;s no one-size fits all, and as such I&apos;m always trying
           out new technologies, and constantly learning.

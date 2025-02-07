@@ -11,8 +11,8 @@ export default function About() {
       </div>
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
         <div className="space-y-6 md:col-span-2">
-          <div className="space-y-4 text-lg">
-            <section className="space-y-4 text-lg font-light tracking-wider dark:text-neutral-200">
+          <div className="space-y-4">
+            <section className="text-md space-y-4 font-light dark:text-neutral-200">
               <p>
                 Hey, I&apos;m <strong className="font-bold">Eduardo</strong>!
               </p>
