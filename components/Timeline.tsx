@@ -9,18 +9,9 @@ interface ParentProps {
   end: string;
 }
 
-interface ChildProps {
-  title: string;
-  description?: string;
-  isLast?: boolean;
-}
-
 export function Parent({ img, name, start, end }: ParentProps) {
   return (
-    <div
-      aria-label="Parent container"
-      className="flex gap-4 text-lg font-light dark:text-neutral-200"
-    >
+    <div className="grid grid-cols-[80px_1fr] gap-x-4">
       <Image
         src={img}
         alt={name}
@@ -33,46 +24,65 @@ export function Parent({ img, name, start, end }: ParentProps) {
         <hr className="border-1 border-neutral-200" />
         <div
           aria-label="Parent details"
-          className="flex items-center justify-between text-2xl"
+          className="flex items-center justify-between text-3xl"
         >
           <h3 aria-label="Title">{name}</h3>
-          <span aria-label="Period">
+          <span aria-label="Period" className="font-serif">
             {start}&ndash;{end}
           </span>
         </div>
       </div>
+      <TimelineNode height={48} />
     </div>
   );
 }
 
-export function Child({ title, description, isLast = false }: ChildProps) {
+interface ChildProps {
+  title?: string;
+  description?: string;
+  isLast?: boolean;
+  children?: React.ReactNode;
+  hasNode?: boolean;
+}
+
+export function Child({
+  title,
+  description,
+  isLast = false,
+  children,
+  hasNode = false,
+}: ChildProps) {
   return (
     <div
       aria-label="Child timeline container"
-      className="grid grid-cols-[80px_1fr] gap-x-4"
+      className="relative grid grid-cols-[80px_1fr] gap-x-4"
     >
       <TimelineNode />
 
-      <TimelineNode hasNode>
+      <TimelineNode hasNode={hasNode}>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-3xl text-neutral-200"
+          className="self-center font-serif text-2xl text-neutral-200"
         >
           {title}
         </h4>
       </TimelineNode>
 
       <TimelineNode>
-        <div
-          aria-label="Project content"
-          className="mb-6 space-y-4 dark:text-neutral-300"
-        >
-          {description && <p aria-label="Project description">{description}</p>}
-        </div>
+        {children ?? (
+          <div
+            aria-label="Project content"
+            className="text-md mb-6 space-y-4 dark:text-neutral-400"
+          >
+            {description && (
+              <p aria-label="Project description">{description}</p>
+            )}
+          </div>
+        )}
       </TimelineNode>
 
       {isLast && (
-        <TimelineNode>
+        <TimelineNode height={96}>
           <div aria-hidden="true" />
         </TimelineNode>
       )}
@@ -83,16 +93,25 @@ export function Child({ title, description, isLast = false }: ChildProps) {
 interface TimelineNodeProps {
   hasNode?: boolean;
   children?: React.ReactNode;
+  height?: number;
 }
 
-export function TimelineNode({ hasNode = false, children }: TimelineNodeProps) {
+export function TimelineNode({
+  hasNode = false,
+  children,
+  height,
+}: TimelineNodeProps) {
   return (
     <div className="contents">
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center" style={{ height }}>
+        <div
+          aria-label="Vertical timeline line"
+          className="h-full w-0.5 bg-neutral-200"
+        />
         {hasNode && (
           <div
             aria-label="Connector dot"
-            className="size-4 rounded-full bg-neutral-200"
+            className="aspect-square size-4 rounded-full bg-neutral-200"
           />
         )}
         <div

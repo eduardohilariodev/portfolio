@@ -26,7 +26,7 @@ export default function BigButton({ children, icon, href }: ButtonProps) {
         "dark:bg-neutral-900",
         "before:bg-neutral-900 dark:before:bg-neutral-200",
         "after:bg-neutral-900 dark:after:bg-neutral-200",
-        "dark:shadow-neutral-200 hover:dark:shadow-2xl active:dark:shadow-none",
+        "hover:dark:shadow-[12px_10px_56px_#FFFFFF64] active:dark:shadow-none",
         "-translate-[15px] active:translate-0",
         "transition-all duration-300 ease-in",
         "before:transition-all before:duration-300 before:ease-in",

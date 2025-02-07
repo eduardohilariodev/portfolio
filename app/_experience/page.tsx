@@ -135,30 +135,34 @@ export default function Experience() {
               key={title}
               title={title}
               description={description}
-              isLast={index === array.length - 1}
+              hasNode
             />
           ))}
 
           {experience.stack && experience.stack.length > 0 && (
-            <div
-              aria-label="Technologies section"
-              className="mt-4 flex flex-col gap-3"
-            >
-              <h5
-                aria-label="Technologies heading"
-                className="font-serif text-2xl"
-              >
-                Core Technologies
-              </h5>
+            <Child isLast>
               <div
-                aria-label="Technology pills container"
-                className="flex flex-wrap gap-4"
+                aria-label="Technologies section"
+                className="mt-4 flex flex-col gap-3 rounded-lg border border-dashed border-neutral-900 p-4 pt-6 dark:border-neutral-200"
               >
-                {experience.stack.map((tech) => (
-                  <StackPill key={tech.label} tech={tech} />
-                ))}
+                <h5
+                  aria-label="Technologies heading"
+                  className="absolute inset-0 top-1 left-28 size-min font-serif text-xl dark:text-neutral-400"
+                >
+                  <div className="size-full bg-neutral-900 px-2 whitespace-nowrap">
+                    Core Technologies
+                  </div>
+                </h5>
+                <div
+                  aria-label="Technology pills container"
+                  className="flex flex-wrap gap-4"
+                >
+                  {experience.stack.map((tech) => (
+                    <StackPill key={tech.label} tech={tech} />
+                  ))}
+                </div>
               </div>
-            </div>
+            </Child>
           )}
         </div>
       ))}
