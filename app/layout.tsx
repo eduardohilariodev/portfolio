@@ -53,7 +53,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Header />
-          <main className="mx-auto mt-16 max-w-5xl px-8 py-8 md:max-w-3xl">
+          <main className="mx-auto mt-16 max-w-5xl px-6 py-8 md:max-w-3xl md:px-8">
             {children}
             <div
               className={cn(

@@ -25,12 +25,8 @@ const stack: StackItem[] = [
   {
     heading: "Frontend",
     items: [
-      { label: "html" },
       { label: "reactjs", children: [{ label: "nextjs" }] },
       { label: "vuejs", children: [{ label: "nuxt" }] },
-      { label: "jquery" },
-      { label: "vite" },
-      { label: "webpack" },
       {
         label: "css",
         children: [
@@ -39,6 +35,10 @@ const stack: StackItem[] = [
           { label: "sass" },
         ],
       },
+      { label: "html" },
+      { label: "jquery" },
+      { label: "vite" },
+      { label: "webpack" },
     ],
   },
   {
@@ -164,7 +164,7 @@ function KnowledgeList({
   return stack.map(({ heading, items }) => (
     <div className="mb-8" key={heading}>
       <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
-      <div className="flex flex-wrap gap-4">
+      <div className="@container flex flex-wrap gap-4">
         {items.map((item) => {
           item.hasColor = hasColor;
           const { children } = item;

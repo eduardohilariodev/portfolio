@@ -688,20 +688,22 @@ export function StackPill({
     icon: Icon,
     label,
   } = techStack[tech.label as keyof typeof techStack];
+
   const borderRadius = "rounded-xs";
   const { hasColor } = tech;
 
   return (
     <div
       className={cn(
-        `inset-0 flex cursor-default items-center bg-neutral-200 before:absolute dark:bg-neutral-900`,
+        `flex cursor-default items-center bg-neutral-200 before:absolute before:inset-0 dark:bg-neutral-900`,
         borderRadius,
       )}
       {...props}
     >
       <div
         className={cn(
-          `flex w-fit items-center border-1`,
+          `flex items-center border-1 @max-sm:max-w-96 @max-sm:flex-col`,
+          tech.children && "items-start @max-sm:p-1",
           borderRadius,
           hasColor
             ? `${background} ${border}`
