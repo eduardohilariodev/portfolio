@@ -26,6 +26,11 @@ const garamond = localFont({
       weight: "600",
       style: "normal",
     },
+    {
+      path: "../public/fonts/Garamond/ITC Garamond Std Bold Narrow.otf",
+      weight: "700",
+      style: "bold",
+    },
   ],
 });
 
