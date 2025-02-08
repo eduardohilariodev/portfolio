@@ -42,7 +42,7 @@ export default function NavLink({
         active
           ? "text-neutral-900 dark:text-neutral-200"
           : "text-neutral-600 dark:text-neutral-400",
-        "group relative flex w-fit items-center font-serif text-xl font-light tracking-tight hover:text-neutral-400 dark:hover:text-neutral-300",
+        "group relative flex h-10 w-fit items-center font-serif text-lg font-light tracking-tight hover:text-neutral-400 md:text-xl dark:hover:text-neutral-300",
         className,
       )}
       {...props}
