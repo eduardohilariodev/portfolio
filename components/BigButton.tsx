@@ -1,18 +1,28 @@
-// https://codepen.io/rauldronca/pen/PzMgzp?editors=0100
-
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: string | React.ReactNode;
   children: React.ReactNode;
   href?: string;
+  download?: string;
 }
 
-export default function BigButton({ children, icon, href }: ButtonProps) {
+export default function BigButton({
+  children,
+  icon,
+  href,
+  download,
+  ...props
+}: ButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
+    if (download) {
+      window.open(`/${download}`, "_blank");
+      return;
+    }
     if (href) {
       router.push(href);
     }
@@ -40,6 +50,7 @@ export default function BigButton({ children, icon, href }: ButtonProps) {
       )}
       type="button"
       onClick={handleClick}
+      {...props}
     >
       <div className="inline-flex items-center gap-3">
         {icon &&

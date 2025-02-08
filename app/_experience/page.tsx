@@ -198,7 +198,11 @@ export default function Experience() {
           )}
         </div>
       ))}
-      <BigButton icon="hn hn-save" aria-label="Save resume">
+      <BigButton
+        icon="hn hn-save"
+        aria-label="Save resume"
+        download="./Eduardo_Hilario_Software_Engineer_Resume.pdf"
+      >
         Save Resume
       </BigButton>
     </div>
