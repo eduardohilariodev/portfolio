@@ -34,14 +34,7 @@ export default function Education() {
     <div className="">
       {education.map((edu, index) => (
         <div key={edu.institution}>
-          <Parent
-            img={edu.img}
-            name={edu.institution}
-            start={edu.period.start.toFormat("LLL yyyy")}
-            end={
-              edu.period.end?.toFormat("LLL yyyy") ?? DateTime.now().toString()
-            }
-          />
+          <Parent img={edu.img} name={edu.institution} period={edu.period} />
           <Child
             hasNode
             title={edu.degree}

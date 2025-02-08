@@ -1,4 +1,3 @@
-import { DateTime } from "luxon";
 import { Period } from "../types";
 
 export function getTimePeriod(startDate: Date, endDate: Date = new Date()) {
@@ -23,19 +22,14 @@ export function getTimePeriod(startDate: Date, endDate: Date = new Date()) {
 }
 
 export function getPeriodDurationText(period: Period) {
-  const end = period.end ?? DateTime.now();
-  const diff = end.diff(period.start, ["months", "years"]);
-
-  const years = Math.floor(diff.years);
-  const months = Math.floor(diff.months);
-
-  const parts = [];
-  if (years > 0) {
-    parts.push(`${years} year${years === 1 ? "" : "s"}`);
-  }
-  if (months > 0) {
-    parts.push(`${months} month${months === 1 ? "" : "s"}`);
-  }
-
-  return parts.join(" ");
+  return (
+    period.end
+      ?.diff(period.start, ["months", "years"])
+      .toHuman({
+        listStyle: "short",
+        unitDisplay: "long",
+      })
+      .replace(/0 years ?and? ?/, "")
+      .replace(/and 0 months/, "") ?? ""
+  );
 }

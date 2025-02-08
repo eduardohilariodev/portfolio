@@ -3,36 +3,48 @@
 import BigButton from "@/components/BigButton";
 import { StackPill } from "@/components/StackPill";
 import { Child, Parent } from "@/components/Timeline";
-import { type CompanyInfo, type ExperienceItem } from "@/lib/types";
+import { type ExperienceItem } from "@/lib/types";
 import { DateTime } from "luxon";
-
-const companies: Record<string, CompanyInfo> = {
-  Ckreativ: {
-    name: "Ckreativ",
-    logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGLeuwrogi8bw/company-logo_200_200/company-logo_200_200/0/1710548135771/ckreativ_logo?e=1744848000&v=beta&t=6YZovv4fOMknme-0bOuGi9F9gguN4BNDHob4TNLFZdI",
-    linkedIn: "https://www.linkedin.com/company/ckreativ",
-  },
-
-  "Brick Abode": {
-    name: "Brick Abode",
-    logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFhRHi0tefe1g/company-logo_200_200/company-logo_200_200/0/1630619625088/brickabode_logo?e=1744848000&v=beta&t=efaIABZOSpz4NqCnbjVAL5GhEbNvVVmW0NGnOVvgKFU",
-    linkedIn: "https://www.linkedin.com/company/brickabode",
-  },
-
-  GETMORE: {
-    name: "GETMORE",
-    logo: "https://media.licdn.com/dms/image/v2/C4D0BAQF1TrPLIeswKA/company-logo_200_200/company-logo_200_200/0/1630471547758/getmore_logo?e=1744848000&v=beta&t=sVCwsojd23zNgakotC2LCBnArY70zoNhQLxulL_Nyis",
-    linkedIn: "https://www.linkedin.com/company/getmore/",
-  },
-};
 
 const experiences: ExperienceItem[] = [
   {
-    company: companies.Ckreativ,
+    company: {
+      name: "Ckreativ",
+      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGLeuwrogi8bw/company-logo_200_200/company-logo_200_200/0/1710548135771/ckreativ_logo?e=1744848000&v=beta&t=6YZovv4fOMknme-0bOuGi9F9gguN4BNDHob4TNLFZdI",
+      linkedIn: "https://www.linkedin.com/company/ckreativ",
+    },
     period: {
       start: DateTime.fromObject({ year: 2022, month: 3 }),
       end: DateTime.fromObject({ year: 2024, month: 12 }),
     },
+    positions: [
+      {
+        title: "Software Engineer",
+        description:
+          "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability.",
+        period: {
+          start: DateTime.fromObject({ year: 2023, month: 3 }),
+          end: DateTime.fromObject({ year: 2024, month: 12 }),
+        },
+      },
+      {
+        title: "Junior Software Engineer",
+        description:
+          "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes.",
+        period: {
+          start: DateTime.fromObject({ year: 2022, month: 6 }),
+          end: DateTime.fromObject({ year: 2023, month: 3 }),
+        },
+      },
+      {
+        title: "UX Designer",
+        description: `Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms.`,
+        period: {
+          start: DateTime.fromObject({ year: 2022, month: 3 }),
+          end: DateTime.fromObject({ year: 2022, month: 6 }),
+        },
+      },
+    ],
     stack: [
       { label: "typescript" },
       { label: "vuejs", children: [{ label: "nuxt" }] },
@@ -59,49 +71,17 @@ const experiences: ExperienceItem[] = [
       { label: "mysql" },
       { label: "figma" },
     ],
-    positions: [
-      {
-        title: "Software Engineer",
-        description:
-          "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability.",
-        period: {
-          start: DateTime.fromObject({ year: 2023, month: 6 }),
-          end: DateTime.fromObject({ year: 2024, month: 12 }),
-        },
-      },
-      {
-        title: "Junior Software Engineer",
-        description:
-          "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes.",
-        period: {
-          start: DateTime.fromObject({ year: 2022, month: 9 }),
-          end: DateTime.fromObject({ year: 2023, month: 6 }),
-        },
-      },
-      {
-        title: "UX Designer",
-        description: `Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms.`,
-        period: {
-          start: DateTime.fromObject({ year: 2022, month: 3 }),
-          end: DateTime.fromObject({ year: 2022, month: 9 }),
-        },
-      },
-    ],
   },
   {
-    company: companies["Brick Abode"],
+    company: {
+      name: "Brick Abode",
+      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFhRHi0tefe1g/company-logo_200_200/company-logo_200_200/0/1630619625088/brickabode_logo?e=1744848000&v=beta&t=efaIABZOSpz4NqCnbjVAL5GhEbNvVVmW0NGnOVvgKFU",
+      linkedIn: "https://www.linkedin.com/company/brickabode",
+    },
     period: {
       start: DateTime.fromObject({ year: 2019, month: 11 }),
       end: DateTime.fromObject({ year: 2021, month: 3 }),
     },
-    stack: [
-      {
-        label: "adobe",
-        children: [{ label: "premiere" }, { label: "aftereffects" }],
-      },
-      { label: "pwsh" },
-      { label: "python" },
-    ],
     positions: [
       {
         title: "Technical Content Producer",
@@ -118,24 +98,29 @@ const experiences: ExperienceItem[] = [
           "Created video content and automated production workflows using industry tools. Improved content delivery efficiency.",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 11 }),
-          end: DateTime.fromObject({ year: 2020, month: 3 }),
+          end: DateTime.fromObject({ year: 2020, month: 2 }),
         },
       },
     ],
+    stack: [
+      {
+        label: "adobe",
+        children: [{ label: "premiere" }, { label: "aftereffects" }],
+      },
+      { label: "pwsh" },
+      { label: "python" },
+    ],
   },
   {
-    company: companies.GETMORE,
+    company: {
+      name: "GETMORE",
+      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQF1TrPLIeswKA/company-logo_200_200/company-logo_200_200/0/1630471547758/getmore_logo?e=1744848000&v=beta&t=sVCwsojd23zNgakotC2LCBnArY70zoNhQLxulL_Nyis",
+      linkedIn: "https://www.linkedin.com/company/getmore/",
+    },
     period: {
       start: DateTime.fromObject({ year: 2019, month: 3 }),
       end: DateTime.fromObject({ year: 2019, month: 9 }),
     },
-    stack: [
-      {
-        label: "adobe",
-        children: [{ label: "photoshop" }, { label: "illustrator" }],
-      },
-      { label: "figma" },
-    ],
     positions: [
       {
         title: "UX Designer",
@@ -156,6 +141,13 @@ const experiences: ExperienceItem[] = [
         },
       },
     ],
+    stack: [
+      {
+        label: "adobe",
+        children: [{ label: "photoshop" }, { label: "illustrator" }],
+      },
+      { label: "figma" },
+    ],
   },
 ];
 
@@ -167,18 +159,15 @@ export default function Experience() {
           <Parent
             img={experience.company.logo}
             name={experience.company.name}
-            start={experience.period.start.toFormat("MMM yyyy")}
-            end={experience.period.end?.toFormat("MMM yyyy") ?? "Present"}
+            period={experience.period}
           />
-          {experience.positions.map(({ title, description, period }) => (
+          {experience.positions.map(({ description, period, title }) => (
             <Child
               key={title}
-              title={title}
-              period={period?.end
-                ?.diff(period.start, ["months", "years"])
-                .years.toString()}
               description={description}
               hasNode
+              period={period}
+              title={title}
             />
           ))}
 

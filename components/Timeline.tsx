@@ -1,18 +1,19 @@
 "use client";
 
+import { Period } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { getPeriodDurationText } from "@/lib/utils/date";
 import Image from "next/image";
 
 interface ParentProps {
   img: string;
   name: string;
-  start: string;
-  end: string;
+  period: Period;
 }
 
 const columnWidth =
   "grid-cols-[50px_1fr] gap-x-2 md:gap-x-4 md:grid-cols-[80px_1fr]";
-export function Parent({ img, name, start, end }: ParentProps) {
+export function Parent({ img, name, period }: ParentProps) {
   return (
     <div className={cn("grid", columnWidth)}>
       <div className="flex flex-col">
@@ -37,9 +38,11 @@ export function Parent({ img, name, start, end }: ParentProps) {
           </h3>
           <span
             aria-label="Period"
-            className="font-serif font-light text-neutral-600 dark:text-neutral-400"
+            className="font-serif font-light text-neutral-500"
           >
-            {start}&ndash;{end}
+            {period.start.toFormat("LLL yyyy")}
+            &ndash;
+            {period.end?.toFormat("LLL yyyy") ?? "Present"}
           </span>
         </div>
       </div>
@@ -50,7 +53,7 @@ export function Parent({ img, name, start, end }: ParentProps) {
 
 interface ChildProps {
   title?: string;
-  period?: string;
+  period?: Period;
   description?: string;
   isLast?: boolean;
   children?: React.ReactNode;
@@ -75,12 +78,12 @@ export function Child({
       <TimelineNode hasNode={hasNode}>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-2xl"
+          className="self-center font-serif text-2xl font-bold"
         >
           {title}
           {period && (
-            <span className="text-neutral-400 dark:text-neutral-500">
-              {` for ${period}`}
+            <span className="font-light text-neutral-500">
+              {` for ${getPeriodDurationText(period)}`}
             </span>
           )}
         </h4>
