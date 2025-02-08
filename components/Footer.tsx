@@ -1,6 +1,7 @@
 "use client";
 
 import { getContactLinks, getSectionsArray } from "@/lib/constants";
+import { DateTime } from "luxon";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
 
@@ -9,11 +10,11 @@ export default function Footer() {
   const contactLinks = getContactLinks();
 
   return (
-    <footer className="mt-32 border-t border-neutral-200 dark:border-neutral-800">
+    <footer className="mt-32 border-t border-neutral-900 dark:border-neutral-200">
       <div className="mx-auto grid max-w-3xl grid-flow-row grid-cols-[4fr_2fr_2fr] gap-x-10 gap-y-16 px-8 py-32">
         <div className="flex flex-col gap-4">
           <Logo width={84} />
-          <p className="text-xl font-thin tracking-wide">
+          <p className="text-sm font-thin tracking-wide md:text-xl">
             I&apos;m Eduardo, a software engineer and designer from Brazil.
           </p>
         </div>
@@ -45,9 +46,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="col-span-3 place-self-center font-serif text-2xl font-light tracking-tight text-neutral-900 dark:text-neutral-200">
-          Built with Next.js by Eduardo Hilário in {new Date().getFullYear()}
-          .&nbsp; All rights reserved.
+        <p className="col-span-3 place-self-center text-center font-serif text-lg font-light tracking-tight text-neutral-900 md:text-2xl dark:text-neutral-200">
+          Built with Next.js by Eduardo Hilário in{" "}
+          {DateTime.now().get("year").toString()}
+          .&nbsp; <br className="md:hidden" />
+          All rights reserved.
         </p>
       </div>
     </footer>
