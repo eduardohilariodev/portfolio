@@ -1,5 +1,11 @@
+import { DateTime } from "luxon";
 import { IconType } from "react-icons";
 import { SectionId } from "./constants";
+
+export interface Period {
+  start: DateTime;
+  end?: DateTime;
+}
 
 export interface CompanyInfo {
   name: string;
@@ -9,12 +15,12 @@ export interface CompanyInfo {
 
 export interface ExperienceItem {
   company: CompanyInfo;
-  startDate: Date;
-  endDate: Date;
+  period: Period;
   stack?: StackPillProps[];
   positions: {
     title: string;
     description?: string;
+    period?: Period;
   }[];
 }
 
@@ -40,8 +46,7 @@ export interface Education {
   img: string;
   institution: string;
   degree: string;
-  startDate: Date;
-  endDate: Date;
+  period: Period;
   description?: string;
   stack?: StackPillProps[];
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface ParentProps {
@@ -9,17 +10,22 @@ interface ParentProps {
   end: string;
 }
 
+const columnWidth =
+  "grid-cols-[50px_1fr] gap-x-2 md:gap-x-4 md:grid-cols-[80px_1fr]";
 export function Parent({ img, name, start, end }: ParentProps) {
   return (
-    <div className="grid grid-cols-[60px_1fr] gap-x-4 md:grid-cols-[80px_1fr]">
-      <Image
-        src={img}
-        alt={name}
-        height={80}
-        width={80}
-        className="object-contain"
-        aria-label="Parent logo"
-      />
+    <div className={cn("grid", columnWidth)}>
+      <div className="flex flex-col">
+        <Image
+          src={img}
+          alt={name}
+          height={80}
+          width={80}
+          className="size-[50px] border-2 border-neutral-900 object-contain md:size-[80px] dark:border-neutral-200"
+          aria-label="Parent logo"
+        />
+        <TimelineNode className="h-full" />
+      </div>
       <div className="flex grow flex-col justify-end md:gap-y-2">
         <hr className="border-1 border-neutral-900 dark:border-neutral-200" />
         <div
@@ -44,6 +50,7 @@ export function Parent({ img, name, start, end }: ParentProps) {
 
 interface ChildProps {
   title?: string;
+  period?: string;
   description?: string;
   isLast?: boolean;
   children?: React.ReactNode;
@@ -51,16 +58,17 @@ interface ChildProps {
 }
 
 export function Child({
-  title,
-  description,
-  isLast = false,
   children,
+  description,
+  period,
   hasNode = false,
+  isLast = false,
+  title,
 }: ChildProps) {
   return (
     <div
       aria-label="Child timeline container"
-      className="relative grid grid-cols-[60px_1fr] gap-x-4 md:grid-cols-[80px_1fr]"
+      className={cn("relative grid", columnWidth)}
     >
       <TimelineNode />
 
@@ -70,6 +78,11 @@ export function Child({
           className="self-center font-serif text-2xl"
         >
           {title}
+          {period && (
+            <span className="text-neutral-400 dark:text-neutral-500">
+              {` for ${period}`}
+            </span>
+          )}
         </h4>
       </TimelineNode>
 
@@ -105,10 +118,14 @@ export function TimelineNode({
   hasNode = false,
   children,
   height,
-}: TimelineNodeProps) {
+  className,
+}: TimelineNodeProps & { className?: string }) {
   return (
-    <div className="contents">
-      <div className="flex flex-col items-center" style={{ height }}>
+    <div className={cn("contents")}>
+      <div
+        className={cn("flex flex-col items-center", className)}
+        style={{ height }}
+      >
         <div
           aria-label="Vertical timeline line"
           className="h-full w-0.5 bg-neutral-900 dark:bg-neutral-200"
