@@ -1,8 +1,9 @@
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/navigation";
+import { IconType } from "react-icons";
 
 interface ButtonProps {
-  icon?: string | React.ReactNode;
+  icon?: string | React.ReactNode | IconType;
   children?: React.ReactNode;
   className?: string;
   href?: string;
@@ -103,12 +104,14 @@ function ButtonChild({
   icon,
 }: {
   children: React.ReactNode;
-  icon?: string | React.ReactNode;
+  icon?: string | React.ReactNode | IconType;
 }) {
   return (
-    <div className="neutral-200space-nowrap grid place-items-center gap-3 font-serif text-neutral-900 dark:text-neutral-200">
+    <div className="grid place-items-center gap-3 font-serif text-nowrap text-neutral-900 dark:text-neutral-200">
       {icon &&
-        (typeof icon === "string" ? (
+        (typeof icon === "function" ? (
+          icon({ className: "text-xl" })
+        ) : typeof icon === "string" ? (
           <i className={cn(icon, "text-xl")} />
         ) : (
           icon

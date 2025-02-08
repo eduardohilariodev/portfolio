@@ -1,3 +1,4 @@
+import { SiWhatsapp } from "react-icons/si";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
 import type { ContactLink, Section } from "./types";
 
@@ -18,11 +19,11 @@ export const SECTION_DATA = {
     title: "Career",
     href: "#career",
   },
-  CONTACT: {
-    id: "contact",
-    title: "Contact",
-    href: "#contact",
-  },
+  // CONTACT: {
+  //   id: "contact",
+  //   title: "Find me",
+  //   href: "#contact",
+  // },
   EDUCATION: {
     id: "education",
     title: "Education",
@@ -38,10 +39,6 @@ export const sections: Record<SectionId, Section> = {
   [SECTION_DATA.ABOUT.id]: {
     ...SECTION_DATA.ABOUT,
     icon: TbBrandGithub,
-  },
-  [SECTION_DATA.CONTACT.id]: {
-    ...SECTION_DATA.CONTACT,
-    icon: TbMail,
   },
   [SECTION_DATA.KNOWLEDGE.id]: {
     ...SECTION_DATA.KNOWLEDGE,
@@ -64,6 +61,11 @@ export const getSectionsArray = (): Section[] => Object.values(sections);
 export const SECTION = SECTION_DATA;
 
 export const CONTACT_LINKS = {
+  WHATSAPP: {
+    href: "https://wa.me/5548996322397",
+    title: "WhatsApp",
+    icon: SiWhatsapp,
+  },
   EMAIL: {
     href: "mailto:eduardohilariodev@pm.me",
     title: "Email",
@@ -85,9 +87,10 @@ export type ContactLinkLabel =
   (typeof CONTACT_LINKS)[keyof typeof CONTACT_LINKS]["title"];
 
 export const contactLinks: Record<ContactLinkLabel, ContactLink> = {
-  [CONTACT_LINKS.EMAIL.title]: CONTACT_LINKS.EMAIL,
-  [CONTACT_LINKS.LINKEDIN.title]: CONTACT_LINKS.LINKEDIN,
   [CONTACT_LINKS.GITHUB.title]: CONTACT_LINKS.GITHUB,
+  [CONTACT_LINKS.LINKEDIN.title]: CONTACT_LINKS.LINKEDIN,
+  [CONTACT_LINKS.WHATSAPP.title]: CONTACT_LINKS.WHATSAPP,
+  [CONTACT_LINKS.EMAIL.title]: CONTACT_LINKS.EMAIL,
 };
 
 // Getter for contact links

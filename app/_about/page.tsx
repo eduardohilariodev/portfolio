@@ -5,12 +5,8 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      {/* <div className="mr-42 ml-28 flex -translate-y-8 items-center">
-        <hr className="grow border-2 border-neutral-900 dark:border-neutral-200" />
-        <i className="size-0 border-t-8 border-b-8 border-l-[12px] border-neutral-900 border-t-transparent border-b-transparent dark:border-l-neutral-200" />
-      </div> */}
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
-        <div className="space-y-6 md:col-span-2">
+        <div className="order-2 space-y-6 md:order-1 md:col-span-2">
           <div className="space-y-4">
             <section className="text-md space-y-4 font-light dark:text-neutral-200">
               <p>
@@ -38,13 +34,12 @@ export default function About() {
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-[300px]">
+        <div className="relative order-1 mx-auto aspect-square w-full max-w-[300px] border-4 border-neutral-900 bg-neutral-50 p-8 md:order-2">
           <Image
             src="/profile_bnw.png"
             alt="Eduardo's profile picture"
             fill
-            sizes="300px"
-            className="hidden -translate-y-24 object-contain"
+            className="scale-75 [background-image:radial-gradient(circle_at_center,black_var(--dotSize),transparent_0),radial-gradient(circle_at_center,black_var(--dotSize),transparent_0)] [background-size:var(--bgSize)_var(--bgSize)] [background-position:0_0,var(--bgPosition)_var(--bgPosition)] object-contain [--bgPosition:calc(var(--bgSize)/2)] [--bgSize:0.7rem] [--dotSize:0.15rem]"
             priority
           />
         </div>

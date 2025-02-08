@@ -1,6 +1,5 @@
 "use client";
 
-import Contact from "@/app/_contact/page";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { getSectionsArray } from "@/lib/constants";
@@ -18,7 +17,6 @@ export default function Home() {
 
       {sections.map((section) => (
         <Section key={section.id} id={section.id} title={section.title}>
-          {section.id === "contact" && <Contact />}
           {section.id === "about" && <About />}
           {section.id === "knowledge" && <Skills />}
           {section.id === "career" && <Experience />}
