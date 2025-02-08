@@ -19,7 +19,7 @@ export default function Hero() {
   }, [theme]);
 
   return (
-    <div className="mt-16 mb-10 flex h-[80vh] max-h-[720px] flex-col justify-center transition-all duration-300">
+    <div className="mb-10 flex h-[80vh] max-h-[720px] flex-col justify-center transition-all duration-300 md:mt-16">
       <div className="space-y-12">
         <div className="space-y-4">
           <div>
