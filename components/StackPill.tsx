@@ -703,7 +703,7 @@ export function StackPill({
       <div
         className={cn(
           `flex items-center border-1 @max-sm:max-w-96 @max-sm:flex-col`,
-          tech.children && "items-start @max-sm:p-1",
+          tech.children && "@max-sm:items-start @max-sm:p-1",
           borderRadius,
           hasColor
             ? `${background} ${border}`
