@@ -2,7 +2,7 @@
 
 import { getSectionsArray } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { useWindowScroll } from "@uidotdev/usehooks";
+import { useClickAway, useWindowScroll } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 
 import Button from "./Button";
@@ -57,6 +57,10 @@ export default function Header() {
     setIsMenuOpen(false);
   };
 
+  const ref = useClickAway(() => {
+    setIsMenuOpen(false);
+  });
+
   const NavButton = ({
     id,
     children,
@@ -81,10 +85,11 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 right-0 left-0 z-50 w-full p-8 transition-all duration-100 md:py-10",
-        y &&
-          y > scrollThreshold &&
-          "border-b-2 border-b-neutral-900 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-900/80",
+        "sticky top-0 z-50 w-full px-6 py-1 transition-all duration-100 md:px-8 md:py-10",
+        isMenuOpen ||
+          (y &&
+            y > scrollThreshold &&
+            "border-b-2 border-b-neutral-900 backdrop-blur-xs dark:border-b-neutral-700 dark:bg-neutral-900/80"),
       )}
     >
       <div className="mx-auto flex max-w-3xl items-center justify-between">
@@ -106,8 +111,8 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Mobile Controls */}
-        <div className="flex items-center gap-4">
+        {/* Mobile Buttons */}
+        <div className="-pr-6 flex items-center md:gap-4">
           <ThemeButton />
           <Button
             className="md:hidden"
@@ -137,8 +142,9 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       <nav
+        ref={ref as React.RefObject<HTMLElement>}
         className={cn(
-          "mt-4 flex w-full flex-col items-end gap-2 transition-all duration-300 ease-out md:opacity-0",
+          "mt-4 flex w-full flex-col items-end justify-end gap-2 transition-all duration-300 ease-out md:opacity-0",
           isMenuOpen
             ? "max-h-64 opacity-100"
             : "pointer-events-none hidden max-h-0 opacity-0",

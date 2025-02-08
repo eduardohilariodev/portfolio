@@ -1,3 +1,5 @@
+"use client";
+
 import Contact from "@/app/_contact/page";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -9,6 +11,7 @@ import Skills from "./_skills/page";
 
 export default function Home() {
   const sections = getSectionsArray();
+
   return (
     <div className="space-y-32">
       <Hero />

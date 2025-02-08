@@ -27,24 +27,29 @@ export default function Button({
     }
   };
 
+  const paddingLabel = "px-2 py-1 md:px-4 md:py-3";
+  const paddingIcon = "p-1";
+  const buttonSize = "min-h-10min-w-10md:min-h-12 md:min-w-12";
+
   return (
     <div
       className={cn(
-        "group relative min-h-12 w-fit min-w-12 border-2 border-transparent text-xl",
+        "group relative w-fit border-2 border-transparent text-xl",
+        buttonSize,
         className,
-        children ? "px-4 py-3" : "p-2",
+        children ? paddingLabel : paddingIcon,
       )}
     >
       <button
         onClick={handleClick}
         tabIndex={0}
         className={cn(
-          "min-h-12 min-w-12",
+          buttonSize,
           "cursor-pointer group-hover:opacity-0",
           "group-active:opacity-100",
-          "group-focus:border-netural-900 border border-transparent dark:group-focus:border-neutral-200",
+          "border border-transparent group-focus:border-neutral-900 dark:group-focus:border-neutral-200",
           "transition-opacity duration-[2s]",
-          children ? "px-4 py-3" : "p-2",
+          children ? paddingLabel : paddingIcon,
         )}
         type="button"
       >
@@ -56,11 +61,11 @@ export default function Button({
         aria-hidden
         tabIndex={-1}
         className={cn(
-          children ? "px-4 py-3" : "p-2",
+          children ? paddingLabel : paddingIcon,
           // TODO: fix this absolute
           "absolute inset-0 cursor-pointer",
 
-          "min-h-12 min-w-12",
+          buttonSize,
 
           "group-hover:opacity-100",
           "opacity-0 transition-opacity duration-[2s]",

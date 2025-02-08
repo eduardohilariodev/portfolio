@@ -5,10 +5,10 @@ import Image from "next/image";
 export default function About() {
   return (
     <>
-      <div className="mr-42 ml-28 flex -translate-y-8 items-center">
+      {/* <div className="mr-42 ml-28 flex -translate-y-8 items-center">
         <hr className="grow border-2 border-neutral-900 dark:border-neutral-200" />
         <i className="size-0 border-t-8 border-b-8 border-l-[12px] border-neutral-900 border-t-transparent border-b-transparent dark:border-l-neutral-200" />
-      </div>
+      </div> */}
       <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
         <div className="space-y-6 md:col-span-2">
           <div className="space-y-4">
@@ -44,7 +44,7 @@ export default function About() {
             alt="Eduardo's profile picture"
             fill
             sizes="300px"
-            className="-translate-y-24 object-contain"
+            className="hidden -translate-y-24 object-contain"
             priority
           />
         </div>

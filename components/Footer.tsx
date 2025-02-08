@@ -10,7 +10,7 @@ export default function Footer() {
 
   return (
     <footer className="mt-32 border-t border-neutral-200 dark:border-neutral-800">
-      <div className="mx-auto grid max-w-3xl grid-flow-row grid-cols-[4fr_2fr_2fr] gap-x-10 gap-y-16 px-4 py-32">
+      <div className="mx-auto grid max-w-3xl grid-flow-row grid-cols-[4fr_2fr_2fr] gap-x-10 gap-y-16 px-8 py-32">
         <div className="flex flex-col gap-4">
           <Logo width={84} />
           <p className="text-xl font-thin tracking-wide">

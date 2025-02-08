@@ -23,10 +23,10 @@ export default function BigButton({ children, icon, href }: ButtonProps) {
       className={cn(
         "relative cursor-pointer rounded-none border-3 border-neutral-900 px-5 py-3 font-serif text-2xl text-neutral-900 select-none",
         "bg-neutral-200 dark:border-neutral-200 dark:text-neutral-200",
-        "dark:bg-neutral-900",
+        "hover:bg-white dark:bg-neutral-900",
         "before:bg-neutral-900 dark:before:bg-neutral-200",
         "after:bg-neutral-900 dark:after:bg-neutral-200",
-        "hover:dark:shadow-[12px_10px_56px_#FFFFFF64] active:dark:shadow-none",
+        "hover:dark:shadow-[12px_10px_56px_#FFFFFF64 hover:shadow-[12px_10px_56px_#FFFFFF] active:dark:shadow-none",
         "-translate-[15px] active:translate-0",
         "transition-all duration-300 ease-in",
         "before:transition-all before:duration-300 before:ease-in",

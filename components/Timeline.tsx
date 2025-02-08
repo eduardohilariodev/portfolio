@@ -62,7 +62,7 @@ export function Child({
       <TimelineNode hasNode={hasNode}>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-2xl text-neutral-200"
+          className="self-center font-serif text-2xl"
         >
           {title}
         </h4>
@@ -72,7 +72,7 @@ export function Child({
         {children ?? (
           <div
             aria-label="Project content"
-            className="text-md mb-6 space-y-4 dark:text-neutral-400"
+            className="text-md mb-6 space-y-4 text-neutral-600 dark:text-neutral-400"
           >
             {description && (
               <p aria-label="Project description">{description}</p>
@@ -106,17 +106,17 @@ export function TimelineNode({
       <div className="flex flex-col items-center" style={{ height }}>
         <div
           aria-label="Vertical timeline line"
-          className="h-full w-0.5 bg-neutral-200"
+          className="h-full w-0.5 bg-neutral-900 dark:bg-neutral-200"
         />
         {hasNode && (
           <div
             aria-label="Connector dot"
-            className="aspect-square size-4 rounded-full bg-neutral-200"
+            className="aspect-square size-4 rounded-full bg-neutral-900 dark:bg-neutral-200"
           />
         )}
         <div
           aria-label="Vertical timeline line"
-          className="h-full w-0.5 bg-neutral-200"
+          className="h-full w-0.5 bg-neutral-900 dark:bg-neutral-200"
         />
       </div>
 
