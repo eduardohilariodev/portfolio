@@ -33,13 +33,23 @@ const experiences: ExperienceItem[] = [
     stack: [
       { label: "vuejs", children: [{ label: "nuxt" }] },
       { label: "typescript" },
-      { label: "python" },
+      { label: "python", children: [{ label: "fastapi" }] },
+      {
+        label: "css",
+        children: [
+          { label: "sass" },
+          { label: "bootstrap" },
+          { label: "tailwindcss" },
+        ],
+      },
+
       { label: "laravel" },
       { label: "aws" },
       { label: "docker" },
       { label: "githubactions" },
       { label: "flutter" },
       { label: "mysql" },
+      { label: "figma" },
     ],
     positions: [
       {
@@ -111,7 +121,7 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <div aria-label="Experience spacing" className="px-12">
+    <div aria-label="Experience spacing" className="md:px-12">
       {experiences.map((experience) => (
         <div key={experience.company.name}>
           <Parent
@@ -147,9 +157,9 @@ export default function Experience() {
               >
                 <h5
                   aria-label="Technologies heading"
-                  className="absolute inset-0 top-1 left-28 size-min font-serif text-xl dark:text-neutral-400"
+                  className="absolute inset-0 top-1 left-22 size-min font-serif text-xl md:left-28 dark:text-neutral-400"
                 >
-                  <div className="size-full bg-neutral-200 px-2 whitespace-nowrap dark:bg-neutral-900">
+                  <div className="relative z-20 size-full px-2 whitespace-nowrap before:absolute before:inset-0 before:-z-10 before:h-6 before:w-full before:bg-neutral-200 before:dark:bg-neutral-900">
                     Core Technologies
                   </div>
                 </h5>
