@@ -14,7 +14,7 @@ const education: Education[] = [
     img: "https://media.licdn.com/dms/image/v2/C4E0BAQG5HFi6nWrpQg/company-logo_200_200/company-logo_200_200/0/1655119369480/grupo_uninter_logo?e=1746662400&v=beta&t=v5NVBuHE6N_RY7tOI0_vNlpzstBLVsJrrb-9ygKRg-U",
     institution: "UNINTER",
     description:
-      "Focusing on digital design and user experience, with emphasis on modern design systems and accessibility practices. Developing skills in interaction design and visual communication through practical projects.",
+      "Studying algorithms, data structures, and software engineering principles with focus on full-stack development. Developing skills in systems design, cloud computing, and modern programming paradigms through hands-on projects.",
   },
   {
     degree: "Design, BA",
