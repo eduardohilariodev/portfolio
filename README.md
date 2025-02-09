@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-![Hero](./docs/hero.png)
+[![Hero](./docs/hero.png)](https://eduardohilariodev.com)
 
 ## Overview
 
