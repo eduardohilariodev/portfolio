@@ -1,5 +1,6 @@
 "use client";
 
+import { CONTACT_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -25,7 +26,11 @@ export default function About() {
             <p>
               Take a look at my background bellow and, in case you&apos;re
               interested,&nbsp;
-              <a href="mailto:eduardohilariodev@pm.me" className="underline">
+              <a
+                href={CONTACT_LINKS.WHATSAPP.href}
+                target="_blank"
+                className="underline"
+              >
                 send me a message
               </a>
               !

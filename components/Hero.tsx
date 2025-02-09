@@ -1,6 +1,7 @@
 "use client";
 
-import { getContactLinks } from "@/lib/constants";
+import { getContactLinks, SECTION } from "@/lib/constants";
+import useScrollById from "@/lib/hooks/useScrollById";
 import { cn } from "@/lib/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { useTheme } from "next-themes";
@@ -10,6 +11,7 @@ import Button from "./Button";
 export default function Hero() {
   const { theme } = useTheme();
   const [{ y }] = useWindowScroll();
+  const { scrollToSection } = useScrollById();
 
   const strokeRef = useRef<HTMLDivElement>(null);
 
@@ -23,7 +25,7 @@ export default function Hero() {
   const contactLinks = getContactLinks();
 
   return (
-    <div className="mb-10 flex h-[80vh] max-h-[720px] flex-col justify-center transition-all duration-300 md:mt-16">
+    <div className="mt-4 mb-10 flex h-[80vh] max-h-[720px] flex-col justify-center transition-all duration-300 md:mt-16">
       <div className="space-y-12">
         <div className="space-y-4">
           <div>
@@ -56,7 +58,10 @@ export default function Hero() {
             </Button>
           ))}
         </div>
-        <div className="relative transition-opacity">
+        <div
+          className="relative transition-opacity"
+          onClick={() => scrollToSection(SECTION.ABOUT.id)}
+        >
           <div
             className={cn(
               "animate-bounce-hard text-center opacity-100",

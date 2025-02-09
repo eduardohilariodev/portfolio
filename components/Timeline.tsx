@@ -78,9 +78,10 @@ export function Child({
       <TimelineNode hasNode={hasNode}>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-2xl font-bold"
+          className="self-center font-serif text-xl leading-6 font-bold md:text-2xl"
         >
           {title}
+          <br className="md:hidden" />
           {period && (
             <span className="font-light text-neutral-500">
               {` for ${getPeriodDurationText(period)}`}
@@ -93,7 +94,7 @@ export function Child({
         {children ?? (
           <div
             aria-label="Project content"
-            className="md:text-md mb-6 space-y-4 text-sm text-neutral-600 dark:text-neutral-400"
+            className="md:text-md mt-5 mb-6 space-y-4 text-sm text-neutral-600 dark:text-neutral-400"
           >
             {description && (
               <p aria-label="Project description">{description}</p>

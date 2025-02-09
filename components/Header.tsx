@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useClickAway, useWindowScroll } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 
+import useScrollById from "@/lib/hooks/useScrollById";
 import Button from "./Button";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
@@ -16,6 +17,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const scrollThreshold = 160;
   const navItems = getSectionsArray();
+  const { scrollToSection } = useScrollById(() => setIsMenuOpen(false));
 
   useEffect(() => {
     if (y && y < 400) {
@@ -46,16 +48,6 @@ export default function Header() {
 
     return () => observer.disconnect();
   }, [navItems, y]);
-
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (!element) {
-      return;
-    }
-    element.scrollIntoView({ behavior: "smooth" });
-
-    setIsMenuOpen(false);
-  };
 
   const ref = useClickAway(() => {
     setIsMenuOpen(false);

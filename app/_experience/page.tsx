@@ -179,7 +179,7 @@ export default function Experience() {
               >
                 <h5
                   aria-label="Technologies heading"
-                  className="absolute inset-0 top-1 left-18 size-min font-serif text-xl md:left-28 dark:text-neutral-400"
+                  className="absolute inset-0 top-8 left-18 size-min font-serif text-xl md:top-1 md:left-28 dark:text-neutral-400"
                 >
                   <div className="relative z-20 size-full px-2 whitespace-nowrap before:absolute before:inset-0 before:-z-10 before:h-6 before:w-full before:bg-neutral-200 dark:before:bg-neutral-900">
                     Core Technologies
