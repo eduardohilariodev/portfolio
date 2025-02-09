@@ -38,7 +38,7 @@ export function Parent({ img, name, period }: ParentProps) {
           </h3>
           <span
             aria-label="Period"
-            className="font-serif font-light text-neutral-500"
+            className="font-serif font-light text-neutral-500 dark:text-neutral-200"
           >
             {period.start.toFormat("LLL yyyy")}
             &ndash;
