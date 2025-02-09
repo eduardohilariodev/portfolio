@@ -23,7 +23,7 @@ export default function About() {
                 I am going for a second run in Computer Science).
               </p>
               <p>
-                Take a look in at my background bellow and, in case you&apos;re
+                Take a look at my background bellow and, in case you&apos;re
                 interested,&nbsp;
                 <a href="mailto:eduardohilariodev@pm.me" className="underline">
                   send me a message
