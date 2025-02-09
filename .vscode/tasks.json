@@ -47,7 +47,7 @@
       "label": "Run TypeScript",
       "type": "shell",
       "command": "bunx",
-      "args": ["tsc", "--watch"],
+      "args": ["tsc", "--watch", "--strict", "--preserveWatchOutput"],
       "isBackground": true,
       "problemMatcher": "$tsc-watch",
       "presentation": {
