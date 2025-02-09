@@ -52,7 +52,12 @@ export default function Hero() {
         <div className="grid md:grid-flow-col">
           <div className="flex max-w-xl justify-center md:mx-auto md:justify-between md:gap-4">
             {contactLinks.map((link) => (
-              <Button key={link.href} href={link.href} icon={link.icon}>
+              <Button
+                external
+                key={link.href}
+                href={link.href}
+                icon={link.icon}
+              >
                 {link.title}
               </Button>
             ))}

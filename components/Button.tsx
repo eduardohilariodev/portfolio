@@ -8,6 +8,7 @@ interface ButtonProps {
   className?: string;
   href?: string;
   onClick?: () => void;
+  external?: boolean;
 }
 
 export default function Button({
@@ -16,12 +17,17 @@ export default function Button({
   className,
   href,
   onClick,
+  external,
 }: ButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
     if (href) {
-      router.push(href);
+      if (external) {
+        window.open(href, "_blank");
+      } else {
+        router.push(href);
+      }
     }
     if (onClick) {
       onClick();
