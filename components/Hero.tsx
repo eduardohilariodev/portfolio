@@ -49,19 +49,12 @@ export default function Hero() {
             <br className="sm:hidden" /> digital stuff.
           </p>
         </div>
-        <div className="grid md:grid-flow-col">
-          <div className="flex max-w-xl justify-center md:mx-auto md:justify-between md:gap-4">
-            {contactLinks.map((link) => (
-              <Button
-                external
-                key={link.href}
-                href={link.href}
-                icon={link.icon}
-              >
-                {link.title}
-              </Button>
-            ))}
-          </div>
+        <div className="mx-auto grid max-w-xl grid-cols-2 place-items-center md:grid-cols-4">
+          {contactLinks.map((link) => (
+            <Button external key={link.href} href={link.href} icon={link.icon}>
+              {link.title}
+            </Button>
+          ))}
         </div>
         <div className="relative transition-opacity">
           <div
