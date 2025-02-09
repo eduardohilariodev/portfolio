@@ -30,19 +30,19 @@ Key features:
 
 ## Project Structure
 
-├── app/ # Next.js app router pages
-│   ├── about/ # About section
-│   ├── education/ # Education section
-│   ├── experience/ # Experience section
-│   └── skills/ # Skills section
-├── components/ # React components
-├── lib/ # Utilities and types
-│   ├── constants.ts # App constants
-│   ├── hooks/ # Custom hooks
-│   ├── providers/ # Context providers
-│   ├── types.ts # TypeScript types
-│   └── utils.ts # Helper functions
-└── public/ # Static assets
+- **app/**: Next.js app router pages
+  - **about/**: About section
+  - **education/**: Education section
+  - **experience/**: Experience section
+  - **skills/**: Skills section
+- **components/**: React components
+- **lib/**: Utilities and types
+  - **constants.ts**: App constants
+  - **hooks/**: Custom hooks
+  - **providers/**: Context providers
+  - **types.ts**: TypeScript types
+  - **utils.ts**: Helper functions
+- **public/**: Static assets
 
 ## License
 
