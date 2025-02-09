@@ -10,7 +10,7 @@ export default function Footer() {
   const contactLinks = getContactLinks();
 
   return (
-    <footer className="mt-32 border-t border-neutral-900 dark:border-neutral-200">
+    <footer className="border-t border-neutral-900 dark:border-neutral-200">
       <div className="mx-auto grid max-w-3xl grid-flow-row grid-cols-[4fr_2fr_2fr] gap-x-10 gap-y-16 px-8 py-32">
         <div className="flex flex-col gap-4">
           <Logo width={84} />
