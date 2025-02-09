@@ -1,5 +1,7 @@
 # Personal Portfolio
 
+![Hero](./docs/hero.png)
+
 ## Overview
 
 This is a modern personal portfolio built with:
