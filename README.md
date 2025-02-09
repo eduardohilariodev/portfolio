@@ -8,7 +8,7 @@ This is a modern personal portfolio built with:
 - TypeScript
 - Tailwind CSS
 - shadcn/ui components
-- React Icons (Tabler icons)
+- React Icons (Tabler, Simple Icons)
 
 Key features:
 
@@ -18,14 +18,32 @@ Key features:
 - Interactive hero section
 - Detailed experience timeline
 - Tech stack visualization
-- Contact form integration
 
-## Icons
+## Development
 
-This section provides information about the icon sets used in the project. We primarily utilize React Icons, specifically the Tabler Icons set, which can be found [here](https://react-icons.github.io/react-icons/icons/tb/).
+### Commands
 
-For additional icons, you can refer to the Pictogrammers Memory repository [here](https://github.com/Pictogrammers/Memory).
+- Install dependencies: `bun install`
+- Run development server: `bun dev`
+- Build for production: `bun build`
+- Start production server: `bun start`
 
-### Usage
+## Project Structure
 
-To use an icon, import it from the `react-icons/tb` package. For example:
+├── app/ # Next.js app router pages
+│   ├── about/ # About section
+│   ├── education/ # Education section
+│   ├── experience/ # Experience section
+│   └── skills/ # Skills section
+├── components/ # React components
+├── lib/ # Utilities and types
+│   ├── constants.ts # App constants
+│   ├── hooks/ # Custom hooks
+│   ├── providers/ # Context providers
+│   ├── types.ts # TypeScript types
+│   └── utils.ts # Helper functions
+└── public/ # Static assets
+
+## License
+
+This project is licensed under the MIT License.
