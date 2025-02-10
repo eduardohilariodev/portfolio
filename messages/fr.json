@@ -1,0 +1,110 @@
+{
+  "Hero": {
+    "name": "Eduardo",
+    "surname": "Hilário",
+    "subtitle": "Je vous aide à <strong>résoudre</strong> et <strong>construire</strong> des solutions numériques."
+  },
+  "sections": {
+    "about": "À propos",
+    "knowledge": "Compétences",
+    "career": "Carrière",
+    "education": "Formation"
+  },
+  "About": {
+    "greeting": "Salut, je suis",
+    "name": "Eduardo",
+    "intro": "Je suis ingénieur logiciel et designer, du Brésil.",
+    "work": "Je travaille sur de nombreux projets, côté client, côté serveur et côté humain !",
+    "learning": "J'aime apprendre et élargir mes connaissances, que ce soit par des cours, des livres, des documentaires ou l'université (j'ai déjà un BA en Design, maintenant je me lance dans une deuxième formation en Informatique).",
+    "cta": "Jetez un œil à mon parcours ci-dessous et, si vous êtes intéressé,",
+    "sendMessage": "envoyez-moi un message",
+    "profileAlt": "Photo de profil d'Eduardo"
+  },
+  "Skills": {
+    "intro": {
+      "tools": "Les outils que j'utilise dépendent généralement du projet.",
+      "noOneSize": "Il n'y a pas de solution universelle, c'est pourquoi j'essaie toujours de nouvelles technologies et j'apprends constamment.",
+      "familiar": "Voici les technologies avec lesquelles je suis le plus familier :"
+    },
+    "categories": {
+      "languages": "Langages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Données",
+      "cloud": "Cloud",
+      "mobile": "Mobile",
+      "testing": "Tests",
+      "tooling": "Outils",
+      "design": "Design"
+    }
+  },
+  "Experience": {
+    "coreTechnologies": "Technologies principales",
+    "saveResume": "Sauvegarder CV",
+    "saveResumeAria": "Sauvegarder le CV",
+    "date": {
+      "present": "Présent",
+      "for": "pendant",
+      "format": {
+        "month": "LLL yyyy",
+        "removeZeroYear": "0 ans ?et? ?",
+        "removeZeroMonth": "et 0 mois"
+      }
+    },
+    "positions": {
+      "softwareEngineer": {
+        "title": "Ingénieur Logiciel",
+        "description": "Direction du développement de solutions basées sur l'IA et d'applications cloud, incluant un chatbot avec des temps de réponse inférieurs à une minute. Mise en place de systèmes d'abonnement et optimisation des flux de développement utilisant des pratiques DevOps modernes, aboutissant à une meilleure acquisition client et une scalabilité du système."
+      },
+      "juniorSoftwareEngineer": {
+        "title": "Ingénieur Logiciel Junior",
+        "description": "Amélioration et maintenance de plateformes logicielles d'entreprise, axées sur l'optimisation des performances et l'expérience utilisateur. Réalisation d'améliorations significatives de la fiabilité du système, de la satisfaction des utilisateurs et des performances des applications grâce à des processus systématiques de test et de débogage."
+      },
+      "uxDesigner": {
+        "title": "Designer UX",
+        "description": "Direction d'initiatives de conception d'interface utilisateur axées sur l'amélioration de l'accessibilité et de l'engagement des utilisateurs sur toutes les plateformes."
+      },
+      "technicalContentProducer": {
+        "title": "Producteur de Contenu Technique",
+        "description": "Direction du flux de production vidéo et des systèmes automatisés de distribution de contenu. Optimisation de la configuration matérielle et des processus de livraison de contenu."
+      },
+      "productionIntern": {
+        "title": "Stagiaire en Production",
+        "description": "Création de contenu vidéo et automatisation des flux de production à l'aide d'outils industriels. Amélioration de l'efficacité de la livraison de contenu."
+      },
+      "designIntern": {
+        "title": "Stagiaire en Design",
+        "description": "Création de supports de communication interne et externe suivant les directives de la marque."
+      }
+    }
+  },
+  "Education": {
+    "degrees": {
+      "computerScience": {
+        "title": "Informatique",
+        "degree": "B.S.C.S.",
+        "description": "Étude des algorithmes, des structures de données et des principes d'ingénierie logicielle avec un accent sur le développement full-stack. Développement de compétences en conception de systèmes, cloud computing et paradigmes de programmation modernes à travers des projets pratiques."
+      },
+      "design": {
+        "title": "Design",
+        "degree": "B.Des.",
+        "description": "Étude des principes complets du design incluant la communication visuelle, le design centré utilisateur et les méthodologies de design thinking. Participation à des projets de recherche axés sur le design d'interface et l'expérience utilisateur."
+      }
+    },
+    "progress": {
+      "in_progress": "En cours",
+      "completed": "Obtenu",
+      "default": "Non commencé"
+    }
+  },
+  "Footer": {
+    "intro": "Je suis Eduardo, ingénieur logiciel et designer du Brésil.",
+    "copyright": "Construit avec Next.js par Eduardo Hilário en {year}.{br} Tous droits réservés."
+  },
+  "date": {
+    "format": {
+      "removeZeroYear": "0 ans? & ?",
+      "removeZeroMonth": "& 0 mois?"
+    }
+  }
+}

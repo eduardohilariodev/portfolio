@@ -1,0 +1,110 @@
+{
+  "Hero": {
+    "name": "Eduardo",
+    "surname": "Hilário",
+    "subtitle": "Ich helfe Ihnen, digitale Lösungen zu <strong>entwickeln</strong> und <strong>umzusetzen</strong>."
+  },
+  "sections": {
+    "about": "Über mich",
+    "knowledge": "Kenntnisse",
+    "career": "Karriere",
+    "education": "Ausbildung"
+  },
+  "About": {
+    "greeting": "Hallo, ich bin",
+    "name": "Eduardo",
+    "intro": "Ich bin Softwareingenieur und Designer aus Brasilien.",
+    "work": "Ich arbeite an vielen Projekten, auf der Client-Seite, Server-Seite und der menschlichen Seite!",
+    "learning": "Ich liebe es zu lernen und mein Wissen zu erweitern, sei es durch Kurse, Bücher, Dokumentationen oder Universität (ich habe bereits einen BA in Design, jetzt studiere ich Informatik).",
+    "cta": "Schauen Sie sich meinen Werdegang unten an und, falls Sie interessiert sind,",
+    "sendMessage": "senden Sie mir eine Nachricht",
+    "profileAlt": "Eduardos Profilbild"
+  },
+  "Skills": {
+    "intro": {
+      "tools": "Die Werkzeuge, die ich für die Arbeit verwende, hängen von der Aufgabe ab.",
+      "noOneSize": "Es gibt keine Universallösung, deshalb probiere ich ständig neue Technologien aus und lerne dazu.",
+      "familiar": "Mit folgenden Technologien bin ich am vertrautesten:"
+    },
+    "categories": {
+      "languages": "Sprachen",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Daten",
+      "cloud": "Cloud",
+      "mobile": "Mobile",
+      "testing": "Testing",
+      "tooling": "Werkzeuge",
+      "design": "Design"
+    }
+  },
+  "Experience": {
+    "coreTechnologies": "Kerntechnologien",
+    "saveResume": "Lebenslauf speichern",
+    "saveResumeAria": "Lebenslauf speichern",
+    "date": {
+      "present": "Heute",
+      "for": "für",
+      "format": {
+        "month": "LLL yyyy",
+        "removeZeroYear": "0 Jahre? und? ",
+        "removeZeroMonth": "und 0 Monate"
+      }
+    },
+    "positions": {
+      "softwareEngineer": {
+        "title": "Softwareingenieur",
+        "description": "Leitung der Entwicklung von KI-gestützten Lösungen und Cloud-Anwendungen, einschließlich eines Chatbots mit Antwortzeiten unter einer Minute. Implementierung von Abonnement-Systemen und Optimierung von Entwicklungsabläufen durch moderne DevOps-Praktiken, was zu verbesserter Kundengewinnung und Systemskalierbarkeit führte."
+      },
+      "juniorSoftwareEngineer": {
+        "title": "Junior Softwareingenieur",
+        "description": "Verbesserung und Wartung von Unternehmenssoftware-Plattformen mit Fokus auf Leistungsoptimierung und Benutzererfahrung. Erreichte signifikante Verbesserungen in Systemzuverlässigkeit, Benutzerzufriedenheit und Anwendungsleistung durch systematische Test- und Debugging-Prozesse."
+      },
+      "uxDesigner": {
+        "title": "UX Designer",
+        "description": "Leitung von Benutzeroberflächen-Design-Initiativen mit Fokus auf Verbesserung der Zugänglichkeit und Benutzerengagement über alle Plattformen."
+      },
+      "technicalContentProducer": {
+        "title": "Technischer Content Producer",
+        "description": "Leitung des Videoproduktions-Workflows und automatisierter Content-Verteilungssysteme. Optimierung der Hardware-Einrichtung und Content-Delivery-Prozesse."
+      },
+      "productionIntern": {
+        "title": "Produktions-Praktikant",
+        "description": "Erstellung von Video-Content und Automatisierung von Produktions-Workflows mit Branchentools. Verbesserung der Content-Delivery-Effizienz."
+      },
+      "designIntern": {
+        "title": "Design-Praktikant",
+        "description": "Erstellung von internen und externen Kommunikationsmaterialien nach Markenrichtlinien."
+      }
+    }
+  },
+  "Education": {
+    "degrees": {
+      "computerScience": {
+        "title": "Informatik",
+        "degree": "B.Sc.",
+        "description": "Studium von Algorithmen, Datenstrukturen und Software-Engineering-Prinzipien mit Fokus auf Full-Stack-Entwicklung. Entwicklung von Fähigkeiten in Systemdesign, Cloud Computing und modernen Programmierparadigmen durch praktische Projekte."
+      },
+      "design": {
+        "title": "Design",
+        "degree": "B.Des.",
+        "description": "Studium umfassender Designprinzipien einschließlich visueller Kommunikation, nutzerorientiertem Design und Design-Thinking-Methodologien. Teilnahme an Forschungsprojekten mit Fokus auf Interface-Design und Benutzererfahrung."
+      }
+    },
+    "progress": {
+      "in_progress": "In Bearbeitung",
+      "completed": "Abgeschlossen",
+      "default": "Nicht begonnen"
+    }
+  },
+  "Footer": {
+    "intro": "Ich bin Eduardo, Softwareingenieur und Designer aus Brasilien.",
+    "copyright": "Erstellt mit Next.js von Eduardo Hilário in {year}.{br} Alle Rechte vorbehalten."
+  },
+  "date": {
+    "format": {
+      "removeZeroYear": "0 Jahre? & ?",
+      "removeZeroMonth": "& 0 Monate?"
+    }
+  }
+}

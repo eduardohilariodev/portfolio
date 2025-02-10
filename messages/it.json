@@ -1,0 +1,110 @@
+{
+  "Hero": {
+    "name": "Eduardo",
+    "surname": "Hilário",
+    "subtitle": "Ti aiuto a <strong>risolvere</strong> e <strong>costruire</strong> soluzioni digitali."
+  },
+  "sections": {
+    "about": "Chi sono",
+    "knowledge": "Competenze",
+    "career": "Carriera",
+    "education": "Formazione"
+  },
+  "About": {
+    "greeting": "Ciao, sono",
+    "name": "Eduardo",
+    "intro": "Sono un ingegnere software e designer dal Brasile.",
+    "work": "Lavoro su molti progetti, lato client, lato server e lato umano!",
+    "learning": "Amo imparare e ampliare le mie conoscenze, che sia attraverso corsi, libri, documentari o università (ho già una laurea in Design, ora sto facendo una seconda laurea in Informatica).",
+    "cta": "Dai un'occhiata al mio percorso qui sotto e, se sei interessato,",
+    "sendMessage": "mandami un messaggio",
+    "profileAlt": "Foto profilo di Eduardo"
+  },
+  "Skills": {
+    "intro": {
+      "tools": "Gli strumenti che uso per il lavoro dipendono dal lavoro stesso.",
+      "noOneSize": "Non esiste una soluzione unica per tutto, per questo provo sempre nuove tecnologie e imparo costantemente.",
+      "familiar": "Le seguenti tecnologie sono quelle con cui ho più familiarità:"
+    },
+    "categories": {
+      "languages": "Linguaggi",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Dati",
+      "cloud": "Cloud",
+      "mobile": "Mobile",
+      "testing": "Testing",
+      "tooling": "Strumenti",
+      "design": "Design"
+    }
+  },
+  "Experience": {
+    "coreTechnologies": "Tecnologie principali",
+    "saveResume": "Salva CV",
+    "saveResumeAria": "Salva curriculum",
+    "date": {
+      "present": "Presente",
+      "for": "per",
+      "format": {
+        "month": "LLL yyyy",
+        "removeZeroYear": "0 anni ?e? ?",
+        "removeZeroMonth": "e 0 mesi"
+      }
+    },
+    "positions": {
+      "softwareEngineer": {
+        "title": "Ingegnere Software",
+        "description": "Ho guidato lo sviluppo di soluzioni basate su IA e applicazioni cloud, incluso un chatbot con tempi di risposta inferiori al minuto. Ho implementato sistemi di abbonamento e ottimizzato i flussi di sviluppo utilizzando pratiche DevOps moderne, portando a un miglioramento nell'acquisizione dei clienti e nella scalabilità del sistema."
+      },
+      "juniorSoftwareEngineer": {
+        "title": "Ingegnere Software Junior",
+        "description": "Ho migliorato e mantenuto piattaforme software aziendali, concentrandomi sull'ottimizzazione delle prestazioni e sull'esperienza utente. Ho ottenuto significativi miglioramenti nell'affidabilità del sistema, nella soddisfazione degli utenti e nelle prestazioni delle applicazioni attraverso processi sistematici di test e debugging."
+      },
+      "uxDesigner": {
+        "title": "UX Designer",
+        "description": "Ho guidato iniziative di design dell'interfaccia utente focalizzate sul miglioramento dell'accessibilità e del coinvolgimento degli utenti su tutte le piattaforme."
+      },
+      "technicalContentProducer": {
+        "title": "Produttore di Contenuti Tecnici",
+        "description": "Ho gestito il flusso di lavoro della produzione video e i sistemi automatizzati di distribuzione dei contenuti. Ho ottimizzato la configurazione hardware e i processi di consegna dei contenuti."
+      },
+      "productionIntern": {
+        "title": "Stagista di Produzione",
+        "description": "Ho creato contenuti video e automatizzato i flussi di lavoro di produzione utilizzando strumenti del settore. Ho migliorato l'efficienza nella consegna dei contenuti."
+      },
+      "designIntern": {
+        "title": "Stagista di Design",
+        "description": "Ho creato materiali di comunicazione interna ed esterna seguendo le linee guida del marchio."
+      }
+    }
+  },
+  "Education": {
+    "degrees": {
+      "computerScience": {
+        "title": "Informatica",
+        "degree": "B.S.C.S.",
+        "description": "Studio di algoritmi, strutture dati e principi di ingegneria del software con focus sullo sviluppo full-stack. Sviluppo di competenze in progettazione di sistemi, cloud computing e paradigmi di programmazione moderni attraverso progetti pratici."
+      },
+      "design": {
+        "title": "Design",
+        "degree": "B.Des.",
+        "description": "Ho studiato principi completi di design inclusa la comunicazione visiva, il design centrato sull'utente e le metodologie di design thinking. Ho partecipato a progetti di ricerca incentrati sul design dell'interfaccia e sull'esperienza utente."
+      }
+    },
+    "progress": {
+      "in_progress": "In corso",
+      "completed": "Completato",
+      "default": "Non iniziato"
+    }
+  },
+  "Footer": {
+    "intro": "Sono Eduardo, ingegnere software e designer dal Brasile.",
+    "copyright": "Realizzato con Next.js da Eduardo Hilário nel {year}.{br} Tutti i diritti riservati."
+  },
+  "date": {
+    "format": {
+      "removeZeroYear": "0 anni? e ?",
+      "removeZeroMonth": "e 0 mesi?"
+    }
+  }
+}

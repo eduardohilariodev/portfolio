@@ -74,13 +74,13 @@ interface ChildProps {
 
 export function Child({
   children,
+  degree,
   description,
-  period,
   hasNode = false,
   isLast = false,
-  title,
-  degree,
+  period,
   status = "default",
+  title,
 }: ChildProps) {
   const tEducation = useTranslations("Education");
   const tExperienceDate = useTranslations("Experience.date");
@@ -111,7 +111,7 @@ export function Child({
       <TimelineNode hasNode={hasNode} status={status}>
         <h4
           aria-label="Position title"
-          className="flex items-center self-center font-serif text-xl leading-6 font-bold md:text-2xl"
+          className="flex items-center gap-1 self-center font-serif text-xl leading-6 font-bold md:text-2xl"
         >
           <div className="flex items-center">
             {title}
@@ -119,8 +119,7 @@ export function Child({
               <span className="font-light text-neutral-500">{`, ${degree}`}</span>
             )}
           </div>
-
-          {status && (
+          {status && ["in_progress", "completed"].includes(status) && (
             <span className={statusClasses}>
               {tEducation(`progress.${status}`)}
             </span>

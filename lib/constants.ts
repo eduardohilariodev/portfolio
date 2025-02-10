@@ -1,4 +1,4 @@
-import { BR, GB } from "country-flag-icons/react/3x2";
+import { BR, DE, ES, FR, GB, IT } from "country-flag-icons/react/3x2";
 import { SiWhatsapp } from "react-icons/si";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
 
@@ -99,7 +99,7 @@ export const contactLinks: Record<ContactLinkLabel, ContactLink> = {
 export const getContactLinks = (): ContactLink[] => Object.values(contactLinks);
 
 // Locale configuration
-export const locales = ["br", "en"] as const;
+export const locales = ["br", "en", "fr", "de", "es", "it"] as const;
 export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = "en";
 
@@ -113,6 +113,26 @@ export const LOCALE_CONFIG: Record<Locale, LocaleConfig> = {
     code: "en",
     label: "English",
     icon: GB,
+  },
+  fr: {
+    code: "fr",
+    label: "Français",
+    icon: FR,
+  },
+  de: {
+    code: "de",
+    label: "Deutsch",
+    icon: DE,
+  },
+  es: {
+    code: "es",
+    label: "Español",
+    icon: ES,
+  },
+  it: {
+    code: "it",
+    label: "Italiano",
+    icon: IT,
   },
 } as const;
 
