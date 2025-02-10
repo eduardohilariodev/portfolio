@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 
 import { StackPill } from "@/components/StackPill";
 
-import { StackPillProps } from "../../lib/types";
+import { StackPillProps } from "../../../lib/types";
 
 interface StackItem {
   heading: categories;

@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+import { usePathname, useRouter } from "@/i18n/routing";
 import { getLocaleConfigs, LOCALE_CONFIG } from "@/lib/constants";
 import { getUserLocale, setUserLocale } from "@/lib/services/locale";
 import { cn } from "@/lib/utils/cn";
@@ -25,12 +26,19 @@ export default function LanguageButton({
   const [cookieLocale, setCookieLocale] = useState<Locale>();
   const [currentLocale, setCurrentLocale] = useState(LOCALE_CONFIG.en);
 
-  const changeLanguage = useCallback(async (value: Locale) => {
-    await setUserLocale(value);
-    setCookieLocale(value);
-    setCurrentLocale(LOCALE_CONFIG[value]);
-    setIsMenuOpen(false);
-  }, []);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const changeLanguage = useCallback(
+    async (value: Locale) => {
+      await setUserLocale(value);
+      setCookieLocale(value);
+      setCurrentLocale(LOCALE_CONFIG[value]);
+      setIsMenuOpen(false);
+      router.replace(pathname, { locale: value });
+    },
+    [pathname, router],
+  );
 
   useEffect(() => {
     const fetchLocale = async () => {

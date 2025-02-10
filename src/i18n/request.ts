@@ -19,16 +19,11 @@ export default getRequestConfig(async ({ requestLocale }) => {
   try {
     return {
       locale,
-      messages: (await import(`../messages/${locale}.json`)).default,
+      messages: (await import(`../../messages/${locale}.json`)).default,
       // You can use a different time zone for each locale
       timeZone: "America/Sao_Paulo",
       // Disable locale detection since we have middleware
       now: new Date(),
-      // If you have a `pages` directory, you can
-      // enable the fallback to it for non-internationalized URLs
-      // pages: {
-      //   ignoreFileRoutes: false
-      // }
     };
   } catch {
     notFound();

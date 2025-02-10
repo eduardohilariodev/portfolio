@@ -1,4 +1,4 @@
-"use client";
+import { setRequestLocale } from "next-intl/server";
 
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
@@ -9,7 +9,9 @@ import Education from "./_education/page";
 import Experience from "./_experience/page";
 import Skills from "./_skills/page";
 
-export default function Home() {
+export default async function Home({ params }: { params: { locale: string } }) {
+  const locale = await params.locale;
+  setRequestLocale(locale);
   const sections = getSectionsArray();
 
   return (
