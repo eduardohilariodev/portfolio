@@ -7,27 +7,20 @@ const config = {
     "@ianvs/prettier-plugin-sort-imports",
   ],
   importOrder: [
-    //   // React imports
-    //   "^react$",
-    //   "",
-    //   // Named imports from external packages
-    //   "^(?!react$|@/|[./]).*\\u007B.*\\u007D$",
-    //   "",
-    //   // // Default imports from external packages
-    //   // "^[^.].*",
-    //   // "",
-    // Third party modules
     "<THIRD_PARTY_MODULES>",
     "",
+    // Default imports from local alias (@/)
+    "^@/(?!.*\\u007B).*$",
+    "",
     // Named imports from local alias (@/)
-    "^@/.*$",
+    "^@/.*\\u007B.*\\u007D$",
+    "",
+    // Relative imports with default exports
+    "^[./](?!.*\\u007B).*$",
     "",
     // Relative imports with named exports
-    "^[./]",
+    "^[./].*\\u007B.*\\u007D$",
     "",
-    //   // Relative imports with default exports
-    //   "^[./].*(?<!\\u007B)$",
-    //   "",
     // Node.js built-in types
     "<TYPES>^(node:)",
     "",
