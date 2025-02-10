@@ -12,9 +12,7 @@ export const config = {
     // - /api (API routes)
     // - /_next (Next.js internals)
     // - /_vercel (Vercel internals)
-    // - /fonts (public fonts)
-    // - /images (public images)
-    // - /favicon.ico, /sitemap.xml (public files)
-    "/((?!api|_next|_vercel|fonts|images|favicon.ico|sitemap.xml).*)",
+    // - All files in public folder
+    "/((?!api|_next|_vercel|.*\\..*|.*\\.json).*)",
   ],
 };
