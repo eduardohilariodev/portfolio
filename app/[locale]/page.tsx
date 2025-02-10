@@ -9,9 +9,11 @@ import Education from "./_education/page";
 import Experience from "./_experience/page";
 import Skills from "./_skills/page";
 
-export default async function Home({ params }: { params: { locale: string } }) {
-  // asynchronous access of params.locale
-  const { locale } = await params;
+export default function Home({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) {
   setRequestLocale(locale);
   const sections = getSectionsArray();
 
