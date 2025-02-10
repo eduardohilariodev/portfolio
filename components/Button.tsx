@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { IconType } from "react-icons";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 interface ButtonProps {
   icon?: string | React.ReactNode | IconType;

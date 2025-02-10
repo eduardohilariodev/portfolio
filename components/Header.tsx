@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { getSectionsArray } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 import Button from "./Button";
 import Logo from "./Logo";

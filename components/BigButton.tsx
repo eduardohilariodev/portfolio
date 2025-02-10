@@ -1,7 +1,7 @@
 import { useRouter } from "next/navigation";
 import { ButtonHTMLAttributes } from "react";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: string | React.ReactNode;

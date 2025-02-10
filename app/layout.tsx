@@ -1,10 +1,12 @@
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { Archivo } from "next/font/google";
 import localFont from "next/font/local";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/lib/providers/ThemeProvider";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 import type { Metadata } from "next";
 
@@ -42,14 +44,20 @@ export const metadata: Metadata = {
   description: "Personal portfolio and blog",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+
+  // Providing all messages to the client
+  // side is the easiest way to get started
+  const messages = await getMessages();
+
   return (
     <html
-      lang="en"
+      lang={locale}
       suppressHydrationWarning
       className={`${archivo.variable} ${garamond.variable}`}
     >
@@ -59,23 +67,25 @@ export default function RootLayout({
       <body
         className={`min-h-screen bg-neutral-200 font-sans text-neutral-900 transition-colors dark:bg-neutral-900 dark:text-neutral-200`}
       >
-        <ThemeProvider>
-          <Header />
-          <main className="mx-auto max-w-5xl px-6 md:mt-16 md:max-w-3xl md:px-8 md:pt-8">
-            {children}
-            <div
-              className={cn(
-                "pointer-events-none fixed inset-0 z-5 bg-neutral-200/95 backdrop-blur-xs dark:bg-neutral-900/95",
-              )}
-              style={{
-                transform: "scale(200%)",
-                WebkitMaskImage:
-                  "radial-gradient(circle, transparent 30%, black 50%)",
-              }}
-            />
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            <Header />
+            <main className="mx-auto max-w-5xl px-6 md:mt-16 md:max-w-3xl md:px-8 md:pt-8">
+              {children}
+              <div
+                className={cn(
+                  "pointer-events-none fixed inset-0 z-5 bg-neutral-200/95 backdrop-blur-xs dark:bg-neutral-900/95",
+                )}
+                style={{
+                  transform: "scale(200%)",
+                  WebkitMaskImage:
+                    "radial-gradient(circle, transparent 30%, black 50%)",
+                }}
+              />
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

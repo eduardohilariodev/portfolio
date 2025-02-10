@@ -2,7 +2,7 @@
 
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
-import { getSectionsArray } from "@/lib/constants";
+import { getSectionsArray, SECTION } from "@/lib/constants";
 
 import About from "./_about/page";
 import Education from "./_education/page";
@@ -18,10 +18,10 @@ export default function Home() {
 
       {sections.map((section) => (
         <Section key={section.id} id={section.id} title={section.title}>
-          {section.id === "about" && <About />}
-          {section.id === "knowledge" && <Skills />}
-          {section.id === "career" && <Experience />}
-          {section.id === "education" && <Education />}
+          {section.id === SECTION.ABOUT.id && <About />}
+          {section.id === SECTION.KNOWLEDGE.id && <Skills />}
+          {section.id === SECTION.CAREER.id && <Experience />}
+          {section.id === SECTION.EDUCATION.id && <Education />}
         </Section>
       ))}
     </div>

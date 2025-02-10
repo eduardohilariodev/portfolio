@@ -63,7 +63,7 @@ import {
   TbTopologyStar3,
 } from "react-icons/tb";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 
 import type { StackPillProps } from "../lib/types";
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils/cn";
 import { getPeriodDurationText } from "@/lib/utils/date";
 
 import type { Period } from "@/lib/types";
