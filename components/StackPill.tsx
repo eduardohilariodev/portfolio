@@ -1,6 +1,4 @@
-import { cn } from "@/lib/utils";
 import { BR, ES, GB } from "country-flag-icons/react/3x2";
-
 import { HTMLAttributes } from "react";
 import { IconType } from "react-icons";
 import {
@@ -64,7 +62,11 @@ import {
   TbTestPipe,
   TbTopologyStar3,
 } from "react-icons/tb";
+
+import { cn } from "@/lib/utils";
+
 import type { StackPillProps } from "../lib/types";
+
 export type Tech =
   | "adobe"
   | "aftereffects"

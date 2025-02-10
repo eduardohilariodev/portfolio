@@ -30,7 +30,7 @@ export default function useMousePosition({ id }: { id: string }) {
       );
       element.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, []);
+  }, [id]);
 
   return { ...mousePosition, isActive };
 }

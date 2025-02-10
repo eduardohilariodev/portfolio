@@ -1,6 +1,7 @@
-import { cn } from "@/lib/utils";
 import Link, { LinkProps } from "next/link";
 import { AnchorHTMLAttributes } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface NavLinkProps
   extends LinkProps,

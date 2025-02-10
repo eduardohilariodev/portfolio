@@ -1,7 +1,9 @@
 "use client";
 
-import { getContactLinks, getSectionsArray } from "@/lib/constants";
 import { DateTime } from "luxon";
+
+import { getContactLinks, getSectionsArray } from "@/lib/constants";
+
 import Logo from "./Logo";
 import NavLink from "./NavLink";
 

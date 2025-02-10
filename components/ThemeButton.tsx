@@ -1,7 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useTheme } from "next-themes";
+
+import { cn } from "@/lib/utils";
+
 import Button from "./Button";
 
 export default function ThemeButton({ className }: { className?: string }) {

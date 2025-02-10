@@ -1,5 +1,6 @@
 import { SiWhatsapp } from "react-icons/si";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
+
 import type { ContactLink, Section } from "./types";
 
 // Define the base section data

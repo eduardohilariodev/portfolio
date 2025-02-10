@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 import { IconType } from "react-icons";
+
 import { SectionId } from "./constants";
 
 export interface Period {

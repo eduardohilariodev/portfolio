@@ -3,6 +3,7 @@
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import { getSectionsArray } from "@/lib/constants";
+
 import About from "./_about/page";
 import Education from "./_education/page";
 import Experience from "./_experience/page";

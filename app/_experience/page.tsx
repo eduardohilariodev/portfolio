@@ -1,10 +1,11 @@
 "use client";
 
+import { DateTime } from "luxon";
+
 import BigButton from "@/components/BigButton";
 import { StackPill } from "@/components/StackPill";
 import { Child, Parent } from "@/components/Timeline";
 import { type ExperienceItem } from "@/lib/types";
-import { DateTime } from "luxon";
 
 const experiences: ExperienceItem[] = [
   {

@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
+
 import { CONTACT_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 export default function About() {
   return (

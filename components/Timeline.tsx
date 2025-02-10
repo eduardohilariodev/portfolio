@@ -1,9 +1,11 @@
 "use client";
 
-import { Period } from "@/lib/types";
+import Image from "next/image";
+
 import { cn } from "@/lib/utils";
 import { getPeriodDurationText } from "@/lib/utils/date";
-import Image from "next/image";
+
+import type { Period } from "@/lib/types";
 
 interface ParentProps {
   img: string;

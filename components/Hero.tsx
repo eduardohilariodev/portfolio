@@ -1,11 +1,13 @@
 "use client";
 
-import { getContactLinks, SECTION } from "@/lib/constants";
-import useScrollById from "@/lib/hooks/useScrollById";
-import { cn } from "@/lib/utils";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { useTheme } from "next-themes";
 import { useEffect, useRef } from "react";
+
+import { getContactLinks, SECTION } from "@/lib/constants";
+import useScrollById from "@/lib/hooks/useScrollById";
+import { cn } from "@/lib/utils";
+
 import Button from "./Button";
 
 export default function Hero() {

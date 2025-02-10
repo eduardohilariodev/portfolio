@@ -1,11 +1,12 @@
 "use client";
 
-import { getSectionsArray } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 import { useClickAway, useWindowScroll } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 
+import { getSectionsArray } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";
+import { cn } from "@/lib/utils";
+
 import Button from "./Button";
 import Logo from "./Logo";
 import NavLink from "./NavLink";

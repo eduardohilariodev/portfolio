@@ -1,8 +1,10 @@
 "use client";
 
-import { Child, Parent } from "@/components/Timeline";
-import { type Education } from "@/lib/types";
 import { DateTime } from "luxon";
+
+import { Child, Parent } from "@/components/Timeline";
+
+import type { Education } from "@/lib/types";
 
 const education: Education[] = [
   {
