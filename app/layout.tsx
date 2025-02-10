@@ -195,6 +195,12 @@ export default async function RootLayout({
             <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
+
+        <Script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id="c7c7f5c4-c0c4-4b3f-9c63-dd6c7b2c3b3f"
+        />
       </body>
     </html>
   );

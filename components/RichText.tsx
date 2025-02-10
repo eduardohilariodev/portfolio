@@ -8,18 +8,14 @@ type Props = {
 };
 
 export default function RichText({ children }: Props) {
-  return (
-    <div className="prose">
-      {children({
-        p: (chunks: ReactNode) => <p>{chunks}</p>,
-        b: (chunks: ReactNode) => (
-          <strong className="font-semibold">{chunks}</strong>
-        ),
-        i: (chunks: ReactNode) => <em className="italic">{chunks}</em>,
-        strong: (chunks: ReactNode) => (
-          <strong className="font-bold">{chunks}</strong>
-        ),
-      })}
-    </div>
-  );
+  return children({
+    p: (chunks: ReactNode) => <p>{chunks}</p>,
+    b: (chunks: ReactNode) => (
+      <strong className="font-semibold">{chunks}</strong>
+    ),
+    i: (chunks: ReactNode) => <em className="italic">{chunks}</em>,
+    strong: (chunks: ReactNode) => (
+      <strong className="font-bold">{chunks}</strong>
+    ),
+  });
 }

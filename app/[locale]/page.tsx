@@ -10,7 +10,8 @@ import Experience from "./_experience/page";
 import Skills from "./_skills/page";
 
 export default async function Home({ params }: { params: { locale: string } }) {
-  const locale = await params.locale;
+  // asynchronous access of params.locale
+  const { locale } = await params;
   setRequestLocale(locale);
   const sections = getSectionsArray();
 

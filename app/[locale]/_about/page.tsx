@@ -41,6 +41,7 @@ export default function About() {
           src="/profile_bnw.png"
           alt={t("profileAlt")}
           fill
+          sizes="(max-width: 768px) 300px, 300px"
           className={cn(
             "scale-75 object-contain",
             "[--bgPosition:calc(var(--bgSize)/2)] [--bgSize:0.7rem] [--dotSize:0.15rem]",

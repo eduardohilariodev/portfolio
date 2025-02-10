@@ -51,7 +51,7 @@ export default function Hero() {
 
           <hr className="border-[1.5px]" />
 
-          <p className="font-serif text-4xl font-light">
+          <p className="prose font-serif text-4xl font-light">
             <RichText>{(tags) => t.rich("subtitle", tags)}</RichText>
           </p>
         </div>
