@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { TbCheck, TbClock } from "react-icons/tb";
+import { TbClock, TbSchool } from "react-icons/tb";
 
 import { cn } from "@/lib/utils/cn";
 import { getMonthYearText, getPeriodDurationText } from "@/lib/utils/date";
@@ -63,6 +63,7 @@ export function Parent({ img, name, period }: ParentProps) {
 
 interface ChildProps {
   title?: string;
+  degree?: string;
   period?: Period;
   description?: string;
   isLast?: boolean;
@@ -78,11 +79,27 @@ export function Child({
   hasNode = false,
   isLast = false,
   title,
+  degree,
   status = "default",
 }: ChildProps) {
-  const t = useTranslations("Experience.date");
+  const tEducation = useTranslations("Education");
+  const tExperienceDate = useTranslations("Experience.date");
   const tDateFormat = useTranslations("date.format");
   const locale = useLocale();
+
+  let statusClasses;
+  switch (status as NodeStatus) {
+    case "in_progress":
+      statusClasses =
+        "ml-2 bg-sky-100 font-bold px-2 py-1 font-sans text-sm dark:font-normal text-sky-600 dark:bg-sky-950 dark:text-sky-400";
+      break;
+    case "completed":
+      statusClasses =
+        "ml-2 bg-emerald-100 font-bold px-2 py-1 font-sans text-sm dark:font-normal text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400";
+      break;
+    default:
+      statusClasses = "";
+  }
 
   return (
     <div
@@ -94,16 +111,31 @@ export function Child({
       <TimelineNode hasNode={hasNode} status={status}>
         <h4
           aria-label="Position title"
-          className="self-center font-serif text-xl leading-6 font-bold md:text-2xl"
+          className="flex items-center self-center font-serif text-xl leading-6 font-bold md:text-2xl"
         >
-          {title}
+          <div className="flex items-center">
+            {title}
+            {degree && (
+              <span className="font-light text-neutral-500">{`, ${degree}`}</span>
+            )}
+          </div>
+
+          {status && (
+            <span className={statusClasses}>
+              {tEducation(`progress.${status}`)}
+            </span>
+          )}
           <br className="md:hidden" />
           {period && (
             <span className="font-light text-neutral-500">
-              {` ${t("for")} ${getPeriodDurationText(period, locale, {
-                removeZeroYear: tDateFormat("removeZeroYear"),
-                removeZeroMonth: tDateFormat("removeZeroMonth"),
-              })}`}
+              {` ${tExperienceDate("for")} ${getPeriodDurationText(
+                period,
+                locale,
+                {
+                  removeZeroYear: tDateFormat("removeZeroYear"),
+                  removeZeroMonth: tDateFormat("removeZeroMonth"),
+                },
+              )}`}
             </span>
           )}
         </h4>
@@ -147,17 +179,32 @@ export function TimelineNode({
   className,
   status = "default",
 }: TimelineNodeProps & { className?: string }) {
+  const t = useTranslations("Education.progress");
+
   const getNodeContent = () => {
     if (!hasNode) return null;
 
     switch (status) {
       case "in_progress":
-        return <TbClock className="size-4 text-blue-500" />;
+        return (
+          <TbClock
+            className="size-8 border-2 border-neutral-900 bg-sky-600 p-1.5 text-neutral-200 dark:border-neutral-200 dark:bg-sky-900 dark:text-neutral-200"
+            aria-label={t("in_progress")}
+          />
+        );
       case "completed":
-        return <TbCheck className="size-4 text-green-500" />;
+        return (
+          <TbSchool
+            className="size-8 border-2 border-neutral-900 bg-emerald-600 p-1.5 text-neutral-200 dark:border-neutral-200 dark:bg-emerald-700"
+            aria-label={t("completed")}
+          />
+        );
       default:
         return (
-          <div className="aspect-square max-h-4 min-h-4 max-w-4 min-w-4 rounded-full bg-neutral-900 dark:bg-neutral-200" />
+          <div
+            className="aspect-square max-h-4 min-h-4 max-w-4 min-w-4 rounded-full bg-neutral-900 dark:bg-neutral-200"
+            aria-label={t("default")}
+          />
         );
     }
   };

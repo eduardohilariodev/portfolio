@@ -12,7 +12,8 @@ export default function Education() {
 
   const education: Education[] = [
     {
-      degree: t("degrees.computerScience.title"),
+      title: t("degrees.computerScience.title"),
+      degree: t("degrees.computerScience.degree"),
       period: {
         start: DateTime.fromISO("2025-01"),
         end: DateTime.fromISO("2029-01"),
@@ -22,10 +23,11 @@ export default function Education() {
       description: t("degrees.computerScience.description"),
     },
     {
-      degree: t("degrees.design.title"),
+      title: t("degrees.design.title"),
+      degree: t("degrees.design.degree"),
       period: {
         start: DateTime.fromISO("2016-03"),
-        end: DateTime.fromISO("2022-03"),
+        end: DateTime.fromISO("2022-02"),
       },
       img: "https://media.licdn.com/dms/image/v2/D4D0BAQF1YvdM9TWgkg/company-logo_200_200/company-logo_200_200/0/1726172033341/ufsc_logo?e=1746662400&v=beta&t=7CbsZiKoYzMf0bbwOiO-8PP-510WMlkQLBA4AutbZGM",
       institution: "UFSC",
@@ -40,7 +42,8 @@ export default function Education() {
           <Parent img={edu.img} name={edu.institution} period={edu.period} />
           <Child
             hasNode
-            title={edu.degree}
+            title={edu.title}
+            degree={edu.degree}
             description={edu.description}
             isLast={index === education.length - 1}
             status={index === 0 ? "in_progress" : "completed"}

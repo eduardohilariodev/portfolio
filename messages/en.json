@@ -81,13 +81,20 @@
   "Education": {
     "degrees": {
       "computerScience": {
-        "title": "Computer Science, BA",
+        "title": "Computer Science",
+        "degree": "B.S.C.S.",
         "description": "Studying algorithms, data structures, and software engineering principles with focus on full-stack development. Developing skills in systems design, cloud computing, and modern programming paradigms through hands-on projects."
       },
       "design": {
-        "title": "Design, BA",
+        "title": "Design",
+        "degree": "B.Des.",
         "description": "Studied comprehensive design principles including visual communication, user-centered design, and design thinking methodologies. Participated in research projects focused on interface design and user experience."
       }
+    },
+    "progress": {
+      "in_progress": "Pursuing",
+      "completed": "Achieved",
+      "default": "Not started"
     }
   },
   "Footer": {

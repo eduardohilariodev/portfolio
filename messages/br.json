@@ -79,13 +79,20 @@
   "Education": {
     "degrees": {
       "computerScience": {
-        "title": "Ciência da Computação, BA",
+        "title": "Ciência da Computação",
+        "degree": "Bacharelado",
         "description": "Estudando algoritmos, estruturas de dados e princípios de engenharia de software com foco em desenvolvimento full-stack. Desenvolvendo habilidades em design de sistemas, computação em nuvem e paradigmas modernos de programação através de projetos práticos."
       },
       "design": {
-        "title": "Design, BA",
+        "title": "Design",
+        "degree": "Bacharelado",
         "description": "Estudei princípios abrangentes de design incluindo comunicação visual, design centrado no usuário e metodologias de design thinking. Participei de projetos de pesquisa focados em design de interface e experiência do usuário."
       }
+    },
+    "progress": {
+      "in_progress": "Cursando",
+      "completed": "Graduado",
+      "default": "Não iniciado"
     }
   },
   "Footer": {

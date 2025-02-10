@@ -47,6 +47,7 @@ export interface Project {
 export interface Education {
   img: string;
   institution: string;
+  title: string;
   degree: string;
   period: Period;
   description?: string;
