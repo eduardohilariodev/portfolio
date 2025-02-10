@@ -47,8 +47,8 @@
       "for": "für",
       "format": {
         "month": "LLL yyyy",
-        "removeZeroYear": "0 Jahre? und? ",
-        "removeZeroMonth": "und 0 Monate"
+        "removeZeroYear": "0 Jahre ?und? ?",
+        "removeZeroMonth": "und 0 Monate?"
       }
     },
     "positions": {

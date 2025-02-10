@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://eduardohilariodev.com/sitemap.xml
+
+# Prevent crawling of error pages
+Disallow: /404
+Disallow: /500 
