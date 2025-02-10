@@ -1,33 +1,34 @@
+import { BR, GB } from "country-flag-icons/react/3x2";
 import { SiWhatsapp } from "react-icons/si";
 import { TbBrandGithub, TbBrandLinkedin, TbMail } from "react-icons/tb";
 
-import type { ContactLink, Section } from "./types";
+import type { ContactLink, LocaleConfig, Section } from "./types";
 
 // Define the base section data
 export const SECTION_DATA = {
   ABOUT: {
     id: "about",
-    title: "About me",
+    title: "sections.about",
     href: "#about",
   },
   KNOWLEDGE: {
     id: "knowledge",
-    title: "Knowledge",
+    title: "sections.knowledge",
     href: "#knowledge",
   },
   CAREER: {
     id: "career",
-    title: "Career",
+    title: "sections.career",
     href: "#career",
   },
   // CONTACT: {
   //   id: "contact",
-  //   title: "Find me",
+  //   title: "sections.contact",
   //   href: "#contact",
   // },
   EDUCATION: {
     id: "education",
-    title: "Education",
+    title: "sections.education",
     href: "#education",
   },
 } as const;
@@ -96,3 +97,25 @@ export const contactLinks: Record<ContactLinkLabel, ContactLink> = {
 
 // Getter for contact links
 export const getContactLinks = (): ContactLink[] => Object.values(contactLinks);
+
+// Locale configuration
+export const locales = ["br", "en"] as const;
+export type Locale = (typeof locales)[number];
+export const defaultLocale: Locale = "en";
+
+export const LOCALE_CONFIG: Record<Locale, LocaleConfig> = {
+  br: {
+    code: "br",
+    label: "Português",
+    icon: BR,
+  },
+  en: {
+    code: "en",
+    label: "English",
+    icon: GB,
+  },
+} as const;
+
+// Helper function to get array of locale configs
+export const getLocaleConfigs = (): LocaleConfig[] =>
+  Object.values(LOCALE_CONFIG);

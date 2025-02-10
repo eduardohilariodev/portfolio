@@ -1,6 +1,7 @@
 "use client";
 
 import { DateTime } from "luxon";
+import { useTranslations } from "next-intl";
 
 import { getContactLinks, getSectionsArray } from "@/lib/constants";
 
@@ -8,6 +9,8 @@ import Logo from "./Logo";
 import NavLink from "./NavLink";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+  const tSections = useTranslations();
   const sectionLinks = getSectionsArray();
   const contactLinks = getContactLinks();
 
@@ -17,7 +20,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <Logo width={84} />
           <p className="text-sm font-thin tracking-wide md:text-xl">
-            I&apos;m Eduardo, a software engineer and designer from Brazil.
+            {t("intro")}
           </p>
         </div>
         <div className="flex flex-col">
@@ -27,9 +30,9 @@ export default function Footer() {
               href={href}
               rel="noopener noreferrer"
               className="p-2 text-neutral-600 transition-colors hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-200"
-              aria-label={title}
+              aria-label={tSections(title)}
             >
-              {title}
+              {tSections(title)}
             </NavLink>
           ))}
         </div>
@@ -49,10 +52,10 @@ export default function Footer() {
         </div>
 
         <p className="col-span-3 place-self-center text-center font-serif text-lg font-light tracking-tight text-neutral-900 md:text-2xl dark:text-neutral-200">
-          Built with Next.js by Eduardo Hilário in{" "}
-          {DateTime.now().get("year").toString()}
-          .&nbsp; <br className="md:hidden" />
-          All rights reserved.
+          {t.rich("copyright", {
+            year: DateTime.now().get("year").toString(),
+            br: () => <br className="md:hidden" />,
+          })}
         </p>
       </div>
     </footer>

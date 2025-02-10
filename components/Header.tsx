@@ -1,6 +1,7 @@
 "use client";
 
 import { useClickAway, useWindowScroll } from "@uidotdev/usehooks";
+import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 
 import { getSectionsArray } from "@/lib/constants";
@@ -8,11 +9,13 @@ import useScrollById from "@/lib/hooks/useScrollById";
 import { cn } from "@/lib/utils/cn";
 
 import Button from "./Button";
+import LanguageButton from "./LanguageButton";
 import Logo from "./Logo";
 import NavLink from "./NavLink";
 import ThemeButton from "./ThemeButton";
 
 export default function Header() {
+  const t = useTranslations();
   const [{ y }] = useWindowScroll();
   const [activeSection, setActiveSection] = useState<string>("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -71,7 +74,7 @@ export default function Header() {
       active={activeSection === id}
       {...props}
     >
-      {children}
+      {t(children as string)}
     </NavLink>
   );
 
@@ -106,6 +109,7 @@ export default function Header() {
 
         {/* Mobile Buttons */}
         <div className="-pr-6 flex items-center md:gap-4">
+          <LanguageButton />
           <ThemeButton />
           <Button
             className="md:hidden"

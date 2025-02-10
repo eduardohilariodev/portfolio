@@ -37,12 +37,12 @@ export default function Button({
 
   const paddingLabel = "px-2 py-1 md:px-4 md:py-3";
   const paddingIcon = "p-1";
-  const buttonSize = "min-h-10min-w-10md:min-h-12 md:min-w-12";
+  const buttonSize = "min-h-10 min-w-10 md:min-h-12 md:min-w-12";
 
   return (
     <div
       className={cn(
-        "group relative w-fit border-2 border-transparent text-xl",
+        "group relative h-fit w-fit border-2 border-transparent text-xl",
         buttonSize,
         className,
         children ? paddingLabel : paddingIcon,

@@ -1,9 +1,11 @@
 "use client";
 
+import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { TbCheck, TbClock } from "react-icons/tb";
 
 import { cn } from "@/lib/utils/cn";
-import { getPeriodDurationText } from "@/lib/utils/date";
+import { getMonthYearText, getPeriodDurationText } from "@/lib/utils/date";
 
 import type { Period } from "@/lib/types";
 
@@ -16,6 +18,10 @@ interface ParentProps {
 const columnWidth =
   "grid-cols-[50px_1fr] gap-x-2 md:gap-x-4 md:grid-cols-[80px_1fr]";
 export function Parent({ img, name, period }: ParentProps) {
+  const t = useTranslations("Experience.date");
+  const locale = useLocale();
+  const format = t("format.month");
+
   return (
     <div className={cn("grid", columnWidth)}>
       <div className="flex flex-col">
@@ -42,9 +48,11 @@ export function Parent({ img, name, period }: ParentProps) {
             aria-label="Period"
             className="font-serif font-light text-neutral-500 dark:text-neutral-200"
           >
-            {period.start.toFormat("LLL yyyy")}
+            {getMonthYearText(period.start, locale, format)}
             &ndash;
-            {period.end?.toFormat("LLL yyyy") ?? "Present"}
+            {period.end
+              ? getMonthYearText(period.end, locale, format)
+              : t("present")}
           </span>
         </div>
       </div>
@@ -60,6 +68,7 @@ interface ChildProps {
   isLast?: boolean;
   children?: React.ReactNode;
   hasNode?: boolean;
+  status?: NodeStatus;
 }
 
 export function Child({
@@ -69,7 +78,12 @@ export function Child({
   hasNode = false,
   isLast = false,
   title,
+  status = "default",
 }: ChildProps) {
+  const t = useTranslations("Experience.date");
+  const tDateFormat = useTranslations("date.format");
+  const locale = useLocale();
+
   return (
     <div
       aria-label="Child timeline container"
@@ -77,7 +91,7 @@ export function Child({
     >
       <TimelineNode />
 
-      <TimelineNode hasNode={hasNode}>
+      <TimelineNode hasNode={hasNode} status={status}>
         <h4
           aria-label="Position title"
           className="self-center font-serif text-xl leading-6 font-bold md:text-2xl"
@@ -86,7 +100,10 @@ export function Child({
           <br className="md:hidden" />
           {period && (
             <span className="font-light text-neutral-500">
-              {` for ${getPeriodDurationText(period)}`}
+              {` ${t("for")} ${getPeriodDurationText(period, locale, {
+                removeZeroYear: tDateFormat("removeZeroYear"),
+                removeZeroMonth: tDateFormat("removeZeroMonth"),
+              })}`}
             </span>
           )}
         </h4>
@@ -114,10 +131,13 @@ export function Child({
   );
 }
 
+type NodeStatus = "default" | "in_progress" | "completed";
+
 interface TimelineNodeProps {
   hasNode?: boolean;
   children?: React.ReactNode;
   height?: number;
+  status?: NodeStatus;
 }
 
 export function TimelineNode({
@@ -125,7 +145,23 @@ export function TimelineNode({
   children,
   height,
   className,
+  status = "default",
 }: TimelineNodeProps & { className?: string }) {
+  const getNodeContent = () => {
+    if (!hasNode) return null;
+
+    switch (status) {
+      case "in_progress":
+        return <TbClock className="size-4 text-blue-500" />;
+      case "completed":
+        return <TbCheck className="size-4 text-green-500" />;
+      default:
+        return (
+          <div className="aspect-square max-h-4 min-h-4 max-w-4 min-w-4 rounded-full bg-neutral-900 dark:bg-neutral-200" />
+        );
+    }
+  };
+
   return (
     <div className={cn("contents")}>
       <div
@@ -137,10 +173,7 @@ export function TimelineNode({
           className="h-full w-0.5 bg-neutral-900 dark:bg-neutral-200"
         />
         {hasNode && (
-          <div
-            aria-label="Connector dot"
-            className="aspect-square max-h-4 min-h-4 max-w-4 min-w-4 rounded-full bg-neutral-900 dark:bg-neutral-200"
-          />
+          <div aria-label="Connector indicator">{getNodeContent()}</div>
         )}
         <div
           aria-label="Vertical timeline line"

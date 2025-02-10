@@ -1,38 +1,34 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 import { CONTACT_LINKS } from "@/lib/constants";
 import { cn } from "@/lib/utils/cn";
 
 export default function About() {
+  const t = useTranslations("About");
+
   return (
     <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3">
       <div className="order-2 space-y-6 md:order-1 md:col-span-2">
         <div className="space-y-4">
           <section className="text-md space-y-4 font-light dark:text-neutral-200">
             <p>
-              Hey, I&apos;m <strong className="font-bold">Eduardo</strong>!
+              {t("greeting")} <strong className="font-bold">{t("name")}</strong>
+              !
             </p>
-            <p>I&apos;m a software engineer and designer, from Brazil.</p>
+            <p>{t("intro")}</p>
+            <p>{t("work")}</p>
+            <p>{t("learning")}</p>
             <p>
-              I work on lots of stuff, on the client-side, on the server-side
-              and on the human-side!
-            </p>
-            <p>
-              I love learning and broadening my knowledge, be it from courses,
-              books, documentaries or college (already did a BA in Design, now I
-              am going for a second run in Computer Science).
-            </p>
-            <p>
-              Take a look at my background bellow and, in case you&apos;re
-              interested,&nbsp;
+              {t("cta")}&nbsp;
               <a
                 href={CONTACT_LINKS.WHATSAPP.href}
                 target="_blank"
                 className="underline"
               >
-                send me a message
+                {t("sendMessage")}
               </a>
               !
             </p>
@@ -43,7 +39,7 @@ export default function About() {
       <div className="relative order-1 mx-auto aspect-square w-full max-w-[300px] border-4 border-neutral-900 bg-neutral-50 p-8 md:order-2 dark:border-neutral-200 dark:bg-neutral-800">
         <Image
           src="/profile_bnw.png"
-          alt="Eduardo's profile picture"
+          alt={t("profileAlt")}
           fill
           className={cn(
             "scale-75 object-contain",

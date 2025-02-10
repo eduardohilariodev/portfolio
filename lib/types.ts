@@ -3,6 +3,8 @@ import { IconType } from "react-icons";
 
 import { SectionId } from "./constants";
 
+import type { FlagComponent } from "country-flag-icons/react/3x2";
+
 export interface Period {
   start: DateTime;
   end?: DateTime;
@@ -19,8 +21,7 @@ export interface ExperienceItem {
   period: Period;
   stack?: StackPillProps[];
   positions: {
-    title: string;
-    description?: string;
+    key: string;
     period?: Period;
   }[];
 }
@@ -67,4 +68,10 @@ export interface ContactLink {
   href: string;
   icon: string | IconType;
   title: string;
+}
+
+export interface LocaleConfig {
+  code: string;
+  label: string;
+  icon: FlagComponent;
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { DateTime } from "luxon";
+import { useTranslations } from "next-intl";
 
 import BigButton from "@/components/BigButton";
 import { StackPill } from "@/components/StackPill";
@@ -20,26 +21,21 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        title: "Software Engineer",
-        description:
-          "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability.",
+        key: "softwareEngineer",
         period: {
           start: DateTime.fromObject({ year: 2023, month: 3 }),
           end: DateTime.fromObject({ year: 2024, month: 12 }),
         },
       },
       {
-        title: "Junior Software Engineer",
-        description:
-          "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes.",
+        key: "juniorSoftwareEngineer",
         period: {
           start: DateTime.fromObject({ year: 2022, month: 6 }),
           end: DateTime.fromObject({ year: 2023, month: 3 }),
         },
       },
       {
-        title: "UX Designer",
-        description: `Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms.`,
+        key: "uxDesigner",
         period: {
           start: DateTime.fromObject({ year: 2022, month: 3 }),
           end: DateTime.fromObject({ year: 2022, month: 6 }),
@@ -85,18 +81,14 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        title: "Technical Content Producer",
-        description:
-          "Led video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes.",
+        key: "technicalContentProducer",
         period: {
           start: DateTime.fromObject({ year: 2020, month: 3 }),
           end: DateTime.fromObject({ year: 2021, month: 3 }),
         },
       },
       {
-        title: "Production Intern",
-        description:
-          "Created video content and automated production workflows using industry tools. Improved content delivery efficiency.",
+        key: "productionIntern",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 11 }),
           end: DateTime.fromObject({ year: 2020, month: 2 }),
@@ -124,18 +116,14 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        title: "UX Designer",
-        description:
-          "Designed brand-aligned communication materials with focus on visual consistency.",
+        key: "uxDesigner",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 6 }),
           end: DateTime.fromObject({ year: 2019, month: 9 }),
         },
       },
       {
-        title: "Design Intern",
-        description:
-          "Created internal and external communication materials following brand guidelines.",
+        key: "designIntern",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 3 }),
           end: DateTime.fromObject({ year: 2019, month: 6 }),
@@ -153,6 +141,8 @@ const experiences: ExperienceItem[] = [
 ];
 
 export default function Experience() {
+  const t = useTranslations("Experience");
+
   return (
     <div aria-label="Experience spacing" className="md:px-12">
       {experiences.map((experience) => (
@@ -162,13 +152,13 @@ export default function Experience() {
             name={experience.company.name}
             period={experience.period}
           />
-          {experience.positions.map(({ description, period, title }) => (
+          {experience.positions.map(({ key, period }) => (
             <Child
-              key={title}
-              description={description}
+              key={key}
+              description={t(`positions.${key}.description`)}
               hasNode
               period={period}
-              title={title}
+              title={t(`positions.${key}.title`)}
             />
           ))}
 
@@ -183,7 +173,7 @@ export default function Experience() {
                   className="absolute inset-0 top-8 left-18 size-min font-serif text-xl md:top-1 md:left-28 dark:text-neutral-400"
                 >
                   <div className="relative z-20 size-full px-2 whitespace-nowrap before:absolute before:inset-0 before:-z-10 before:h-6 before:w-full before:bg-neutral-200 dark:before:bg-neutral-900">
-                    Core Technologies
+                    {t("coreTechnologies")}
                   </div>
                 </h5>
                 <div
@@ -201,10 +191,10 @@ export default function Experience() {
       ))}
       <BigButton
         icon="hn hn-save"
-        aria-label="Save resume"
+        aria-label={t("saveResumeAria")}
         download="./Eduardo_Hilario_Software_Engineer_Resume.pdf"
       >
-        Save Resume
+        {t("saveResume")}
       </BigButton>
     </div>
   );

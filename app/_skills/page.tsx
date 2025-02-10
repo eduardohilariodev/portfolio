@@ -1,17 +1,30 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { StackPill } from "@/components/StackPill";
 
 import { StackPillProps } from "../../lib/types";
 
 interface StackItem {
-  heading: string;
+  heading: categories;
   items: StackPillProps[];
 }
 
+type categories =
+  | "languages"
+  | "frontend"
+  | "backend"
+  | "data"
+  | "cloud"
+  | "mobile"
+  | "testing"
+  | "tooling"
+  | "design";
+
 const stack: StackItem[] = [
   {
-    heading: "Languages",
+    heading: "languages" as categories,
     items: [
       { label: "javascript" },
       { label: "python" },
@@ -20,7 +33,7 @@ const stack: StackItem[] = [
     ],
   },
   {
-    heading: "Frontend",
+    heading: "frontend",
     items: [
       { label: "reactjs", children: [{ label: "nextjs" }] },
       { label: "vuejs", children: [{ label: "nuxt" }] },
@@ -39,7 +52,7 @@ const stack: StackItem[] = [
     ],
   },
   {
-    heading: "Backend",
+    heading: "backend",
     items: [
       {
         label: "javascript",
@@ -52,7 +65,7 @@ const stack: StackItem[] = [
     ],
   },
   {
-    heading: "Data",
+    heading: "data",
     items: [
       { label: "postgresql" },
       { label: "mysql" },
@@ -62,19 +75,19 @@ const stack: StackItem[] = [
     ],
   },
   {
-    heading: "Cloud",
+    heading: "cloud",
     items: [{ label: "aws" }, { label: "vercel" }, { label: "githubactions" }],
   },
   {
-    heading: "Mobile",
+    heading: "mobile",
     items: [{ label: "flutter" }, { label: "reactnative" }],
   },
   {
-    heading: "Testing",
+    heading: "testing",
     items: [{ label: "vitest" }, { label: "jest" }, { label: "puppeteer" }],
   },
   {
-    heading: "Tooling",
+    heading: "tooling",
     items: [
       {
         label: "docker",
@@ -96,7 +109,7 @@ const stack: StackItem[] = [
     ],
   },
   {
-    heading: "Design",
+    heading: "design",
     items: [
       { label: "figma" },
       {
@@ -111,23 +124,23 @@ const stack: StackItem[] = [
     ],
   },
 ];
+
 export default function Skills() {
+  const t = useTranslations("Skills");
+
   return (
     <>
       <div className="text-md mb-12 space-y-3 font-light text-neutral-900 dark:text-neutral-200">
-        <p>Usually the tools I use for the job, depend on the job.</p>
-        <p>
-          There&apos;s no one-size fits all, and as such I&apos;m always trying
-          out new technologies, and constantly learning.
-        </p>
-        <p>
-          The following technologies are the ones I&apos;m most familiar with:
-        </p>
+        <p>{t("intro.tools")}</p>
+        <p>{t("intro.noOneSize")}</p>
+        <p>{t("intro.familiar")}</p>
       </div>
       <div className="h-full w-full">
         {stack.map(({ heading, items }) => (
           <div className="mb-8" key={heading}>
-            <h3 className="mb-3 font-serif text-3xl">{heading}</h3>
+            <h3 className="mb-3 font-serif text-3xl">
+              {t(`categories.${heading}`)}
+            </h3>
             <div className="@container flex flex-wrap gap-4">
               {items.map((item) => (
                 <StackPill key={item.label} tech={item} />

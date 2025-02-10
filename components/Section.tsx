@@ -1,5 +1,7 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 import { cn } from "@/lib/utils/cn";
 
 interface SectionProps {
@@ -15,10 +17,12 @@ export default function Section({
   children,
   className = "",
 }: SectionProps) {
+  const t = useTranslations();
+
   return (
     <section id={id} className={cn("scroll-mt-28 md:scroll-mt-56", className)}>
       <h2 className="mb-8 font-serif text-5xl text-black dark:text-neutral-200">
-        {title}
+        {t(title)}
       </h2>
       {children}
     </section>

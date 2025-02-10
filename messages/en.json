@@ -1,3 +1,103 @@
 {
-  "Hero": { "title": { "name": "Eduardo", "surname": "Hilário" } }
+  "Hero": {
+    "name": "Eduardo",
+    "surname": "Hilário",
+    "subtitle": "I help you <strong>solve</strong> and <strong>build</strong> digital stuff."
+  },
+  "sections": {
+    "about": "About me",
+    "knowledge": "Knowledge",
+    "career": "Career",
+    "education": "Education"
+  },
+  "About": {
+    "greeting": "Hey, I'm",
+    "name": "Eduardo",
+    "intro": "I'm a software engineer and designer, from Brazil.",
+    "work": "I work on lots of stuff, on the client-side, on the server-side and on the human-side!",
+    "learning": "I love learning and broadening my knowledge, be it from courses, books, documentaries or college (already did a BA in Design, now I am going for a second run in Computer Science).",
+    "cta": "Take a look at my background bellow and, in case you're interested,",
+    "sendMessage": "send me a message",
+    "profileAlt": "Eduardo's profile picture"
+  },
+  "Skills": {
+    "intro": {
+      "tools": "Usually the tools I use for the job, depend on the job.",
+      "noOneSize": "There's no one-size fits all, and as such I'm always trying out new technologies, and constantly learning.",
+      "familiar": "The following technologies are the ones I'm most familiar with:"
+    },
+    "categories": {
+      "languages": "Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "data": "Data",
+      "cloud": "Cloud",
+      "mobile": "Mobile",
+      "testing": "Testing",
+      "tooling": "Tooling",
+      "design": "Design"
+    }
+  },
+  "Experience": {
+    "coreTechnologies": "Core Technologies",
+    "saveResume": "Save Resume",
+    "saveResumeAria": "Save resume",
+    "date": {
+      "present": "Present",
+      "for": "for",
+      "format": {
+        "month": "LLL yyyy",
+        "removeZeroYear": "0 years ?and? ?",
+        "removeZeroMonth": "and 0 months"
+      }
+    },
+    "positions": {
+      "softwareEngineer": {
+        "title": "Software Engineer",
+        "description": "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability."
+      },
+      "juniorSoftwareEngineer": {
+        "title": "Junior Software Engineer",
+        "description": "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes."
+      },
+      "uxDesigner": {
+        "title": "UX Designer",
+        "description": "Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms."
+      },
+      "technicalContentProducer": {
+        "title": "Technical Content Producer",
+        "description": "Led video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes."
+      },
+      "productionIntern": {
+        "title": "Production Intern",
+        "description": "Created video content and automated production workflows using industry tools. Improved content delivery efficiency."
+      },
+      "designIntern": {
+        "title": "Design Intern",
+        "description": "Created internal and external communication materials following brand guidelines."
+      }
+    }
+  },
+  "Education": {
+    "degrees": {
+      "computerScience": {
+        "title": "Computer Science, BA",
+        "description": "Studying algorithms, data structures, and software engineering principles with focus on full-stack development. Developing skills in systems design, cloud computing, and modern programming paradigms through hands-on projects."
+      },
+      "design": {
+        "title": "Design, BA",
+        "description": "Studied comprehensive design principles including visual communication, user-centered design, and design thinking methodologies. Participated in research projects focused on interface design and user experience."
+      }
+    }
+  },
+  "Footer": {
+    "intro": "I'm Eduardo, a software engineer and designer from Brazil.",
+    "copyright": "Built with Next.js by Eduardo Hilário in {year}.{br} All rights reserved."
+  },
+  "date": {
+    "format": {
+      "removeZeroYear": "0 years? & ?",
+      "removeZeroMonth": "& 0 months?"
+    }
+  }
 }

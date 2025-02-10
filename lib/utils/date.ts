@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 import { Period } from "../types";
 
 export function getTimePeriod(startDate: Date, endDate: Date = new Date()) {
@@ -21,15 +23,36 @@ export function getTimePeriod(startDate: Date, endDate: Date = new Date()) {
   return parts.join(" ");
 }
 
-export function getPeriodDurationText(period: Period) {
+interface DateFormatTranslations {
+  removeZeroYear: string;
+  removeZeroMonth: string;
+}
+
+export function getPeriodDurationText(
+  period: Period,
+  locale: string,
+  translations: DateFormatTranslations,
+) {
+  const luxonLocale = locale === "br" ? "pt-BR" : locale;
+
   return (
     period.end
       ?.diff(period.start, ["months", "years"])
+      .reconfigure({ locale: luxonLocale })
       .toHuman({
         listStyle: "short",
         unitDisplay: "long",
       })
-      .replace(/0 years ?and? ?/, "")
-      .replace(/and 0 months/, "") ?? ""
+      .replace(new RegExp(translations.removeZeroYear), "")
+      .replace(new RegExp(translations.removeZeroMonth), "") ?? ""
   );
+}
+
+export function getMonthYearText(
+  date: DateTime,
+  locale: string,
+  format: string,
+) {
+  const luxonLocale = locale === "br" ? "pt-BR" : locale;
+  return date.setLocale(luxonLocale).toFormat(format);
 }
