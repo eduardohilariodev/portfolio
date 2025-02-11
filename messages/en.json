@@ -99,7 +99,7 @@
   },
   "Footer": {
     "intro": "I'm Eduardo, a software engineer and designer from Brazil.",
-    "copyright": "Built with Next.js by Eduardo Hilário in {year}.{br} All rights reserved."
+    "copyright": "Built with Next.js by Eduardo Hilário in {year}.<br></br> All rights reserved."
   },
   "date": {
     "format": {

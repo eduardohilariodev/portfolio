@@ -97,7 +97,7 @@
   },
   "Footer": {
     "intro": "Sou Eduardo, engenheiro de software e designer do Brasil.",
-    "copyright": "Desenvolvido com Next.js por Eduardo Hilário em {year}.{br} Todos os direitos reservados."
+    "copyright": "Desenvolvido com Next.js por Eduardo Hilário em {year}.<br></br> Todos os direitos reservados."
   },
   "date": {
     "format": {
