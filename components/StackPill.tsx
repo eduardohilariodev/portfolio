@@ -702,7 +702,7 @@ export function StackPill({
   return (
     <div
       className={cn(
-        `flex cursor-default items-center bg-neutral-200 before:absolute before:inset-0 dark:bg-neutral-900`,
+        `flex cursor-default items-center bg-neutral-200 dark:bg-neutral-900`,
         borderRadius,
       )}
       {...props}
