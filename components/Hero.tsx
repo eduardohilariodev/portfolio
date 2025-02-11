@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect, useRef } from "react";
+
 import { useWindowScroll } from "@uidotdev/usehooks";
 import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-import { useEffect, useRef } from "react";
 
 import { getContactLinks, SECTION } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";

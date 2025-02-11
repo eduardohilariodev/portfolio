@@ -1,8 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import { useClickAway, useWindowScroll } from "@uidotdev/usehooks";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
 
 import { getSectionsArray } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";

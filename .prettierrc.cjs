@@ -7,6 +7,8 @@ const config = {
     "prettier-plugin-tailwindcss",
   ],
   importOrder: [
+    "^react$",
+    "",
     "<THIRD_PARTY_MODULES>",
     "",
     // Default imports from local alias (@/)
