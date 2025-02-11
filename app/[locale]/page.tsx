@@ -2,13 +2,12 @@ import Footer from "@/components/layouts/Footer";
 import Header from "@/components/layouts/Header";
 import Hero from "@/components/layouts/Hero";
 import Section from "@/components/layouts/Section";
+import About from "@/components/sections/About";
+import Education from "@/components/sections/Education";
+import Experience from "@/components/sections/Experience";
+import Skills from "@/components/sections/Skills";
 import { getSectionsArray, SECTION } from "@/lib/constants";
 import { cn } from "@/lib/utils/cn";
-
-import About from "./_about/page";
-import Education from "./_education/page";
-import Experience from "./_experience/page";
-import Skills from "./_skills/page";
 
 export default async function Page() {
   const sections = getSectionsArray();

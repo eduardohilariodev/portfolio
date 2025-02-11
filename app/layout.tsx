@@ -4,14 +4,15 @@ import { Archivo } from "next/font/google";
 import localFont from "next/font/local";
 import Script from "next/script";
 
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { ThemeProvider } from "@/lib/providers/ThemeProvider";
-import { cn } from "@/lib/utils/cn";
 
 import type { Metadata } from "next";
 
 import "./globals.css";
+
+import { PostHogProvider } from "@/lib/providers/PostHogProvider";
+
+import type { ReactNode } from "react";
 
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo" });
 const garamond = localFont({
@@ -109,7 +110,7 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   const locale = await getLocale();
 
@@ -176,31 +177,17 @@ export default async function RootLayout({
       <body
         className={`min-h-screen bg-neutral-200 font-sans text-neutral-900 transition-colors dark:bg-neutral-900 dark:text-neutral-200`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <Header />
-            <main className="mx-auto max-w-5xl px-6 md:mt-16 md:max-w-3xl md:px-8 md:pt-8">
-              {children}
-              <div
-                className={cn(
-                  "pointer-events-none fixed inset-0 z-5 bg-neutral-200/95 backdrop-blur-xs dark:bg-neutral-900/95",
-                )}
-                style={{
-                  transform: "scale(200%)",
-                  WebkitMaskImage:
-                    "radial-gradient(circle, transparent 30%, black 50%)",
-                }}
-              />
-            </main>
-            <Footer />
-          </ThemeProvider>
-        </NextIntlClientProvider>
-
-        <Script
-          async
-          src="https://analytics.umami.is/script.js"
-          data-website-id="c7c7f5c4-c0c4-4b3f-9c63-dd6c7b2c3b3f"
-        />
+        <PostHogProvider>
+          <NextIntlClientProvider messages={messages}>
+            {" "}
+            <ThemeProvider>{children}</ThemeProvider>{" "}
+          </NextIntlClientProvider>
+          <Script
+            async
+            src="https://analytics.umami.is/script.js"
+            data-website-id="c7c7f5c4-c0c4-4b3f-9c63-dd6c7b2c3b3f"
+          />
+        </PostHogProvider>
       </body>
     </html>
   );
