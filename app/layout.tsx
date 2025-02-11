@@ -179,8 +179,7 @@ export default async function RootLayout({
       >
         <PostHogProvider>
           <NextIntlClientProvider messages={messages}>
-            {" "}
-            <ThemeProvider>{children}</ThemeProvider>{" "}
+            <ThemeProvider>{children}</ThemeProvider>
           </NextIntlClientProvider>
           <Script
             async
