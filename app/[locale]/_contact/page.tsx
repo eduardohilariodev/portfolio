@@ -1,6 +1,6 @@
 "use client";
 
-import Button from "@/components/Button";
+import Button from "@/components/ui/buttons/Button";
 import { getContactLinks } from "@/lib/constants";
 
 export default function Contact() {

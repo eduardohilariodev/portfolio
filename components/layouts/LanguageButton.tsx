@@ -7,7 +7,7 @@ import { getLocaleConfigs, LOCALE_CONFIG } from "@/lib/constants";
 import { getUserLocale, setUserLocale } from "@/lib/services/locale";
 import { cn } from "@/lib/utils/cn";
 
-import { DropdownItem, DropdownMenu } from "./DropdownMenu";
+import { DropdownItem, DropdownMenu } from "../ui/buttons/DropdownMenu";
 
 import type { Locale } from "@/lib/constants";
 

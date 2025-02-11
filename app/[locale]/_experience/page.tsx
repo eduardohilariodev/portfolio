@@ -3,9 +3,9 @@
 import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 
-import BigButton from "@/components/BigButton";
-import { StackPill } from "@/components/StackPill";
-import { Child, Parent } from "@/components/Timeline";
+import { Child, Parent } from "@/components/layouts/Timeline";
+import BigButton from "@/components/ui/buttons/BigButton";
+import { StackPill } from "@/components/ui/StackPill";
 import { type ExperienceItem } from "@/lib/types";
 
 const experiences: ExperienceItem[] = [

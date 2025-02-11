@@ -10,8 +10,8 @@ import { getContactLinks, SECTION } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";
 import { cn } from "@/lib/utils/cn";
 
-import Button from "./Button";
-import RichText from "./RichText";
+import Button from "../ui/buttons/Button";
+import RichText from "../ui/RichText";
 
 export default function Hero() {
   const { theme } = useTheme();

@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 
-import { StackPill } from "@/components/StackPill";
+import { StackPill } from "@/components/ui/StackPill";
 
 import { StackPillProps } from "../../../lib/types";
 

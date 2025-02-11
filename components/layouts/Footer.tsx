@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 
 import { getContactLinks, getSectionsArray } from "@/lib/constants";
 
-import Logo from "./Logo";
-import NavLink from "./NavLink";
+import Logo from "../ui/Logo";
+import NavLink from "../ui/NavLink";
 
 export default function Footer() {
   const t = useTranslations("Footer");

@@ -66,7 +66,7 @@ import {
 
 import { cn } from "@/lib/utils/cn";
 
-import type { StackPillProps } from "../lib/types";
+import type { StackPillProps } from "../../lib/types";
 
 export type Tech =
   | "adobe"

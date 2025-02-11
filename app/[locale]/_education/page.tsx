@@ -3,7 +3,7 @@
 import { DateTime } from "luxon";
 import { useTranslations } from "next-intl";
 
-import { Child, Parent } from "@/components/Timeline";
+import { Child, Parent } from "@/components/layouts/Timeline";
 
 import type { Education } from "@/lib/types";
 

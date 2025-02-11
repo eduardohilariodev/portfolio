@@ -9,11 +9,11 @@ import { getSectionsArray } from "@/lib/constants";
 import useScrollById from "@/lib/hooks/useScrollById";
 import { cn } from "@/lib/utils/cn";
 
-import Button from "./Button";
+import Button from "../ui/buttons/Button";
+import ThemeButton from "../ui/buttons/ThemeButton";
+import Logo from "../ui/Logo";
+import NavLink from "../ui/NavLink";
 import LanguageButton from "./LanguageButton";
-import Logo from "./Logo";
-import NavLink from "./NavLink";
-import ThemeButton from "./ThemeButton";
 
 export default function Header() {
   const t = useTranslations();
