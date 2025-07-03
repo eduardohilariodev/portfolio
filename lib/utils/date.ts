@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { DateTime, Duration } from "luxon";
 
 import { Period } from "../types";
 
@@ -35,17 +35,23 @@ export function getPeriodDurationText(
 ) {
   const luxonLocale = locale === "br" ? "pt-BR" : locale;
 
-  return (
-    period.end
-      ?.diff(period.start, ["months", "years"])
-      .reconfigure({ locale: luxonLocale })
-      .toHuman({
-        listStyle: "short",
-        unitDisplay: "long",
-      })
-      .replace(new RegExp(translations.removeZeroYear), "")
-      .replace(new RegExp(translations.removeZeroMonth), "") ?? ""
-  );
+  if (!period.end) return "";
+
+  const duration = period.end.diff(period.start, ["years", "months"]);
+  const years = Math.floor(duration.years);
+  const months = Math.floor(duration.months);
+
+  // Use Luxon's built-in internationalization for duration formatting
+  const durationObj = Duration.fromObject({ years, months });
+
+  return durationObj
+    .reconfigure({ locale: luxonLocale })
+    .toHuman({
+      listStyle: "short",
+      unitDisplay: "long",
+    })
+    .replace(new RegExp(translations.removeZeroYear), "")
+    .replace(new RegExp(translations.removeZeroMonth), "");
 }
 
 export function getMonthYearText(

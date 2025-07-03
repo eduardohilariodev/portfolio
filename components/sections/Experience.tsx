@@ -11,8 +11,34 @@ import { type ExperienceItem } from "@/lib/types";
 const experiences: ExperienceItem[] = [
   {
     company: {
+      name: "Lakan.ai",
+      logo: "/lakan_logo.webp",
+      linkedIn: "https://lakan.ai",
+    },
+    period: {
+      start: DateTime.fromObject({ year: 2025, month: 1 }),
+      end: undefined,
+    },
+    positions: [
+      {
+        key: "lakanSoftwareEngineer",
+        period: {
+          start: DateTime.fromObject({ year: 2025, month: 1 }),
+          end: DateTime.now(),
+        },
+      },
+    ],
+    stack: [
+      { label: "aspnet" },
+      { label: "csharp" },
+      { label: "azure" },
+      { label: "microsoftsqlserver" },
+    ],
+  },
+  {
+    company: {
       name: "Ckreativ",
-      logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGLeuwrogi8bw/company-logo_200_200/company-logo_200_200/0/1710548135771/ckreativ_logo?e=1744848000&v=beta&t=6YZovv4fOMknme-0bOuGi9F9gguN4BNDHob4TNLFZdI",
+      logo: "/ckreativ_logo.webp",
       linkedIn: "https://www.linkedin.com/company/ckreativ",
     },
     period: {
@@ -21,31 +47,17 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        key: "softwareEngineer",
-        period: {
-          start: DateTime.fromObject({ year: 2023, month: 3 }),
-          end: DateTime.fromObject({ year: 2024, month: 12 }),
-        },
-      },
-      {
-        key: "juniorSoftwareEngineer",
-        period: {
-          start: DateTime.fromObject({ year: 2022, month: 6 }),
-          end: DateTime.fromObject({ year: 2023, month: 3 }),
-        },
-      },
-      {
-        key: "uxDesigner",
+        key: "ckreativSoftwareEngineer",
         period: {
           start: DateTime.fromObject({ year: 2022, month: 3 }),
-          end: DateTime.fromObject({ year: 2022, month: 6 }),
+          end: DateTime.fromObject({ year: 2024, month: 12 }),
         },
       },
     ],
     stack: [
       { label: "typescript" },
       { label: "vuejs", children: [{ label: "nuxt" }] },
-      { label: "python", children: [{ label: "fastapi" }] },
+      { label: "python" },
       {
         label: "css",
         children: [
@@ -66,39 +78,40 @@ const experiences: ExperienceItem[] = [
       { label: "docker" },
       { label: "githubactions" },
       { label: "mysql" },
+      { label: "mongodb" },
+      { label: "nodejs" },
+      { label: "vite" },
       { label: "figma" },
     ],
   },
   {
     company: {
       name: "Brick Abode",
-      logo: "https://media.licdn.com/dms/image/v2/C4E0BAQFhRHi0tefe1g/company-logo_200_200/company-logo_200_200/0/1630619625088/brickabode_logo?e=1744848000&v=beta&t=efaIABZOSpz4NqCnbjVAL5GhEbNvVVmW0NGnOVvgKFU",
+      logo: "/brickabode_logo.webp",
       linkedIn: "https://www.linkedin.com/company/brickabode",
     },
     period: {
       start: DateTime.fromObject({ year: 2019, month: 11 }),
-      end: DateTime.fromObject({ year: 2021, month: 3 }),
+      end: DateTime.fromObject({ year: 2021, month: 11 }),
     },
     positions: [
       {
         key: "technicalContentProducer",
         period: {
-          start: DateTime.fromObject({ year: 2020, month: 3 }),
-          end: DateTime.fromObject({ year: 2021, month: 3 }),
-        },
-      },
-      {
-        key: "productionIntern",
-        period: {
           start: DateTime.fromObject({ year: 2019, month: 11 }),
-          end: DateTime.fromObject({ year: 2020, month: 2 }),
+          end: DateTime.fromObject({ year: 2021, month: 11 }),
         },
       },
     ],
     stack: [
       {
         label: "adobe",
-        children: [{ label: "premiere" }, { label: "aftereffects" }],
+        children: [
+          { label: "premiere" },
+          { label: "aftereffects" },
+          { label: "photoshop" },
+          { label: "illustrator" },
+        ],
       },
       { label: "pwsh" },
       { label: "python" },
@@ -107,7 +120,7 @@ const experiences: ExperienceItem[] = [
   {
     company: {
       name: "GETMORE",
-      logo: "https://media.licdn.com/dms/image/v2/C4D0BAQF1TrPLIeswKA/company-logo_200_200/company-logo_200_200/0/1630471547758/getmore_logo?e=1744848000&v=beta&t=sVCwsojd23zNgakotC2LCBnArY70zoNhQLxulL_Nyis",
+      logo: "/getmore_logo.webp",
       linkedIn: "https://www.linkedin.com/company/getmore/",
     },
     period: {
@@ -118,15 +131,8 @@ const experiences: ExperienceItem[] = [
       {
         key: "uxDesigner",
         period: {
-          start: DateTime.fromObject({ year: 2019, month: 6 }),
-          end: DateTime.fromObject({ year: 2019, month: 9 }),
-        },
-      },
-      {
-        key: "designIntern",
-        period: {
           start: DateTime.fromObject({ year: 2019, month: 3 }),
-          end: DateTime.fromObject({ year: 2019, month: 6 }),
+          end: DateTime.fromObject({ year: 2019, month: 9 }),
         },
       },
     ],
@@ -161,7 +167,6 @@ export default function Experience() {
               title={t(`positions.${key}.title`)}
             />
           ))}
-
           {experience.stack && experience.stack.length > 0 && (
             <Child isLast>
               <div

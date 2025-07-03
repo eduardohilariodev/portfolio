@@ -14,6 +14,7 @@ import {
   SiCss3,
   SiDart,
   SiDocker,
+  SiDotnet,
   SiExpress,
   SiFastapi,
   SiFigma,
@@ -52,6 +53,8 @@ import {
 import {
   TbAppWindow,
   TbBrandApple,
+  TbBrandAzure,
+  TbBrandCSharp,
   TbBrandPowershell,
   TbBrandWindows,
   TbDatabase,
@@ -60,6 +63,7 @@ import {
   TbMessageChatbot,
   TbPalette,
   TbSourceCode,
+  TbSql,
   TbTestPipe,
   TbTopologyStar3,
 } from "react-icons/tb";
@@ -142,7 +146,11 @@ export type Tech =
   | "vitest"
   | "vuejs"
   | "webpack"
-  | "windows";
+  | "windows"
+  | "csharp"
+  | "aspnet"
+  | "azure"
+  | "microsoftsqlserver";
 
 interface TechConfig {
   icon: IconType;
@@ -683,6 +691,34 @@ const techStack: TechStack = {
     color: "hover:text-[#1866b5] dark:hover:text-[#1866b5]",
     icon: TbBrandWindows,
     label: "Windows",
+  },
+  csharp: {
+    background: "hover:bg-[#239120]/10 dark:hover:bg-[#239120]/10",
+    border: "hover:border-[#239120]/30 dark:hover:border-[#239120]/30",
+    color: "hover:text-[#239120] dark:hover:text-[#239120]",
+    icon: TbBrandCSharp,
+    label: "C#",
+  },
+  aspnet: {
+    background: "hover:bg-[#239120]/10 dark:hover:bg-[#239120]/10",
+    border: "hover:border-[#239120]/30 dark:hover:border-[#239120]/30",
+    color: "hover:text-[#239120] dark:hover:text-[#239120]",
+    icon: SiDotnet,
+    label: "ASP.NET",
+  },
+  azure: {
+    background: "hover:bg-[#239120]/10 dark:hover:bg-[#239120]/10",
+    border: "hover:border-[#239120]/30 dark:hover:border-[#239120]/30",
+    color: "hover:text-[#239120] dark:hover:text-[#239120]",
+    icon: TbBrandAzure,
+    label: "Azure",
+  },
+  microsoftsqlserver: {
+    background: "hover:bg-[#239120]/10 dark:hover:bg-[#239120]/10",
+    border: "hover:border-[#239120]/30 dark:hover:border-[#239120]/30",
+    color: "hover:text-[#239120] dark:hover:text-[#239120]",
+    icon: TbSql,
+    label: "Microsoft SQL Server",
   },
 };
 

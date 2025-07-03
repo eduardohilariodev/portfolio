@@ -27,6 +27,8 @@ const stack: StackItem[] = [
     heading: "languages" as categories,
     items: [
       { label: "javascript" },
+      { label: "typescript" },
+      { label: "csharp" },
       { label: "python" },
       { label: "php" },
       { label: "dart" },
@@ -60,6 +62,7 @@ const stack: StackItem[] = [
       },
       { label: "php", children: [{ label: "laravel" }] },
       { label: "python", children: [{ label: "fastapi" }] },
+      { label: "csharp", children: [{ label: "aspnet" }] },
       { label: "nginx" },
       { label: "graphql" },
     ],
@@ -72,11 +75,17 @@ const stack: StackItem[] = [
       { label: "mariadb" },
       { label: "sqlite" },
       { label: "mongodb" },
+      { label: "microsoftsqlserver" },
     ],
   },
   {
     heading: "cloud",
-    items: [{ label: "aws" }, { label: "vercel" }, { label: "githubactions" }],
+    items: [
+      { label: "aws" },
+      { label: "vercel" },
+      { label: "githubactions" },
+      { label: "azure" },
+    ],
   },
   {
     heading: "mobile",
