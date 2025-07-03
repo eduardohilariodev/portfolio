@@ -36,7 +36,8 @@ export function DropdownMenu({
           "border-neutral-200 bg-white/80 py-1 shadow-lg backdrop-blur-sm",
           "cursor-pointer dark:border-neutral-800 dark:bg-neutral-900/80",
           "opacity-0 transition-all duration-1000",
-          isOpen && "opacity-100",
+          "pointer-events-none",
+          isOpen && "pointer-events-auto opacity-100",
           align === "end" ? "right-0" : "left-0",
           side === "top" ? "bottom-full mb-2" : "top-full mt-2",
         )}
