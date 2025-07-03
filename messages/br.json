@@ -50,29 +50,33 @@
       }
     },
     "positions": {
-      "softwareEngineer": {
+      "lakanSoftwareEngineer": {
         "title": "Engenheiro de Software",
-        "description": "Liderou o desenvolvimento de soluções baseadas em IA e aplicações em nuvem, incluindo um chatbot com tempos de resposta inferiores a um minuto. Implementou sistemas de assinatura e otimizou fluxos de desenvolvimento usando práticas modernas de DevOps, resultando em melhor aquisição de clientes e escalabilidade do sistema."
+        "description": "Desenvolvo a plataforma de psicologia Lakan.ai com APIs ASP.NET Core e Microsoft SQL Server. Implementei transcrição de fala OpenAI Whisper para notas de sessão. Contribuí para o design de produtos, fluxos de usuário e otimização de banco de dados sob prazos apertados."
       },
-      "juniorSoftwareEngineer": {
+      "ckreativSoftwareEngineer": {
+        "title": "Engenheiro de Software",
+        "description": "Coordenei o desenvolvimento de soluções baseadas em IA e aplicações em nuvem, incluindo um chatbot com tempos de resposta inferiores a um minuto. Criei sistemas de assinatura e otimizei fluxos de desenvolvimento usando práticas modernas de DevOps, resultando em melhor aquisição de clientes e escalabilidade do sistema."
+      },
+      "ckreativJuniorSoftwareEngineer": {
         "title": "Engenheiro de Software Jr.",
-        "description": "Aprimorou e manteve plataformas de software empresarial, focando em otimização de desempenho e experiência do usuário. Alcançou melhorias significativas na confiabilidade do sistema, satisfação do usuário e desempenho da aplicação através de processos sistemáticos de teste e depuração."
+        "description": "Aprimorei e mantive plataformas de software empresarial, focando em otimização de desempenho e experiência do usuário. Alcancei melhorias significativas na confiabilidade do sistema, satisfação do usuário e desempenho da aplicação através de processos sistemáticos de teste e depuração."
       },
       "uxDesigner": {
         "title": "Designer UX",
-        "description": "Liderou iniciativas de design de interface do usuário focadas em melhorar a acessibilidade e o engajamento do usuário em todas as plataformas."
+        "description": "Conduzi iniciativas de design de interface do usuário focadas em melhorar a acessibilidade e o engajamento do usuário em todas as plataformas."
       },
       "technicalContentProducer": {
         "title": "Produtor de Conteúdo Técnico",
-        "description": "Liderou o fluxo de produção de vídeo e automatizou sistemas de distribuição de conteúdo. Otimizou a configuração de hardware e processos de entrega de conteúdo."
+        "description": "Gerenciei o fluxo de produção de vídeo e automatizei sistemas de distribuição de conteúdo. Otimizei a configuração de hardware e processos de entrega de conteúdo."
       },
       "productionIntern": {
         "title": "Estagiário de Produção",
-        "description": "Criou conteúdo em vídeo e automatizou fluxos de trabalho de produção usando ferramentas da indústria. Melhorou a eficiência da entrega de conteúdo."
+        "description": "Produzi conteúdo em vídeo e automatizei fluxos de trabalho de produção usando ferramentas da indústria. Melhorei a eficiência da entrega de conteúdo."
       },
       "designIntern": {
         "title": "Estagiário de Design",
-        "description": "Criou materiais de comunicação interna e externa seguindo as diretrizes da marca."
+        "description": "Elaborei materiais de comunicação interna e externa seguindo as diretrizes da marca."
       }
     }
   },

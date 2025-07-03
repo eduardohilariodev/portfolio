@@ -52,17 +52,21 @@
       }
     },
     "positions": {
-      "softwareEngineer": {
+      "lakanSoftwareEngineer": {
         "title": "Ingegnere Software",
-        "description": "Ho guidato lo sviluppo di soluzioni basate su IA e applicazioni cloud, incluso un chatbot con tempi di risposta inferiori al minuto. Ho implementato sistemi di abbonamento e ottimizzato i flussi di sviluppo utilizzando pratiche DevOps moderne, portando a un miglioramento nell'acquisizione dei clienti e nella scalabilità del sistema."
+        "description": "Sviluppo la piattaforma di psicologia Lakan.ai con API ASP.NET Core e Microsoft SQL Server. Ho implementato la trascrizione vocale OpenAI Whisper per le note di sessione. Ho contribuito al design del prodotto, ai flussi utente e all'ottimizzazione del database sotto scadenze strette."
       },
-      "juniorSoftwareEngineer": {
+      "ckreativSoftwareEngineer": {
+        "title": "Ingegnere Software",
+        "description": "Ho coordinato lo sviluppo di soluzioni basate su IA e applicazioni cloud, incluso un chatbot con tempi di risposta inferiori al minuto. Ho costruito sistemi di abbonamento e ottimizzato i flussi di sviluppo utilizzando pratiche DevOps moderne, portando a un miglioramento nell'acquisizione dei clienti e nella scalabilità del sistema."
+      },
+      "ckreativJuniorSoftwareEngineer": {
         "title": "Ingegnere Software Junior",
         "description": "Ho migliorato e mantenuto piattaforme software aziendali, concentrandomi sull'ottimizzazione delle prestazioni e sull'esperienza utente. Ho ottenuto significativi miglioramenti nell'affidabilità del sistema, nella soddisfazione degli utenti e nelle prestazioni delle applicazioni attraverso processi sistematici di test e debugging."
       },
       "uxDesigner": {
         "title": "UX Designer",
-        "description": "Ho guidato iniziative di design dell'interfaccia utente focalizzate sul miglioramento dell'accessibilità e del coinvolgimento degli utenti su tutte le piattaforme."
+        "description": "Ho condotto iniziative di design dell'interfaccia utente focalizzate sul miglioramento dell'accessibilità e del coinvolgimento degli utenti su tutte le piattaforme."
       },
       "technicalContentProducer": {
         "title": "Produttore di Contenuti Tecnici",
@@ -70,11 +74,11 @@
       },
       "productionIntern": {
         "title": "Stagista di Produzione",
-        "description": "Ho creato contenuti video e automatizzato i flussi di lavoro di produzione utilizzando strumenti del settore. Ho migliorato l'efficienza nella consegna dei contenuti."
+        "description": "Ho prodotto contenuti video e automatizzato i flussi di lavoro di produzione utilizzando strumenti del settore. Ho migliorato l'efficienza nella consegna dei contenuti."
       },
       "designIntern": {
         "title": "Stagista di Design",
-        "description": "Ho creato materiali di comunicazione interna ed esterna seguendo le linee guida del marchio."
+        "description": "Ho elaborato materiali di comunicazione interna ed esterna seguendo le linee guida del marchio."
       }
     }
   },

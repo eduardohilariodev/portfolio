@@ -52,29 +52,33 @@
       }
     },
     "positions": {
-      "softwareEngineer": {
+      "lakanSoftwareEngineer": {
         "title": "Software Engineer",
-        "description": "Led development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Implemented subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability."
+        "description": "I develop the Lakan.ai psychology platform with ASP.NET Core APIs and Microsoft SQL Server. Implemented OpenAI Whisper speech transcription for session notes. Contributed to product design, user flows, and database optimization under tight deadlines."
       },
-      "juniorSoftwareEngineer": {
+      "ckreativSoftwareEngineer": {
+        "title": "Software Engineer",
+        "description": "I coordinated the development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Built subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability."
+      },
+      "ckreativJuniorSoftwareEngineer": {
         "title": "Junior Software Engineer",
-        "description": "Enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes."
+        "description": "I enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes."
       },
       "uxDesigner": {
         "title": "UX Designer",
-        "description": "Spearheaded user interface design initiatives focused on improving accessibility and user engagement across platforms."
+        "description": "I conducted user interface design initiatives focused on improving accessibility and user engagement across platforms."
       },
       "technicalContentProducer": {
         "title": "Technical Content Producer",
-        "description": "Led video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes."
+        "description": "I managed video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes."
       },
       "productionIntern": {
         "title": "Production Intern",
-        "description": "Created video content and automated production workflows using industry tools. Improved content delivery efficiency."
+        "description": "I created video content and automated production workflows using industry tools. Improved content delivery efficiency."
       },
       "designIntern": {
         "title": "Design Intern",
-        "description": "Created internal and external communication materials following brand guidelines."
+        "description": "I crafted internal and external communication materials following brand guidelines."
       }
     }
   },

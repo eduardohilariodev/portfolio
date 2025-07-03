@@ -47,34 +47,38 @@
       "for": "pendant",
       "format": {
         "month": "LLL yyyy",
-        "removeZeroYear": "0 ans ?et? ?",
-        "removeZeroMonth": "et 0 mois"
+        "removeZeroYear": "0\\s*an\\s*et\\s*",
+        "removeZeroMonth": "et\\s*0\\s*mois\\s*"
       }
     },
     "positions": {
-      "softwareEngineer": {
+      "lakanSoftwareEngineer": {
         "title": "Ingénieur Logiciel",
-        "description": "Direction du développement de solutions basées sur l'IA et d'applications cloud, incluant un chatbot avec des temps de réponse inférieurs à une minute. Mise en place de systèmes d'abonnement et optimisation des flux de développement utilisant des pratiques DevOps modernes, aboutissant à une meilleure acquisition client et une scalabilité du système."
+        "description": "Je développe la plateforme de psychologie Lakan.ai avec des APIs ASP.NET Core et Microsoft SQL Server. J'ai implémenté la transcription vocale OpenAI Whisper pour les notes de session. J'ai contribué à la conception de produits, aux flux utilisateur et à l'optimisation de base de données sous des délais serrés."
       },
-      "juniorSoftwareEngineer": {
+      "ckreativSoftwareEngineer": {
+        "title": "Ingénieur Logiciel",
+        "description": "J'ai coordonné le développement de solutions basées sur l'IA et d'applications cloud, incluant un chatbot avec des temps de réponse inférieurs à une minute. J'ai construit des systèmes d'abonnement et optimisé les flux de développement utilisant des pratiques DevOps modernes, aboutissant à une meilleure acquisition client et une scalabilité du système."
+      },
+      "ckreativJuniorSoftwareEngineer": {
         "title": "Ingénieur Logiciel Junior",
-        "description": "Amélioration et maintenance de plateformes logicielles d'entreprise, axées sur l'optimisation des performances et l'expérience utilisateur. Réalisation d'améliorations significatives de la fiabilité du système, de la satisfaction des utilisateurs et des performances des applications grâce à des processus systématiques de test et de débogage."
+        "description": "J'ai amélioré et maintenu des plateformes logicielles d'entreprise, axées sur l'optimisation des performances et l'expérience utilisateur. J'ai réalisé des améliorations significatives de la fiabilité du système, de la satisfaction des utilisateurs et des performances des applications grâce à des processus systématiques de test et de débogage."
       },
       "uxDesigner": {
         "title": "Designer UX",
-        "description": "Direction d'initiatives de conception d'interface utilisateur axées sur l'amélioration de l'accessibilité et de l'engagement des utilisateurs sur toutes les plateformes."
+        "description": "J'ai conduit des initiatives de conception d'interface utilisateur axées sur l'amélioration de l'accessibilité et de l'engagement des utilisateurs sur toutes les plateformes."
       },
       "technicalContentProducer": {
         "title": "Producteur de Contenu Technique",
-        "description": "Direction du flux de production vidéo et des systèmes automatisés de distribution de contenu. Optimisation de la configuration matérielle et des processus de livraison de contenu."
+        "description": "J'ai géré le flux de production vidéo et des systèmes automatisés de distribution de contenu. J'ai optimisé la configuration matérielle et les processus de livraison de contenu."
       },
       "productionIntern": {
         "title": "Stagiaire en Production",
-        "description": "Création de contenu vidéo et automatisation des flux de production à l'aide d'outils industriels. Amélioration de l'efficacité de la livraison de contenu."
+        "description": "J'ai produit du contenu vidéo et automatisé les flux de production à l'aide d'outils industriels. J'ai amélioré l'efficacité de la livraison de contenu."
       },
       "designIntern": {
         "title": "Stagiaire en Design",
-        "description": "Création de supports de communication interne et externe suivant les directives de la marque."
+        "description": "J'ai élaboré des supports de communication interne et externe suivant les directives de la marque."
       }
     }
   },
@@ -103,8 +107,8 @@
   },
   "date": {
     "format": {
-      "removeZeroYear": "0 ans? & ?",
-      "removeZeroMonth": "& 0 mois?"
+      "removeZeroYear": "0\\s*an\\s*et\\s*",
+      "removeZeroMonth": "et\\s*0\\s*mois\\s*"
     }
   }
 }

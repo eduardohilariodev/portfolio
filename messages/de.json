@@ -47,34 +47,38 @@
       "for": "für",
       "format": {
         "month": "LLL yyyy",
-        "removeZeroYear": "0 Jahre ?und? ?",
-        "removeZeroMonth": "und 0 Monate?"
+        "removeZeroYear": "0 Jahre und ",
+        "removeZeroMonth": "und 0 Monate\\s*"
       }
     },
     "positions": {
-      "softwareEngineer": {
+      "lakanSoftwareEngineer": {
         "title": "Softwareingenieur",
-        "description": "Leitung der Entwicklung von KI-gestützten Lösungen und Cloud-Anwendungen, einschließlich eines Chatbots mit Antwortzeiten unter einer Minute. Implementierung von Abonnement-Systemen und Optimierung von Entwicklungsabläufen durch moderne DevOps-Praktiken, was zu verbesserter Kundengewinnung und Systemskalierbarkeit führte."
+        "description": "Ich entwickle die Lakan.ai Psychologie-Plattform mit ASP.NET Core APIs und Microsoft SQL Server. Ich habe die OpenAI Whisper Spracherkennung für Sitzungsnotizen implementiert. Ich habe zu Produktdesign, Benutzerabläufen und Datenbankoptimierung unter engen Zeitvorgaben beigetragen."
       },
-      "juniorSoftwareEngineer": {
+      "ckreativSoftwareEngineer": {
+        "title": "Softwareingenieur",
+        "description": "Ich habe die Entwicklung von KI-gestützten Lösungen und Cloud-Anwendungen koordiniert, einschließlich eines Chatbots mit Antwortzeiten unter einer Minute. Ich habe Abonnement-Systeme erstellt und Entwicklungsabläufe durch moderne DevOps-Praktiken optimiert, was zu verbesserter Kundengewinnung und Systemskalierbarkeit führte."
+      },
+      "ckreativJuniorSoftwareEngineer": {
         "title": "Junior Softwareingenieur",
-        "description": "Verbesserung und Wartung von Unternehmenssoftware-Plattformen mit Fokus auf Leistungsoptimierung und Benutzererfahrung. Erreichte signifikante Verbesserungen in Systemzuverlässigkeit, Benutzerzufriedenheit und Anwendungsleistung durch systematische Test- und Debugging-Prozesse."
+        "description": "Ich habe Unternehmenssoftware-Plattformen verbessert und gewartet mit Fokus auf Leistungsoptimierung und Benutzererfahrung. Ich habe signifikante Verbesserungen in Systemzuverlässigkeit, Benutzerzufriedenheit und Anwendungsleistung durch systematische Test- und Debugging-Prozesse erreicht."
       },
       "uxDesigner": {
         "title": "UX Designer",
-        "description": "Leitung von Benutzeroberflächen-Design-Initiativen mit Fokus auf Verbesserung der Zugänglichkeit und Benutzerengagement über alle Plattformen."
+        "description": "Ich habe Benutzeroberflächen-Design-Initiativen geleitet mit Fokus auf Verbesserung der Zugänglichkeit und Benutzerengagement über alle Plattformen."
       },
       "technicalContentProducer": {
         "title": "Technischer Content Producer",
-        "description": "Leitung des Videoproduktions-Workflows und automatisierter Content-Verteilungssysteme. Optimierung der Hardware-Einrichtung und Content-Delivery-Prozesse."
+        "description": "Ich habe den Videoproduktions-Workflow verwaltet und automatisierte Content-Verteilungssysteme. Ich habe die Hardware-Einrichtung und Content-Delivery-Prozesse optimiert."
       },
       "productionIntern": {
         "title": "Produktions-Praktikant",
-        "description": "Erstellung von Video-Content und Automatisierung von Produktions-Workflows mit Branchentools. Verbesserung der Content-Delivery-Effizienz."
+        "description": "Ich habe Video-Content erstellt und Produktions-Workflows mit Branchentools automatisiert. Ich habe die Content-Delivery-Effizienz verbessert."
       },
       "designIntern": {
         "title": "Design-Praktikant",
-        "description": "Erstellung von internen und externen Kommunikationsmaterialien nach Markenrichtlinien."
+        "description": "Ich habe interne und externe Kommunikationsmaterialien nach Markenrichtlinien erstellt."
       }
     }
   },
@@ -103,8 +107,8 @@
   },
   "date": {
     "format": {
-      "removeZeroYear": "0 Jahre? & ?",
-      "removeZeroMonth": "& 0 Monate?"
+      "removeZeroYear": "0 Jahre und ",
+      "removeZeroMonth": "und 0 Monate\\s*"
     }
   }
 }
