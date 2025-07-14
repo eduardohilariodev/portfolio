@@ -11,7 +11,7 @@ import {
   SiAmazon,
   SiApifox,
   SiBootstrap,
-  SiCss3,
+  SiCsswizardry,
   SiDart,
   SiDocker,
   SiDotnet,
@@ -249,7 +249,7 @@ const techStack: TechStack = {
     background: "hover:bg-[#1572B6]/10 dark:hover:bg-[#1572B6]/10",
     border: "hover:border-[#1572B6]/30 dark:hover:border-[#1572B6]/30",
     color: "hover:text-[#1572B6] dark:hover:text-[#1572B6]",
-    icon: SiCss3,
+    icon: SiCsswizardry,
     label: "CSS",
   },
   cypress: {

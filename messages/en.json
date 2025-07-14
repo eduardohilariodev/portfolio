@@ -13,9 +13,9 @@
   "About": {
     "greeting": "Hey, I'm",
     "name": "Eduardo",
-    "intro": "I'm a software engineer and designer, from Brazil.",
-    "work": "I work on lots of stuff, on the client-side, on the server-side and on the human-side!",
-    "learning": "I love learning and broadening my knowledge, be it from courses, books, documentaries or college (already did a BA in Design, now I am going for a second run in Computer Science).",
+    "intro": "I'm a solution-oriented Software Engineer with a background in Design, from Brazil.",
+    "work": "I don't run from a good technical challenge and work on lots of stuff.",
+    "learning": "I'm always learning new abilities, currently proficient in Node.js, Vue.js, React and getting up to par in .NET.",
     "cta": "Take a look at my background bellow and, in case you're interested,",
     "sendMessage": "send me a message",
     "profileAlt": "Eduardo's profile picture"
@@ -54,23 +54,27 @@
     "positions": {
       "lakanSoftwareEngineer": {
         "title": "Software Engineer",
-        "description": "I develop the Lakan.ai psychology platform with ASP.NET Core APIs and Microsoft SQL Server. Implemented OpenAI Whisper speech transcription for session notes. Contributed to product design, user flows, and database optimization under tight deadlines."
+        "description": "Contributed to the development of psychology platform Lakan.ai, providing product design expertise and teamworking under tight deadlines. Implemented a live speech-to-text transcription, a key business feature to the app. Helped the team with usability and design challenges, planning and building user flows and improving user experience. Delivered reliable backend solutions for production applications by developing ASP.NET Core APIs and resolving complex integration challenges."
       },
       "ckreativSoftwareEngineer": {
         "title": "Software Engineer",
-        "description": "I coordinated the development of AI-powered solutions and cloud applications, including a chatbot with sub-minute response times. Built subscription systems and optimized development workflows using modern DevOps practices, resulting in improved customer acquisition and system scalability."
+        "description": "Implemented a design system and improved the UX of the Nuvend B2B sales app, positively impacting around 600 salespeople across 5 Brazilian states and reducing support tickets by 80%. Led the development of an AI chatbot that answers users natural language questions about the company's knowledge base. Helped to increase customer acquisition by 20% by integrating with Stripe, simplifying the product's subscription billing for our clients. Designed and deployed reliable software solutions, leveraging cloud environments while streamlining continuous deployment pipelines using GitHub Actions and Docker."
       },
       "ckreativJuniorSoftwareEngineer": {
         "title": "Junior Software Engineer",
-        "description": "I enhanced and maintained enterprise software platforms, focusing on performance optimization and user experience. Achieved significant improvements in system reliability, user satisfaction, and application performance through systematic testing and debugging processes."
+        "description": "Maintained the Ckreativ ERP platform and improved the product UX for dozens of businesses, increasing user satisfaction and reducing support tickets. Supported company's teams by providing technical expertise, creating workflows that reduced project delivery time facilitating seamless software delivery."
       },
-      "uxDesigner": {
-        "title": "UX Designer",
-        "description": "I conducted user interface design initiatives focused on improving accessibility and user engagement across platforms."
+      "ckreativDesigner": {
+        "title": "Designer",
+        "description": "Designed and tested user interfaces, improving accessibility and user engagement. Collaborated with the engineering team to build designed products."
       },
-      "technicalContentProducer": {
-        "title": "Technical Content Producer",
-        "description": "I managed video production workflow and automated content distribution systems. Optimized hardware setup and content delivery processes."
+      "getmoreUXDesigner": {
+        "title": " Designer",
+        "description": "Served as a design generalist, creating dozens of presentations and layouts for print and other media, for internal and external company communication efforts. Specialized in UI design, developing wireframes and prototypes of varying complexity for key client YALO, and designed email marketing layouts (Unilever, Banco next)."
+      },
+      "brickAbodeDesigner": {
+        "title": "Designer",
+        "description": "Worked on many different fronts, the most expressive ones being: Produced and edited audiovisual materials using non-linear editing software (Adobe Creative Cloud, Blackmagic Davinci Resolve), and managed recording hardware. Developed a self-recording studio for hundreds of videos, including setting up cameras, voice capture devices, green screening, lighting, and automated Python video editing with YouTube API integration."
       },
       "productionIntern": {
         "title": "Production Intern",

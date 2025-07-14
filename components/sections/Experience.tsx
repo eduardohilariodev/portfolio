@@ -23,7 +23,7 @@ const experiences: ExperienceItem[] = [
       {
         key: "lakanSoftwareEngineer",
         period: {
-          start: DateTime.fromObject({ year: 2025, month: 1 }),
+          start: DateTime.fromObject({ year: 2024, month: 12 }),
           end: DateTime.now(),
         },
       },
@@ -49,8 +49,22 @@ const experiences: ExperienceItem[] = [
       {
         key: "ckreativSoftwareEngineer",
         period: {
-          start: DateTime.fromObject({ year: 2022, month: 3 }),
+          start: DateTime.fromObject({ year: 2023, month: 5 }),
           end: DateTime.fromObject({ year: 2024, month: 12 }),
+        },
+      },
+      {
+        key: "ckreativJuniorSoftwareEngineer",
+        period: {
+          start: DateTime.fromObject({ year: 2022, month: 5 }),
+          end: DateTime.fromObject({ year: 2023, month: 6 }),
+        },
+      },
+      {
+        key: "ckreativDesigner",
+        period: {
+          start: DateTime.fromObject({ year: 2022, month: 3 }),
+          end: DateTime.fromObject({ year: 2022, month: 6 }),
         },
       },
     ],
@@ -96,7 +110,7 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        key: "technicalContentProducer",
+        key: "brickAbodeDesigner",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 11 }),
           end: DateTime.fromObject({ year: 2021, month: 11 }),
@@ -129,7 +143,7 @@ const experiences: ExperienceItem[] = [
     },
     positions: [
       {
-        key: "uxDesigner",
+        key: "getmoreUXDesigner",
         period: {
           start: DateTime.fromObject({ year: 2019, month: 3 }),
           end: DateTime.fromObject({ year: 2019, month: 9 }),

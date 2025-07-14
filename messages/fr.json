@@ -13,9 +13,9 @@
   "About": {
     "greeting": "Salut, je suis",
     "name": "Eduardo",
-    "intro": "Je suis ingénieur logiciel et designer, du Brésil.",
-    "work": "Je travaille sur de nombreux projets, côté client, côté serveur et côté humain !",
-    "learning": "J'aime apprendre et élargir mes connaissances, que ce soit par des cours, des livres, des documentaires ou l'université (j'ai déjà un BA en Design, maintenant je me lance dans une deuxième formation en Informatique).",
+    "intro": "Je suis un ingénieur logiciel orienté solutions avec une expérience en Design, du Brésil.",
+    "work": "Je ne fuis pas un bon défi technique et je travaille sur beaucoup de choses.",
+    "learning": "J'apprends toujours de nouvelles compétences, actuellement compétent en Node.js, Vue.js, React et me mets à niveau en .NET.",
     "cta": "Jetez un œil à mon parcours ci-dessous et, si vous êtes intéressé,",
     "sendMessage": "envoyez-moi un message",
     "profileAlt": "Photo de profil d'Eduardo"
@@ -54,23 +54,27 @@
     "positions": {
       "lakanSoftwareEngineer": {
         "title": "Ingénieur Logiciel",
-        "description": "Je développe la plateforme de psychologie Lakan.ai avec des APIs ASP.NET Core et Microsoft SQL Server. J'ai implémenté la transcription vocale OpenAI Whisper pour les notes de session. J'ai contribué à la conception de produits, aux flux utilisateur et à l'optimisation de base de données sous des délais serrés."
+        "description": "Contribution au développement de la plateforme de psychologie Lakan.ai, apportant une expertise en conception de produits et travail d'équipe sous des délais serrés. Implémentation d'une transcription vocale en temps réel, une fonctionnalité métier clé pour l'application. Aide à l'équipe avec les défis d'utilisabilité et de conception, planification et construction de flux utilisateur et amélioration de l'expérience utilisateur. Livraison de solutions backend fiables pour les applications de production en développant des APIs ASP.NET Core et en résolvant des défis d'intégration complexes."
       },
       "ckreativSoftwareEngineer": {
         "title": "Ingénieur Logiciel",
-        "description": "J'ai coordonné le développement de solutions basées sur l'IA et d'applications cloud, incluant un chatbot avec des temps de réponse inférieurs à une minute. J'ai construit des systèmes d'abonnement et optimisé les flux de développement utilisant des pratiques DevOps modernes, aboutissant à une meilleure acquisition client et une scalabilité du système."
+        "description": "Implémentation d'un système de conception et amélioration de l'UX de l'application de vente B2B Nuvend, impactant positivement environ 600 vendeurs dans 5 états brésiliens et réduisant les tickets de support de 80%. Direction du développement d'un chatbot IA qui répond aux questions en langage naturel des utilisateurs sur la base de connaissances de l'entreprise. Aide à augmenter l'acquisition de clients de 20% en intégrant avec Stripe, simplifiant la facturation d'abonnement du produit pour nos clients. Conception et déploiement de solutions logicielles fiables, exploitant les environnements cloud tout en rationalisant les pipelines de déploiement continu utilisant GitHub Actions et Docker."
       },
       "ckreativJuniorSoftwareEngineer": {
         "title": "Ingénieur Logiciel Junior",
-        "description": "J'ai amélioré et maintenu des plateformes logicielles d'entreprise, axées sur l'optimisation des performances et l'expérience utilisateur. J'ai réalisé des améliorations significatives de la fiabilité du système, de la satisfaction des utilisateurs et des performances des applications grâce à des processus systématiques de test et de débogage."
+        "description": "Maintenance de la plateforme ERP Ckreativ et amélioration de l'UX du produit pour des dizaines d'entreprises, augmentant la satisfaction des utilisateurs et réduisant les tickets de support. Support des équipes de l'entreprise en fournissant une expertise technique, créant des flux de travail qui ont réduit le temps de livraison des projets facilitant une livraison logicielle transparente."
       },
-      "uxDesigner": {
-        "title": "Designer UX",
-        "description": "J'ai conduit des initiatives de conception d'interface utilisateur axées sur l'amélioration de l'accessibilité et de l'engagement des utilisateurs sur toutes les plateformes."
+      "ckreativDesigner": {
+        "title": "Designer",
+        "description": "Conception et test d'interfaces utilisateur, amélioration de l'accessibilité et de l'engagement des utilisateurs. Collaboration avec l'équipe d'ingénierie pour construire des produits conçus."
       },
-      "technicalContentProducer": {
-        "title": "Producteur de Contenu Technique",
-        "description": "J'ai géré le flux de production vidéo et des systèmes automatisés de distribution de contenu. J'ai optimisé la configuration matérielle et les processus de livraison de contenu."
+      "getmoreUXDesigner": {
+        "title": " Designer",
+        "description": "Service comme généraliste en design, création de dizaines de présentations et de mises en page pour l'impression et autres médias, pour les efforts de communication interne et externe de l'entreprise. Spécialisation en design UI, développement de wireframes et prototypes de complexité variable pour le client clé YALO, et conception de mises en page d'email marketing (Unilever, Banco next)."
+      },
+      "brickAbodeDesigner": {
+        "title": "Designer",
+        "description": "Travail sur de nombreux fronts différents, les plus expressifs étant : Production et édition de matériaux audiovisuels utilisant des logiciels d'édition non linéaires (Adobe Creative Cloud, Blackmagic Davinci Resolve), et gestion du matériel d'enregistrement. Développement d'un studio d'auto-enregistrement pour des centaines de vidéos, incluant la configuration de caméras, dispositifs de capture vocale, écran vert, éclairage, et édition vidéo automatisée Python avec intégration API YouTube."
       },
       "productionIntern": {
         "title": "Stagiaire en Production",

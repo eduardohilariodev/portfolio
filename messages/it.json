@@ -13,9 +13,9 @@
   "About": {
     "greeting": "Ciao, sono",
     "name": "Eduardo",
-    "intro": "Sono un ingegnere software e designer dal Brasile.",
-    "work": "Lavoro su molti progetti, lato client, lato server e lato umano!",
-    "learning": "Amo imparare e ampliare le mie conoscenze, che sia attraverso corsi, libri, documentari o università (ho già una laurea in Design, ora sto facendo una seconda laurea in Informatica).",
+    "intro": "Sono un ingegnere software orientato alle soluzioni con esperienza nel Design, dal Brasile.",
+    "work": "Non scappo da una buona sfida tecnica e lavoro su molte cose.",
+    "learning": "Sto sempre imparando nuove abilità, attualmente competente in Node.js, Vue.js, React e mi sto aggiornando in .NET.",
     "cta": "Dai un'occhiata al mio percorso qui sotto e, se sei interessato,",
     "sendMessage": "mandami un messaggio",
     "profileAlt": "Foto profilo di Eduardo"
@@ -54,23 +54,27 @@
     "positions": {
       "lakanSoftwareEngineer": {
         "title": "Ingegnere Software",
-        "description": "Sviluppo la piattaforma di psicologia Lakan.ai con API ASP.NET Core e Microsoft SQL Server. Ho implementato la trascrizione vocale OpenAI Whisper per le note di sessione. Ho contribuito al design del prodotto, ai flussi utente e all'ottimizzazione del database sotto scadenze strette."
+        "description": "Contribuito allo sviluppo della piattaforma di psicologia Lakan.ai, fornendo competenze di design del prodotto e lavoro di squadra sotto scadenze strette. Implementato trascrizione vocale dal vivo, una caratteristica chiave di business per l'app. Aiutato il team con sfide di usabilità e design, pianificando e costruendo flussi utente e migliorando l'esperienza utente. Consegnato soluzioni backend affidabili per applicazioni di produzione sviluppando API ASP.NET Core e risolvendo sfide di integrazione complesse."
       },
       "ckreativSoftwareEngineer": {
         "title": "Ingegnere Software",
-        "description": "Ho coordinato lo sviluppo di soluzioni basate su IA e applicazioni cloud, incluso un chatbot con tempi di risposta inferiori al minuto. Ho costruito sistemi di abbonamento e ottimizzato i flussi di sviluppo utilizzando pratiche DevOps moderne, portando a un miglioramento nell'acquisizione dei clienti e nella scalabilità del sistema."
+        "description": "Implementato un sistema di design e migliorato l'UX dell'app di vendite B2B Nuvend, impattando positivamente circa 600 venditori in 5 stati brasiliani e riducendo i ticket di supporto dell'80%. Guidato lo sviluppo di un chatbot AI che risponde alle domande in linguaggio naturale degli utenti sulla base di conoscenze dell'azienda. Aiutato ad aumentare l'acquisizione clienti del 20% integrando con Stripe, semplificando la fatturazione degli abbonamenti del prodotto per i nostri clienti. Progettato e distribuito soluzioni software affidabili, sfruttando ambienti cloud mentre ottimizzavo pipeline di distribuzione continua usando GitHub Actions e Docker."
       },
       "ckreativJuniorSoftwareEngineer": {
         "title": "Ingegnere Software Junior",
-        "description": "Ho migliorato e mantenuto piattaforme software aziendali, concentrandomi sull'ottimizzazione delle prestazioni e sull'esperienza utente. Ho ottenuto significativi miglioramenti nell'affidabilità del sistema, nella soddisfazione degli utenti e nelle prestazioni delle applicazioni attraverso processi sistematici di test e debugging."
+        "description": "Mantenuto la piattaforma ERP Ckreativ e migliorato l'UX del prodotto per dozzine di aziende, aumentando la soddisfazione degli utenti e riducendo i ticket di supporto. Supportato i team dell'azienda fornendo competenze tecniche, creando flussi di lavoro che riducevano i tempi di consegna dei progetti facilitando la distribuzione software senza interruzioni."
       },
-      "uxDesigner": {
-        "title": "UX Designer",
-        "description": "Ho condotto iniziative di design dell'interfaccia utente focalizzate sul miglioramento dell'accessibilità e del coinvolgimento degli utenti su tutte le piattaforme."
+      "ckreativDesigner": {
+        "title": "Designer",
+        "description": "Progettato e testato interfacce utente, migliorando accessibilità e coinvolgimento degli utenti. Collaborato con il team di ingegneria per costruire prodotti progettati."
       },
-      "technicalContentProducer": {
-        "title": "Produttore di Contenuti Tecnici",
-        "description": "Ho gestito il flusso di lavoro della produzione video e i sistemi automatizzati di distribuzione dei contenuti. Ho ottimizzato la configurazione hardware e i processi di consegna dei contenuti."
+      "getmoreUXDesigner": {
+        "title": " Designer",
+        "description": "Servito come generalista del design, creando dozzine di presentazioni e layout per stampa e altri media, per sforzi di comunicazione interna ed esterna dell'azienda. Specializzato in design UI, sviluppando wireframe e prototipi di complessità variabile per il cliente chiave YALO, e progettato layout di email marketing (Unilever, Banco next)."
+      },
+      "brickAbodeDesigner": {
+        "title": "Designer",
+        "description": "Lavorato su molti fronti diversi, i più espressivi sono stati: Prodotto e modificato materiali audiovisivi usando software di editing non lineare (Adobe Creative Cloud, Blackmagic Davinci Resolve), e gestito hardware di registrazione. Sviluppato uno studio di auto-registrazione per centinaia di video, inclusa la configurazione di telecamere, dispositivi di cattura vocale, green screen, illuminazione, e editing video automatizzato Python con integrazione API YouTube."
       },
       "productionIntern": {
         "title": "Stagista di Produzione",
